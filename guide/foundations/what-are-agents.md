@@ -475,6 +475,85 @@ does something you don't like, you can roll it back.
 
 ---
 
+## Agent Design Patterns
+
+As you work with agents, you'll notice certain approaches keep
+coming up. We've given these **names** so you can recognize and
+talk about them. Think of them as plays in a playbook.
+
+Here are the 8 core patterns (each gets a full chapter in
+[Agent Design Patterns](agent-design-patterns.md)):
+
+1. **The Agent Loop** -- Think, Act, Observe, Decide, Repeat. The fundamental cycle every agent follows.
+
+2. **The Tool Use Pattern** -- Agents extend their abilities by using tools, like apps give your phone new powers.
+
+3. **The Planning Pattern** -- The agent plans before acting. Blueprints before building.
+
+4. **The Memory Pattern** -- The agent remembers things across sessions, like leaving notes for yourself for tomorrow.
+
+5. **The Multi-Agent Pattern** -- Multiple specialized agents working together, like a team where each person has a role.
+
+6. **The Metacognition Pattern** -- The agent evaluates its own work before calling it done, like proofreading your own essay.
+
+7. **The Human-in-the-Loop Pattern** -- The agent pauses for your approval at key decision points, like a contractor showing you tile samples.
+
+8. **The Context Engineering Pattern** -- Systematically giving the agent the right information, like providing the full movie production setup instead of a single line of dialogue.
+
+You've already seen several of these in action in this chapter.
+The agentic loop? That's Pattern 1. The tools section? Pattern 2.
+The approval prompts? Pattern 7. Now you have names for them.
+
+---
+
+## Beyond Codex: The Universal Agent
+
+This guide uses OpenAI Codex as its primary example, but Codex
+is just **one** implementation of the agent paradigm. Several
+other tools follow the exact same principles:
+
+- **Claude Code** (by Anthropic) -- Another terminal-based AI agent,
+  using Claude models instead of GPT. Uses CLAUDE.md instead of
+  AGENTS.md. Same concept, different provider.
+  (See: [Claude Code Intro](claude-code-intro.md))
+
+- **Cursor** -- An AI-powered editor with built-in agent capabilities.
+
+- **GitHub Copilot** -- AI assistance integrated into code editors.
+
+- **Gemini CLI** -- Google's command-line AI agent.
+
+All of them use the same core ideas: the agentic loop, tool use,
+context management, and safety controls.
+
+Why does this matter? Because **the skills you're learning in this
+guide are not Codex-specific.** Context engineering, design patterns,
+safety awareness, clear communication -- these transfer to any agent
+tool you'll ever use.
+
+```
+WHAT CHANGES BETWEEN TOOLS:
+  - Command names
+  - AI model under the hood
+  - Configuration file names
+  - Specific features and pricing
+
+WHAT STAYS THE SAME:
+  - The agentic loop
+  - How context engineering works
+  - Safety principles
+  - Design patterns
+  - How you communicate with the agent
+  - How you evaluate the agent's work
+```
+
+The tools will change. New ones will appear. Some will disappear.
+But the paradigm -- AI agents that think, act, observe, and
+decide -- is here to stay. **Learn the paradigm, and every new
+tool becomes easy to pick up.**
+
+---
+
 ## Key Takeaways
 
 1. **Chatbots answer questions. Agents complete tasks.** That's the core difference.
@@ -497,6 +576,12 @@ does something you don't like, you can roll it back.
 7. This is the shift from **AI as oracle** to **AI as collaborator.**
    We're not just asking AI what it knows anymore -- we're asking it
    to *do work.*
+
+8. **Eight design patterns** give you a vocabulary for how agents work --
+   from the Agent Loop to the Human-in-the-Loop pattern.
+
+9. **The agent paradigm is universal.** Codex, Claude Code, Cursor, Copilot --
+   different tools, same fundamental skills.
 
 ---
 

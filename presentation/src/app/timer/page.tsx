@@ -1,10 +1,9 @@
 'use client';
 
 import { useState, useCallback } from 'react';
-import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTimer } from '@/hooks/use-timer';
-import { Button } from '@/components/ui/button';
+import { Play, Pause, RotateCcw } from 'lucide-react';
 
 /* ---------- Presets ---------- */
 const presets = [
@@ -13,29 +12,6 @@ const presets = [
   { label: '10 min', seconds: 600 },
   { label: '15 min', seconds: 900 },
 ];
-
-/* ---------- Color helpers ---------- */
-function getTimerColor(percentRemaining: number): string {
-  if (percentRemaining > 50) return 'oklch(0.65 0.2 155)'; // green
-  if (percentRemaining > 20) return 'oklch(0.75 0.15 80)'; // amber/yellow
-  return 'oklch(0.6 0.2 10)'; // red
-}
-
-function getTimerGlow(percentRemaining: number): string {
-  if (percentRemaining > 50) return '0 0 80px oklch(0.65 0.2 155 / 0.3)';
-  if (percentRemaining > 20) return '0 0 80px oklch(0.75 0.15 80 / 0.3)';
-  return '0 0 80px oklch(0.6 0.2 10 / 0.4)';
-}
-
-function getBgGradient(percentRemaining: number): string {
-  if (percentRemaining > 50) {
-    return 'radial-gradient(ellipse 80% 60% at 50% 50%, oklch(0.65 0.2 155 / 0.06), transparent 70%)';
-  }
-  if (percentRemaining > 20) {
-    return 'radial-gradient(ellipse 80% 60% at 50% 50%, oklch(0.75 0.15 80 / 0.06), transparent 70%)';
-  }
-  return 'radial-gradient(ellipse 80% 60% at 50% 50%, oklch(0.6 0.2 10 / 0.08), transparent 70%)';
-}
 
 /* ---------- Format time ---------- */
 function formatTime(seconds: number): { minutes: string; secs: string } {
@@ -49,7 +25,7 @@ function formatTime(seconds: number): { minutes: string; secs: string } {
 
 /* ========== MAIN COMPONENT ========== */
 export default function TimerPage() {
-  const [duration, setDuration] = useState(300); // 5 min default
+  const [duration, setDuration] = useState(300);
   const [activityName, setActivityName] = useState('');
   const [customMinutes, setCustomMinutes] = useState('');
   const [showCustom, setShowCustom] = useState(false);
@@ -64,11 +40,7 @@ export default function TimerPage() {
     onComplete: handleComplete,
   });
 
-  const timerColor = getTimerColor(percentRemaining);
-  const timerGlow = getTimerGlow(percentRemaining);
-  const bgGradient = getBgGradient(percentRemaining);
   const { minutes, secs } = formatTime(timeLeft);
-  const isUnder30 = timeLeft > 0 && timeLeft <= 30 && isRunning;
 
   const handlePreset = useCallback(
     (seconds: number) => {
@@ -102,48 +74,30 @@ export default function TimerPage() {
   }, [start]);
 
   return (
-    <div className="min-h-screen flex flex-col relative overflow-hidden">
-      {/* Dynamic background */}
-      <div
-        className="fixed inset-0 pointer-events-none transition-all duration-1000"
-        style={{ background: bgGradient }}
-      />
-
-      {/* Top bar */}
-      <div className="relative z-10 flex items-center justify-between p-6">
-        <Link
-          href="/"
-          className="text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors"
-        >
-          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-          </svg>
-        </Link>
-
-        {/* Activity name input */}
-        <div className="flex-1 max-w-md mx-4">
+    <div className="min-h-screen flex flex-col">
+      {/* Top bar — activity name */}
+      <div className="flex items-center justify-center p-6">
+        <div className="w-full max-w-sm">
           <input
             type="text"
             value={activityName}
             onChange={(e) => setActivityName(e.target.value)}
             placeholder="Activity name (optional)"
-            className="w-full text-center text-lg font-medium bg-transparent border-b border-[var(--border)] focus:border-[var(--primary)] outline-none py-2 px-4 text-[var(--foreground)] placeholder:text-[var(--muted-foreground)] transition-colors"
+            className="w-full text-center text-sm font-medium bg-transparent border-b border-[var(--border)] focus:border-[var(--foreground)] outline-none py-2 px-4 text-[var(--foreground)] placeholder:text-[var(--muted-foreground)] transition-colors"
           />
         </div>
-
-        <div className="w-5" /> {/* Spacer for alignment */}
       </div>
 
       {/* Main timer area */}
-      <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6">
+      <div className="flex-1 flex flex-col items-center justify-center px-6">
         {/* Activity name display */}
         <AnimatePresence>
           {activityName && (
             <motion.p
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="text-xl sm:text-2xl text-[var(--muted-foreground)] mb-8 font-medium text-center"
+              className="text-sm text-[var(--muted-foreground)] mb-8 font-medium text-center uppercase tracking-widest"
             >
               {activityName}
             </motion.p>
@@ -154,34 +108,27 @@ export default function TimerPage() {
         <AnimatePresence>
           {timesUp && (
             <motion.div
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.5 }}
-              transition={{ type: 'spring', stiffness: 200, damping: 15 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
               className="absolute inset-0 flex items-center justify-center z-20"
             >
               <div className="text-center">
-                <motion.h1
-                  className="text-7xl sm:text-8xl md:text-9xl font-black tracking-tight"
-                  style={{ color: 'oklch(0.6 0.2 10)' }}
-                  animate={{
-                    scale: [1, 1.05, 1],
-                    opacity: [1, 0.8, 1],
-                  }}
-                  transition={{ repeat: Infinity, duration: 1.5 }}
+                <h1
+                  className="text-6xl sm:text-7xl md:text-8xl font-semibold tracking-tight text-[var(--foreground)]"
                 >
-                  TIME&apos;S UP!
-                </motion.h1>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5 }}
-                  className="mt-8"
-                >
-                  <Button onClick={handleReset} size="lg" className="rounded-2xl px-10 h-14 text-lg">
-                    Reset Timer
-                  </Button>
-                </motion.div>
+                  TIME&apos;S UP
+                </h1>
+                <div className="mt-8">
+                  <button
+                    onClick={handleReset}
+                    className="inline-flex items-center gap-2 text-sm font-medium bg-[var(--foreground)] text-[var(--background)] rounded-lg px-6 py-3 hover:opacity-90 transition-opacity"
+                  >
+                    <RotateCcw className="w-4 h-4" />
+                    Reset
+                  </button>
+                </div>
               </div>
             </motion.div>
           )}
@@ -189,43 +136,31 @@ export default function TimerPage() {
 
         {/* Timer digits */}
         {!timesUp && (
-          <motion.div
-            className="flex items-center justify-center select-none"
-            animate={isUnder30 ? { scale: [1, 1.02, 1] } : { scale: 1 }}
-            transition={isUnder30 ? { repeat: Infinity, duration: 1 } : undefined}
-          >
+          <div className="flex items-center justify-center select-none">
             {/* Minutes */}
             <div className="flex">
               {minutes.split('').map((digit, i) => (
-                <motion.span
+                <span
                   key={`m-${i}-${digit}`}
-                  className="font-black tabular-nums"
+                  className="font-semibold tabular-nums text-[var(--foreground)]"
                   style={{
-                    fontSize: 'clamp(120px, 25vw, 240px)',
+                    fontSize: 'clamp(100px, 22vw, 220px)',
                     lineHeight: 1,
-                    color: timerColor,
-                    textShadow: timerGlow,
-                    transition: 'color 1s ease, text-shadow 1s ease',
                   }}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.2 }}
                 >
                   {digit}
-                </motion.span>
+                </span>
               ))}
             </div>
 
             {/* Colon */}
             <motion.span
-              className="font-black mx-2 sm:mx-4"
+              className="font-semibold mx-2 sm:mx-4 text-[var(--foreground)]"
               style={{
-                fontSize: 'clamp(80px, 20vw, 200px)',
+                fontSize: 'clamp(70px, 18vw, 180px)',
                 lineHeight: 1,
-                color: timerColor,
-                transition: 'color 1s ease',
               }}
-              animate={isRunning ? { opacity: [1, 0.3, 1] } : { opacity: 1 }}
+              animate={isRunning ? { opacity: [1, 0.2, 1] } : { opacity: 1 }}
               transition={isRunning ? { repeat: Infinity, duration: 1 } : undefined}
             >
               :
@@ -234,104 +169,89 @@ export default function TimerPage() {
             {/* Seconds */}
             <div className="flex">
               {secs.split('').map((digit, i) => (
-                <motion.span
+                <span
                   key={`s-${i}-${digit}`}
-                  className="font-black tabular-nums"
+                  className="font-semibold tabular-nums text-[var(--foreground)]"
                   style={{
-                    fontSize: 'clamp(120px, 25vw, 240px)',
+                    fontSize: 'clamp(100px, 22vw, 220px)',
                     lineHeight: 1,
-                    color: timerColor,
-                    textShadow: timerGlow,
-                    transition: 'color 1s ease, text-shadow 1s ease',
                   }}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.2 }}
                 >
                   {digit}
-                </motion.span>
+                </span>
               ))}
             </div>
-          </motion.div>
+          </div>
         )}
 
         {/* Controls */}
         {!timesUp && (
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="flex items-center gap-4 mt-12"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="flex items-center gap-3 mt-12"
           >
             {!isRunning ? (
-              <Button
+              <button
                 onClick={handleStart}
-                size="lg"
-                className="rounded-2xl px-10 h-14 text-lg shadow-lg hover:shadow-[var(--glow-purple)] transition-shadow"
+                className="inline-flex items-center gap-2 text-sm font-medium bg-[var(--foreground)] text-[var(--background)] rounded-lg px-6 py-3 hover:opacity-90 transition-opacity"
               >
-                <svg className="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
-                </svg>
+                <Play className="w-4 h-4" />
                 Start
-              </Button>
+              </button>
             ) : (
-              <Button
+              <button
                 onClick={pause}
-                variant="outline"
-                size="lg"
-                className="rounded-2xl px-10 h-14 text-lg"
+                className="inline-flex items-center gap-2 text-sm font-medium border border-[var(--border)] rounded-lg px-6 py-3 hover:border-[var(--foreground)] transition-colors"
               >
-                <svg className="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M5.75 3a.75.75 0 00-.75.75v12.5c0 .414.336.75.75.75h1.5a.75.75 0 00.75-.75V3.75A.75.75 0 007.25 3h-1.5zM12.75 3a.75.75 0 00-.75.75v12.5c0 .414.336.75.75.75h1.5a.75.75 0 00.75-.75V3.75a.75.75 0 00-.75-.75h-1.5z" />
-                </svg>
+                <Pause className="w-4 h-4" />
                 Pause
-              </Button>
+              </button>
             )}
 
-            <Button
+            <button
               onClick={handleReset}
-              variant="ghost"
-              size="lg"
-              className="rounded-2xl px-8 h-14 text-lg"
+              className="inline-flex items-center gap-2 text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors px-4 py-3"
             >
-              <svg className="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182" />
-              </svg>
+              <RotateCcw className="w-4 h-4" />
               Reset
-            </Button>
+            </button>
           </motion.div>
         )}
       </div>
 
       {/* Bottom presets */}
       {!timesUp && (
-        <div className="relative z-10 py-8 px-6">
-          <div className="max-w-2xl mx-auto">
-            <div className="flex flex-wrap items-center justify-center gap-3">
+        <div className="py-8 px-6">
+          <div className="max-w-lg mx-auto">
+            <div className="flex flex-wrap items-center justify-center gap-2">
               {presets.map((preset) => (
-                <Button
+                <button
                   key={preset.seconds}
                   onClick={() => handlePreset(preset.seconds)}
-                  variant={duration === preset.seconds && !isRunning ? 'default' : 'outline'}
-                  className="rounded-xl px-6 h-11"
+                  className={`text-xs font-medium rounded-full px-4 py-1.5 border transition-colors ${
+                    duration === preset.seconds && !isRunning
+                      ? 'bg-[var(--foreground)] text-[var(--background)] border-[var(--foreground)]'
+                      : 'border-[var(--border)] text-[var(--muted-foreground)] hover:border-[var(--foreground)] hover:text-[var(--foreground)]'
+                  }`}
                 >
                   {preset.label}
-                </Button>
+                </button>
               ))}
 
               {/* Custom button */}
               {!showCustom ? (
-                <Button
+                <button
                   onClick={() => setShowCustom(true)}
-                  variant="ghost"
-                  className="rounded-xl px-6 h-11"
+                  className="text-xs font-medium text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors px-4 py-1.5"
                 >
                   Custom
-                </Button>
+                </button>
               ) : (
                 <motion.div
-                  initial={{ opacity: 0, width: 0 }}
-                  animate={{ opacity: 1, width: 'auto' }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
                   className="flex items-center gap-2"
                 >
                   <input
@@ -342,15 +262,21 @@ export default function TimerPage() {
                     onChange={(e) => setCustomMinutes(e.target.value)}
                     onKeyDown={(e) => e.key === 'Enter' && handleCustom()}
                     placeholder="min"
-                    className="w-20 h-11 rounded-xl border border-[var(--border)] bg-[var(--card)] text-center text-[var(--foreground)] outline-none focus:border-[var(--primary)] px-3"
+                    className="w-16 h-8 rounded-lg border border-[var(--border)] bg-transparent text-center text-xs text-[var(--foreground)] outline-none focus:border-[var(--foreground)] px-2"
                     autoFocus
                   />
-                  <Button onClick={handleCustom} size="sm" className="rounded-xl h-11">
+                  <button
+                    onClick={handleCustom}
+                    className="text-xs font-medium bg-[var(--foreground)] text-[var(--background)] rounded-lg px-3 py-1.5"
+                  >
                     Set
-                  </Button>
-                  <Button onClick={() => setShowCustom(false)} variant="ghost" size="sm" className="rounded-xl h-11">
+                  </button>
+                  <button
+                    onClick={() => setShowCustom(false)}
+                    className="text-xs text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors px-2 py-1.5"
+                  >
                     Cancel
-                  </Button>
+                  </button>
                 </motion.div>
               )}
             </div>
@@ -358,16 +284,12 @@ export default function TimerPage() {
         </div>
       )}
 
-      {/* Progress bar at the very bottom */}
+      {/* Progress bar at the bottom */}
       {!timesUp && (
-        <div className="relative z-10 h-1.5 w-full">
-          <motion.div
-            className="h-full"
-            style={{
-              width: `${percentRemaining}%`,
-              backgroundColor: timerColor,
-              transition: 'background-color 1s ease',
-            }}
+        <div className="h-0.5 w-full bg-[var(--border)]">
+          <div
+            className="h-full bg-[var(--foreground)] transition-all duration-1000 ease-linear"
+            style={{ width: `${percentRemaining}%` }}
           />
         </div>
       )}

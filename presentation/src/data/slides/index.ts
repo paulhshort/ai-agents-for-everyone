@@ -3,6 +3,8 @@ import { openingSlides } from './opening';
 import { howAiThinksSlides } from './how-ai-thinks';
 import { theBigIdeaSlides } from './the-big-idea';
 import { promptEngineeringSlides } from './prompt-engineering';
+import { contextEngineeringSlides } from './context-engineering';
+import { agentPatternsSlides } from './agent-patterns';
 import { safetyMattersSlides } from './safety-matters';
 import { day1RecapSlides } from './day-1-recap';
 import { day2RecapSlides } from './day-2-recap';
@@ -17,6 +19,8 @@ export const slideDecks: Record<string, Slide[]> = {
   'how-ai-thinks': howAiThinksSlides,
   'the-big-idea': theBigIdeaSlides,
   'prompt-engineering': promptEngineeringSlides,
+  'context-engineering': contextEngineeringSlides,
+  'agent-patterns': agentPatternsSlides,
   'safety-matters': safetyMattersSlides,
   'day-1-recap': day1RecapSlides,
   'day-2-recap': day2RecapSlides,
@@ -34,6 +38,8 @@ export {
   howAiThinksSlides,
   theBigIdeaSlides,
   promptEngineeringSlides,
+  contextEngineeringSlides,
+  agentPatternsSlides,
   safetyMattersSlides,
   day1RecapSlides,
   day2RecapSlides,

@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { FontSizeProvider } from "@/providers/font-size-provider";
 import { PresentationProvider } from "@/providers/presentation-provider";
+import { Navbar } from "@/components/layout/navbar";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "AI Agents: The Next Level | Interactive Course",
+  title: "AI Agents for Everyone | Interactive Course",
   description:
-    "An interactive presentation platform teaching the agentic AI paradigm through OpenAI Codex. Built for classrooms.",
+    "An interactive course teaching the agentic AI paradigm. Learn how AI agents can do things for you — not just answer questions.",
 };
 
 export default function RootLayout({
@@ -26,7 +27,10 @@ export default function RootLayout({
       <body className="min-h-screen antialiased">
         <ThemeProvider>
           <FontSizeProvider>
-            <PresentationProvider>{children}</PresentationProvider>
+            <PresentationProvider>
+              <Navbar />
+              {children}
+            </PresentationProvider>
           </FontSizeProvider>
         </ThemeProvider>
       </body>
