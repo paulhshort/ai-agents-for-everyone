@@ -1,0 +1,143 @@
+# Section 14: Team and Enterprise Use
+# These questions cover using Codex in a team setting, sharing
+# configurations, and enterprise considerations.
+
+- id: "14-001"
+  question: "How can a team share their Codex configuration?"
+  options:
+    a: "Email config files back and forth"
+    b: "Commit the .codex/ folder and AGENTS.md to the project's git repository"
+    c: "Everyone creates their own from scratch"
+    d: "Use a shared USB drive"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    The best way to share configuration is to commit the .codex/ folder
+    (with config.toml and hooks.json) and the AGENTS.md file to the
+    project's git repository. When team members clone the repo, they
+    automatically get the team's Codex configuration. This ensures
+    everyone has consistent settings.
+  guide_ref: "Section 14.1"
+  tags: ["teams", "configuration"]
+
+- id: "14-002"
+  question: "Why should a team agree on AGENTS.md content?"
+  options:
+    a: "It is not important"
+    b: "So the AI agent behaves consistently for everyone, following the same rules and patterns"
+    c: "To reduce API costs"
+    d: "Because Codex refuses to work without team agreement"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    A shared AGENTS.md means everyone's Codex follows the same rules,
+    coding conventions, and patterns. Without it, one person's Codex
+    might use tabs while another's uses spaces, or one might add comments
+    while another does not. Consistency is crucial for team projects.
+  guide_ref: "Section 14.1"
+  tags: ["teams", "agents-md"]
+
+- id: "14-003"
+  question: "What is a good practice for onboarding a new team member who will use Codex?"
+  options:
+    a: "Let them figure it out on their own"
+    b: "Share the project AGENTS.md, explain the team's Codex workflows, and show them key commands"
+    c: "Give them your personal API key"
+    d: "Have them read the entire OpenAI documentation"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    Good onboarding includes: (1) Make sure they have their own API key.
+    (2) Walk them through the project's AGENTS.md and configuration.
+    (3) Show them the key workflows the team uses (like /commit, /review).
+    (4) Start them with safe settings (read-only sandbox, untrusted approval).
+    (5) Have them try simple tasks first.
+  guide_ref: "Section 14.2"
+  tags: ["teams", "onboarding"]
+
+- id: "14-004"
+  question: "Should each team member have their own API key?"
+  options:
+    a: "No, share one key to save money"
+    b: "Yes, each person should have their own key for security and usage tracking"
+    c: "Only the team lead needs a key"
+    d: "API keys are not needed for team use"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    Each team member should have their own API key. This is important for
+    security (if one key is compromised, others are not affected), usage
+    tracking (you can see who is using how much), and accountability.
+    Sharing keys is a security risk.
+  guide_ref: "Section 14.3"
+  tags: ["teams", "api-key", "security"]
+
+- id: "14-005"
+  question: "What is a good team policy for sandbox modes?"
+  options:
+    a: "Everyone uses danger-full-access for maximum productivity"
+    b: "Set workspace-write as the default, with read-only for reviewing code and stricter access by exception"
+    c: "No policy needed -- individual choice"
+    d: "Everyone uses read-only mode only"
+  answer: "b"
+  difficulty: "advanced"
+  explanation: >
+    A sensible team policy is workspace-write as the default (safe for most
+    work), with read-only for review tasks, and stricter modes (like
+    danger-full-access) only available with justification. This balances
+    productivity with safety. The team can agree on this in their shared
+    config.toml.
+  guide_ref: "Section 14.3"
+  tags: ["teams", "sandbox", "security"]
+
+- id: "14-006"
+  question: "How can Codex be used in code review workflows?"
+  options:
+    a: "It cannot -- code review is only for humans"
+    b: "Use Codex as an automated first-pass reviewer before human review"
+    c: "Replace all human reviewers with Codex"
+    d: "Only for open source projects"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    Codex makes a great first-pass reviewer. It can catch bugs, style issues,
+    and common problems before a human reviewer looks at the code. This saves
+    human reviewers time and catches issues early. The key word is "first pass"
+    -- human review should still happen for important changes.
+  guide_ref: "Section 14.4"
+  tags: ["teams", "code-review", "workflows"]
+
+- id: "14-007"
+  question: "Should teams keep secrets (API keys, passwords) in the shared AGENTS.md?"
+  options:
+    a: "Yes, so Codex can access everything"
+    b: "Absolutely not -- AGENTS.md is in git and should never contain secrets"
+    c: "Only test secrets"
+    d: "Only if the repository is private"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    Never put secrets in AGENTS.md! It is committed to git and visible to
+    everyone who has access to the repository. Instead, reference environment
+    variables in AGENTS.md (like "use the DATABASE_URL environment variable")
+    and have each team member set up their own secrets locally.
+  guide_ref: "Section 14.3"
+  tags: ["teams", "security", "secrets"]
+
+- id: "14-008"
+  question: "What is the benefit of creating team-wide custom commands?"
+  options:
+    a: "They look professional"
+    b: "Everyone follows the same workflow for common tasks, ensuring consistency"
+    c: "They make Codex faster"
+    d: "They are required for team accounts"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    Team-wide custom commands (like /commit, /review, /deploy-check) ensure
+    everyone follows the same process. When one person runs /commit, they
+    get the same structured workflow as everyone else. This consistency
+    reduces mistakes and makes it easier for team members to understand
+    each other's work.
+  guide_ref: "Section 14.1"
+  tags: ["teams", "custom-commands"]

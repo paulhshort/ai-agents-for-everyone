@@ -1,0 +1,146 @@
+# Section 15: The Broader AI Ecosystem
+# These questions cover how Codex fits into the bigger picture of AI tools,
+# the future of AI agents, and general AI literacy.
+
+- id: "15-001"
+  question: "Is Codex the only AI agent available?"
+  options:
+    a: "Yes, it is the only one"
+    b: "No, there are many AI agents and tools -- Codex is one option in a growing ecosystem"
+    c: "It is the only free one"
+    d: "It is the only one that works on the command line"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    Codex is one of many AI agent tools available. The AI ecosystem is
+    growing rapidly with tools from different companies. What you learn
+    about using Codex -- like writing good prompts, managing context, and
+    reviewing AI work -- applies to working with AI tools in general.
+    The skills are transferable.
+  guide_ref: "Section 15.1"
+  tags: ["ecosystem", "basics"]
+
+- id: "15-002"
+  question: "What skills you learn from using Codex transfer to other AI tools?"
+  options:
+    a: "None -- every tool is completely different"
+    b: "Writing clear prompts, reviewing AI output, managing context, and understanding safety"
+    c: "Only typing speed"
+    d: "Only programming skills"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    The fundamental skills are universal: writing clear instructions (prompt
+    engineering), reviewing AI-generated output, managing context efficiently,
+    understanding safety and permissions, and knowing how to iterate with
+    feedback. These apply to virtually every AI tool, not just Codex.
+  guide_ref: "Section 15.2"
+  tags: ["ecosystem", "skills"]
+
+- id: "15-003"
+  question: "What does 'AI literacy' mean?"
+  options:
+    a: "Teaching AI to read"
+    b: "Understanding how AI works, its capabilities, limitations, and how to use it effectively"
+    c: "A university degree in computer science"
+    d: "Being able to write code"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    AI literacy is understanding what AI can and cannot do, how to use
+    it effectively and safely, and being able to evaluate AI output
+    critically. It does not require programming skills. Anyone who uses
+    AI tools benefits from AI literacy -- knowing when to trust the AI,
+    when to verify, and how to get the best results.
+  guide_ref: "Section 15.2"
+  tags: ["ecosystem", "ai-literacy"]
+
+- id: "15-004"
+  question: "Why is it important to review AI-generated content rather than accepting it blindly?"
+  options:
+    a: "It is not important -- AI is always right"
+    b: "Because AI can make mistakes, have biases, and sometimes produce convincing-sounding but incorrect output"
+    c: "Only to slow down the process"
+    d: "Because the government requires it"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    AI can produce "hallucinations" (confident but wrong information),
+    reflect biases from its training data, or misunderstand your intent.
+    Reviewing output catches these issues. The human in the loop is
+    essential -- your judgment and domain knowledge are what turn AI
+    output from "possibly useful" into "definitely correct."
+  guide_ref: "Section 15.3"
+  tags: ["ecosystem", "safety", "golden-rules"]
+
+- id: "15-005"
+  question: "What is a 'hallucination' in AI terminology?"
+  options:
+    a: "The AI seeing images"
+    b: "When the AI generates information that sounds confident and plausible but is factually wrong"
+    c: "A bug in the software"
+    d: "A fun feature"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    An AI hallucination is when the AI states something with confidence
+    that is actually incorrect or made up. For example, it might reference
+    a function that does not exist, cite a nonexistent source, or give
+    plausible-sounding but wrong advice. This is why reviewing AI output
+    is always important.
+  guide_ref: "Section 15.3"
+  tags: ["ecosystem", "hallucination"]
+
+- id: "15-006"
+  question: "What is the best mindset for working with AI agents?"
+  options:
+    a: "Either trust them completely or do not use them at all"
+    b: "Trust but verify -- use the AI to speed up your work, but always check the results"
+    c: "Fear and suspicion"
+    d: "Treat them as infallible experts"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    "Trust but verify" is the ideal mindset. AI agents like Codex can
+    dramatically speed up your work and handle tedious tasks. But they
+    are tools, not infallible experts. Review their output, test their
+    code, and use your judgment. The combination of AI speed and human
+    judgment is more powerful than either alone.
+  guide_ref: "Section 15.4"
+  tags: ["ecosystem", "mindset"]
+
+- id: "15-007"
+  question: "Will AI agents replace human workers?"
+  options:
+    a: "Yes, completely and immediately"
+    b: "AI is best thought of as a tool that augments human abilities, not a replacement"
+    c: "No, AI can never be useful"
+    d: "Only in the fast food industry"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    AI agents are tools that amplify what humans can do. A person using
+    Codex can accomplish more than they could alone, just like a person
+    with a calculator can do math faster. The most effective approach is
+    treating AI as a very capable assistant while you remain the
+    decision-maker, reviewer, and creative director.
+  guide_ref: "Section 15.4"
+  tags: ["ecosystem", "future"]
+
+- id: "15-008"
+  question: "What is the most important thing to remember about AI agents as a beginner?"
+  options:
+    a: "They are too complicated for most people"
+    b: "They are tools -- powerful ones -- but you are still in charge, and your judgment matters most"
+    c: "They will do everything perfectly every time"
+    d: "You need a computer science degree to use them"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    The most important thing is this: AI agents are powerful tools, but
+    YOU are in charge. Your judgment, your review, and your decisions are
+    what make the difference between good results and great results. You
+    do not need to be technical to use AI agents -- you just need to be
+    thoughtful about how you use them.
+  guide_ref: "Section 15.4"
+  tags: ["ecosystem", "basics", "golden-rules"]

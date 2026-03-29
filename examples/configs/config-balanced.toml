@@ -1,0 +1,70 @@
+# Codex Configuration -- Balanced / Everyday Mode
+#
+# WHAT IS THIS FILE?
+# This is a configuration file for OpenAI Codex. It controls how Codex
+# behaves -- what it is allowed to do and how much it asks for permission.
+#
+# WHERE DOES IT GO?
+# - For ALL your projects: ~/.codex/config.toml (in your home folder)
+# - For ONE specific project: .codex/config.toml (in the project folder)
+# Project-level settings override your global settings.
+#
+# WHAT IS THIS CONFIGURATION FOR?
+# This is the BALANCED configuration. It gives Codex enough freedom to
+# be productive, while still keeping you in control of important decisions.
+# Recommended for:
+#   - Everyday use on normal projects
+#   - Users who are comfortable with Codex basics
+#   - Projects where you want a good mix of speed and safety
+
+# ============================================================
+# MODEL SETTINGS
+# ============================================================
+
+# Which AI model to use.
+# "gpt-5.4" is the best all-around choice. It gives the highest quality
+# results for most tasks.
+model = "gpt-5.4"
+
+# ============================================================
+# APPROVAL SETTINGS
+# ============================================================
+
+# "on-request" means Codex will do simple things (like reading files)
+# on its own, but will ask your permission before doing anything
+# significant (like writing files or running commands).
+#
+# This is the sweet spot for most people -- you stay in control
+# without having to approve every tiny action.
+approval = "on-request"
+
+# ============================================================
+# SANDBOX SETTINGS
+# ============================================================
+
+# "workspace-write" means Codex can read and write files inside your
+# project folder, but cannot touch anything outside of it.
+# This is safe for most projects because:
+#   - Your project files are backed up in git anyway
+#   - Codex cannot mess with your system files
+#   - You can always undo changes with git
+sandbox = "workspace-write"
+
+# ============================================================
+# MCP SERVERS
+# ============================================================
+
+# Here is an example of adding a web search MCP server.
+# This lets Codex search the internet when it needs current information.
+# Remove the comment markers (#) to enable it.
+#
+# [mcp_servers.web-search]
+# command = "npx"
+# args = ["-y", "@anthropic/web-search-mcp"]
+
+# Here is an example of adding a file system MCP server.
+# This lets Codex work with files in specific directories you choose.
+#
+# [mcp_servers.filesystem]
+# command = "npx"
+# args = ["-y", "@anthropic/filesystem-mcp", "/path/to/allowed/folder"]

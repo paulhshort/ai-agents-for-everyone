@@ -1,0 +1,177 @@
+# Section 8: Hooks and Extensions
+# These questions cover hooks, skills, MCP basics, and how to extend
+# Codex's capabilities.
+
+- id: "08-001"
+  question: "What is a 'hook' in Codex?"
+  options:
+    a: "A fishing reference in the code"
+    b: "A script that runs automatically at a specific moment, like before a commit"
+    c: "A way to connect two computers"
+    d: "A type of error"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    A hook is a script that runs automatically at a specific moment during
+    Codex's work. For example, a "pre-commit" hook runs before a commit is
+    saved, and an "on-complete" hook runs when a task finishes. Hooks let
+    you automate checks and actions without having to remember to do them
+    manually.
+  guide_ref: "Section 8.1"
+  tags: ["hooks", "automation"]
+
+- id: "08-002"
+  question: "Where are hooks configured?"
+  options:
+    a: "In the AGENTS.md file"
+    b: "In .codex/hooks.json"
+    c: "In your web browser settings"
+    d: "They do not need configuration"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    Hooks are configured in .codex/hooks.json in your project folder. This
+    file lists each hook with its event (when to run) and command (what to
+    run). Example: {"hooks": [{"event": "pre-commit", "command": "bash lint.sh"}]}
+  guide_ref: "Section 8.1"
+  tags: ["hooks", "configuration"]
+
+- id: "08-003"
+  question: "What is a Skill in Codex?"
+  options:
+    a: "A certification badge"
+    b: "A reusable capability defined in a SKILL.md file that teaches Codex how to do a specific task"
+    c: "A difficulty rating"
+    d: "A programming language Codex knows"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    A Skill is a reusable set of instructions stored in .agents/skills/.
+    Each skill has a SKILL.md file that describes what it does and how to
+    do it. For example, a "code-review" skill teaches Codex exactly how to
+    review code, what to check for, and how to format its findings. You
+    write the skill once and can use it over and over.
+  guide_ref: "Section 8.2"
+  tags: ["skills"]
+
+- id: "08-004"
+  question: "Where do Skills live in your project?"
+  options:
+    a: "In the root folder"
+    b: "In .agents/skills/ with each skill in its own folder containing a SKILL.md"
+    c: "In the config.toml file"
+    d: "On a remote server"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    Skills are organized in .agents/skills/. Each skill gets its own folder
+    with a SKILL.md file inside. For example: .agents/skills/code-review/SKILL.md.
+    This structure keeps skills organized and makes them easy to find and share.
+  guide_ref: "Section 8.2"
+  tags: ["skills", "file-structure"]
+
+- id: "08-005"
+  question: "What is MCP?"
+  options:
+    a: "Master Control Program"
+    b: "Model Context Protocol -- a standard for connecting AI to external tools"
+    c: "Multi-Cloud Platform"
+    d: "Maximum Compute Power"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    MCP stands for Model Context Protocol. It is a standard way to connect
+    AI agents like Codex to external tools and services. MCP servers give
+    Codex new capabilities -- like searching the web, accessing databases,
+    or working with GitHub. Think of MCP servers as plugins that extend
+    what Codex can do.
+  guide_ref: "Section 8.3"
+  tags: ["mcp", "basics"]
+
+- id: "08-006"
+  question: "What is the difference between a hook and a skill?"
+  options:
+    a: "There is no difference"
+    b: "Hooks run automatically at specific moments; skills are capabilities you invoke when needed"
+    c: "Hooks are free, skills cost money"
+    d: "Skills are for beginners, hooks are for experts"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    Hooks are automatic -- they run at specific triggers (like before a
+    commit) without you having to ask. Skills are capabilities you invoke
+    when you need them (like asking Codex to "use the code review skill").
+    Hooks are for things that should always happen; skills are for things
+    you do on demand.
+  guide_ref: "Section 8.1"
+  tags: ["hooks", "skills"]
+
+- id: "08-007"
+  question: "Can MCP servers access the internet?"
+  options:
+    a: "No, everything stays on your computer"
+    b: "Yes, some MCP servers can search the web, access APIs, and connect to online services"
+    c: "Only with a special license"
+    d: "Only during business hours"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    Some MCP servers connect to online services. For example, a web search
+    MCP server lets Codex search the internet, and a GitHub MCP server lets
+    it interact with GitHub repositories. This is powerful but also means
+    you should vet MCP servers carefully -- make sure you trust them before
+    giving them access to external services.
+  guide_ref: "Section 8.3"
+  tags: ["mcp", "security"]
+
+- id: "08-008"
+  question: "Where are MCP servers configured?"
+  options:
+    a: "In the AGENTS.md file"
+    b: "In config.toml under the [mcp_servers] section"
+    c: "In a separate mcp.json file"
+    d: "They configure themselves automatically"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    MCP servers are configured in your config.toml file under the
+    [mcp_servers] section. Each server gets its own subsection with its
+    command and arguments. You can also add them using the command line:
+    'codex mcp add --name "server-name" -- command arg1 arg2'.
+  guide_ref: "Section 8.3"
+  tags: ["mcp", "configuration"]
+
+- id: "08-009"
+  question: "What kind of task is a hook best suited for?"
+  options:
+    a: "Complex creative tasks"
+    b: "Simple, repetitive checks that should happen automatically every time"
+    c: "One-time tasks"
+    d: "Tasks that require human judgment"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    Hooks are best for simple, automated checks: running a linter before
+    commits, sending notifications when tasks finish, or logging activity.
+    They should be fast and reliable since they run automatically. Complex
+    tasks that need human judgment are better done through interactive
+    Codex sessions.
+  guide_ref: "Section 8.1"
+  tags: ["hooks", "automation"]
+
+- id: "08-010"
+  question: "What is a practical example of a useful hook?"
+  options:
+    a: "A hook that plays music while you work"
+    b: "A pre-commit hook that checks code for common mistakes before allowing a commit"
+    c: "A hook that changes your desktop wallpaper"
+    d: "A hook that orders coffee"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    A pre-commit lint hook is one of the most useful hooks. It automatically
+    checks your code for common mistakes (formatting errors, unused variables,
+    potential bugs) before a commit is saved. If it finds problems, it stops
+    the commit so you can fix them first. This catches issues early.
+  guide_ref: "Section 8.1"
+  tags: ["hooks", "examples"]

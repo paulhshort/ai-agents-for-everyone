@@ -1,0 +1,274 @@
+# Section 1: Quick Start Questions
+# These questions cover the very basics -- what Codex is, how to get started,
+# and the most important rules for using it safely and effectively.
+
+- id: "01-001"
+  question: "What is OpenAI Codex?"
+  options:
+    a: "A search engine like Google"
+    b: "An AI-powered coding assistant you use from the command line"
+    c: "A programming language"
+    d: "A website builder"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    Codex is an AI assistant made by OpenAI that you interact with through
+    the command line (terminal). It can read your files, write code, run
+    commands, and help you with all kinds of tasks. It is not just a chatbot --
+    it is an agent that can actually DO things on your computer.
+  guide_ref: "Section 1.1"
+  tags: ["basics", "what-is-codex"]
+
+- id: "01-002"
+  question: "How do you install the Codex CLI on your computer?"
+  options:
+    a: "Download it from the App Store"
+    b: "pip install codex"
+    c: "npm install -g @openai/codex"
+    d: "It comes pre-installed on all computers"
+  answer: "c"
+  difficulty: "beginner"
+  explanation: >
+    Codex is installed using npm (Node Package Manager) with the command
+    npm install -g @openai/codex. The -g flag means "install globally"
+    so you can use it from any folder on your computer. You need Node.js
+    installed first.
+  guide_ref: "Section 1.2"
+  tags: ["installation", "cli"]
+
+- id: "01-003"
+  question: "What is the FIRST Golden Rule of using Codex?"
+  options:
+    a: "Always use the most expensive model"
+    b: "Never read the documentation"
+    c: "Always review changes before accepting them"
+    d: "Let Codex do everything without supervision"
+  answer: "c"
+  difficulty: "beginner"
+  explanation: >
+    The number one rule is to ALWAYS review what Codex has done before
+    accepting it. Use /diff to see what changed. Never blindly accept
+    changes -- Codex is powerful but not perfect, and you are ultimately
+    responsible for the results.
+  guide_ref: "Section 1.4"
+  tags: ["golden-rules", "safety"]
+
+- id: "01-004"
+  question: "What is the simplest way to start using Codex?"
+  options:
+    a: "Write a configuration file first"
+    b: "Just type 'codex' followed by what you want to do"
+    c: "Create an AGENTS.md file"
+    d: "Install ten MCP servers"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    The simplest way to use Codex is to just type 'codex' followed by
+    your request in plain English. For example: codex "explain what this
+    project does". No configuration needed to get started!
+  guide_ref: "Section 1.2"
+  tags: ["basics", "getting-started"]
+
+- id: "01-005"
+  question: "What does the prompt formula WHAT+WHERE+HOW+VERIFY help with?"
+  options:
+    a: "Reducing your electricity bill"
+    b: "Writing clear, specific requests that get better results"
+    c: "Making Codex run faster"
+    d: "Skipping the review step"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    The WHAT+WHERE+HOW+VERIFY formula helps you write better prompts.
+    WHAT = what you want done, WHERE = which files or folders, HOW = any
+    specific approach or constraints, VERIFY = how to check it worked.
+    Specific prompts get much better results than vague ones.
+  guide_ref: "Section 1.4"
+  tags: ["prompting", "golden-rules"]
+
+- id: "01-006"
+  question: "What does Codex need to work?"
+  options:
+    a: "Just a web browser"
+    b: "An OpenAI API key and Node.js installed"
+    c: "A supercomputer"
+    d: "A paid subscription to ChatGPT Plus"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    Codex needs two things: Node.js (which lets it run) and an OpenAI API
+    key (which gives it access to the AI models). The API key is different
+    from a ChatGPT subscription -- you get it from platform.openai.com and
+    pay based on how much you use it.
+  guide_ref: "Section 1.2"
+  tags: ["installation", "api-key"]
+
+- id: "01-007"
+  question: "What is the default AI model that Codex uses?"
+  options:
+    a: "GPT-4"
+    b: "GPT-5.3-codex"
+    c: "GPT-5.4"
+    d: "GPT-5.4-mini"
+  answer: "c"
+  difficulty: "beginner"
+  explanation: >
+    GPT-5.4 is the default model. It is the most capable option and gives
+    the best results for most tasks. GPT-5.4-mini is faster and cheaper
+    for simple tasks, and GPT-5.3-codex is the previous generation.
+  guide_ref: "Section 1.3"
+  tags: ["models", "basics"]
+
+- id: "01-008"
+  question: "What makes Codex different from regular ChatGPT?"
+  options:
+    a: "Codex can only answer questions about code"
+    b: "Codex can actually take actions -- read files, write code, run commands"
+    c: "Codex is free but ChatGPT is paid"
+    d: "There is no difference"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    The key difference is that Codex is an AGENT. Regular ChatGPT can only
+    chat -- it answers questions in a text window. Codex can actually DO
+    things: read your files, edit code, run terminal commands, and interact
+    with your project. This is the "agentic paradigm" -- AI that takes action,
+    not just provides answers.
+  guide_ref: "Section 1.1"
+  tags: ["basics", "agentic"]
+
+- id: "01-009"
+  question: "When you give Codex a task, what should you do when it finishes?"
+  options:
+    a: "Close the terminal immediately"
+    b: "Review what it did using /diff and make sure it looks right"
+    c: "Always accept without looking"
+    d: "Delete everything and start over"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    Always review Codex's work before accepting it. The /diff command shows
+    you exactly what changed. Read through the changes, make sure they make
+    sense, and only then accept them. This is the most important habit to
+    build when using any AI agent.
+  guide_ref: "Section 1.4"
+  tags: ["golden-rules", "review", "diff"]
+
+- id: "01-010"
+  question: "What does 'codex exec' do differently from regular 'codex'?"
+  options:
+    a: "It runs faster"
+    b: "It runs a task and exits without an interactive session"
+    c: "It uses a different AI model"
+    d: "It requires a special license"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    'codex exec' runs a single task and then exits, without opening an
+    interactive session. It is useful for automation, scripts, and quick
+    one-off tasks. Regular 'codex' opens a session where you can have
+    an ongoing conversation.
+  guide_ref: "Section 1.3"
+  tags: ["cli", "exec"]
+
+- id: "01-011"
+  question: "What is the best first step if you are completely new to Codex?"
+  options:
+    a: "Immediately start a complex project"
+    b: "Configure every possible setting"
+    c: "Try a simple task like asking Codex to explain a file"
+    d: "Install all available MCP servers"
+  answer: "c"
+  difficulty: "beginner"
+  explanation: >
+    Start small! Ask Codex to explain a file in your project, or summarize
+    what a folder contains. This lets you see how it works without any risk.
+    You can gradually try more complex tasks as you get comfortable.
+  guide_ref: "Section 1.2"
+  tags: ["getting-started", "basics"]
+
+- id: "01-012"
+  question: "What does 'CLI' stand for?"
+  options:
+    a: "Computer Language Interface"
+    b: "Command Line Interface"
+    c: "Code Learning Integration"
+    d: "Central Logic Interpreter"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    CLI stands for Command Line Interface. It is the text-based way of
+    interacting with your computer -- you type commands and the computer
+    responds with text. Codex is a CLI tool, meaning you use it by
+    typing commands in a terminal window.
+  guide_ref: "Section 1.1"
+  tags: ["basics", "terminology"]
+
+- id: "01-013"
+  question: "Which of these is a good prompt for Codex?"
+  options:
+    a: "Fix it"
+    b: "Do something with the code"
+    c: "In src/auth.py, add input validation to the login function. Check that the email format is valid and the password is at least 8 characters."
+    d: "Make everything better"
+  answer: "c"
+  difficulty: "beginner"
+  explanation: >
+    Good prompts are specific. They say WHAT to do, WHERE to do it, and
+    HOW to do it. Option C tells Codex exactly which file, which function,
+    and what specific changes to make. Vague prompts like "fix it" or
+    "make everything better" give Codex too little to work with.
+  guide_ref: "Section 1.4"
+  tags: ["prompting", "golden-rules"]
+
+- id: "01-014"
+  question: "Can you use Codex without writing any code yourself?"
+  options:
+    a: "No, it only works for experienced programmers"
+    b: "Yes, you can ask it to do tasks in plain English"
+    c: "Only if you pay extra"
+    d: "Only for very simple tasks"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    Absolutely! You can give Codex instructions in plain English. You do
+    not need to know how to code. For example, you can say "organize the
+    files in this folder by type" or "summarize all the documents in this
+    directory." Codex figures out the technical details for you.
+  guide_ref: "Section 1.1"
+  tags: ["basics", "accessibility"]
+
+- id: "01-015"
+  question: "What should you NEVER paste directly into Codex?"
+  options:
+    a: "File names"
+    b: "Error messages"
+    c: "Passwords, API keys, or other secrets"
+    d: "Code snippets"
+  answer: "c"
+  difficulty: "beginner"
+  explanation: >
+    Never paste passwords, API keys, tokens, or any other secrets into
+    Codex. Everything you type is sent to OpenAI's servers for processing.
+    Instead, use environment variables to handle secrets. If Codex needs
+    to access something that requires a key, put the key in a .env file
+    and tell Codex to read it from there.
+  guide_ref: "Section 1.4"
+  tags: ["security", "golden-rules", "secrets"]
+
+- id: "01-016"
+  question: "What is an 'agent' in the context of AI?"
+  options:
+    a: "A human customer service representative"
+    b: "An AI that can take actions and make decisions, not just answer questions"
+    c: "A virus or malware"
+    d: "A type of computer hardware"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    In AI, an "agent" is an AI system that can take actions in the real world,
+    not just have conversations. Codex is an agent because it can read files,
+    write code, run commands, and interact with your computer. Regular chatbots
+    can only send and receive text messages. Agents can DO things.
+  guide_ref: "Section 1.1"
+  tags: ["basics", "agentic", "terminology"]

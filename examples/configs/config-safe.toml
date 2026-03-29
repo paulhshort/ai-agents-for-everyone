@@ -1,0 +1,84 @@
+# Codex Configuration -- Safe / Strict Mode
+#
+# WHAT IS THIS FILE?
+# This is a configuration file for OpenAI Codex. It controls how Codex
+# behaves -- what it is allowed to do, what model it uses, and how much
+# permission it needs from you before taking action.
+#
+# WHERE DOES IT GO?
+# - For ALL your projects: ~/.codex/config.toml (in your home folder)
+# - For ONE specific project: .codex/config.toml (in the project folder)
+# Project-level settings override your global settings.
+#
+# WHAT IS THIS CONFIGURATION FOR?
+# This is the SAFE configuration. It is the most restrictive option.
+# Codex will ask your permission before doing almost anything.
+# Recommended for:
+#   - New users who are still learning Codex
+#   - Sensitive projects with important data
+#   - Situations where you want full control
+#
+# HOW TO USE IT:
+# 1. Copy this file to ~/.codex/config.toml (for global) or
+#    .codex/config.toml (for a specific project)
+# 2. Restart Codex or start a new session
+# 3. Codex will use these settings automatically
+
+# ============================================================
+# MODEL SETTINGS
+# ============================================================
+
+# Which AI model to use. Options:
+#   "gpt-5.4"       -- The most capable model (default). Best results
+#                      but costs more per use.
+#   "gpt-5.4-mini"  -- Faster and cheaper. Good for simple tasks.
+#   "gpt-5.3-codex" -- Previous generation. Use if you need it for
+#                      compatibility.
+model = "gpt-5.4"
+
+# ============================================================
+# APPROVAL SETTINGS
+# ============================================================
+
+# How much permission does Codex need before taking actions?
+# Options:
+#   "untrusted"  -- Ask permission for EVERYTHING. Safest option.
+#   "on-request" -- Ask for sensitive operations (file writes, commands).
+#   "never"      -- Never ask. Codex does everything automatically.
+#                   (Not recommended for this safe configuration!)
+#
+# You can also use these when launching Codex:
+#   codex --full-auto    (same as "never" -- no approval needed)
+#   codex --yolo         (same as "never" but even for network access)
+approval = "untrusted"
+
+# ============================================================
+# SANDBOX SETTINGS
+# ============================================================
+
+# The sandbox controls what Codex can access on your computer.
+# Options:
+#   "read-only"           -- Can only READ files, cannot change anything.
+#                            The safest option.
+#   "workspace-write"     -- Can read and write files ONLY in your
+#                            project folder. Cannot touch anything outside.
+#   "danger-full-access"  -- Can read and write ANYWHERE on your computer.
+#                            Use with extreme caution!
+sandbox = "read-only"
+
+# ============================================================
+# MCP SERVERS
+# ============================================================
+
+# MCP (Model Context Protocol) servers add extra capabilities to Codex,
+# like searching the web or accessing databases.
+#
+# In safe mode, we do not add any MCP servers. You can add them later
+# when you are comfortable. Here is what it would look like:
+#
+# [mcp_servers.web-search]
+# command = "npx"
+# args = ["-y", "@anthropic/web-search-mcp"]
+#
+# To add an MCP server, you can also use the command:
+#   codex mcp add --name "server-name" -- command arg1 arg2

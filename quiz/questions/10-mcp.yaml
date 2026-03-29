@@ -1,0 +1,175 @@
+# Section 10: MCP (Model Context Protocol)
+# These questions cover MCP servers -- what they are, how to use them,
+# and how they extend Codex's capabilities.
+
+- id: "10-001"
+  question: "What does MCP stand for?"
+  options:
+    a: "Maximum Compute Power"
+    b: "Model Context Protocol"
+    c: "Multi-Cloud Platform"
+    d: "Main Control Panel"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    MCP stands for Model Context Protocol. It is a standard way for AI
+    agents to connect to external tools and services. Think of it as a
+    universal plug that lets Codex connect to many different tools using
+    the same standard interface.
+  guide_ref: "Section 10.1"
+  tags: ["mcp", "basics"]
+
+- id: "10-002"
+  question: "What does an MCP server give Codex?"
+  options:
+    a: "More computing power"
+    b: "Access to additional tools and capabilities, like web search or database access"
+    c: "A faster internet connection"
+    d: "More storage space"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    MCP servers extend Codex's capabilities by providing new tools. Without
+    MCP servers, Codex can read/write files and run commands. With MCP servers,
+    it can also search the web, query databases, interact with GitHub, send
+    messages, and much more -- depending on which servers you install.
+  guide_ref: "Section 10.1"
+  tags: ["mcp", "tools"]
+
+- id: "10-003"
+  question: "How do you add an MCP server to Codex?"
+  options:
+    a: "It happens automatically"
+    b: "Use 'codex mcp add' command or add it to the [mcp_servers] section in config.toml"
+    c: "Download it from an app store"
+    d: "Send an email to OpenAI support"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    There are two ways to add MCP servers: (1) Use the command line:
+    'codex mcp add --name "server-name" -- command arg1 arg2'. (2) Manually
+    add it to your config.toml file under the [mcp_servers] section. Both
+    methods register the server so Codex knows how to start and use it.
+  guide_ref: "Section 10.2"
+  tags: ["mcp", "configuration"]
+
+- id: "10-004"
+  question: "Where are MCP servers configured in the config file?"
+  options:
+    a: "Under [plugins]"
+    b: "Under [mcp_servers]"
+    c: "Under [extensions]"
+    d: "In a separate mcp.config file"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    MCP servers are configured in config.toml under the [mcp_servers]
+    section. Each server gets its own subsection like [mcp_servers.server-name]
+    with fields for the command to run and any arguments it needs.
+  guide_ref: "Section 10.2"
+  tags: ["mcp", "configuration", "config-toml"]
+
+- id: "10-005"
+  question: "Should you install every MCP server you can find?"
+  options:
+    a: "Yes, more is always better"
+    b: "No, only install ones you need and trust -- each one increases your attack surface"
+    c: "Yes, they are all safe"
+    d: "It does not matter either way"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    Only install MCP servers you actually need and have vetted. Each MCP
+    server is code that runs on your system and can potentially access
+    your files, network, and data. Installing unnecessary ones increases
+    your "attack surface" -- meaning more potential entry points for
+    problems. Quality over quantity.
+  guide_ref: "Section 10.3"
+  tags: ["mcp", "security"]
+
+- id: "10-006"
+  question: "What command lets you see which MCP servers are currently installed?"
+  options:
+    a: "/status"
+    b: "/mcp"
+    c: "/plugins"
+    d: "/list-servers"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    The /mcp command inside Codex shows you information about your installed
+    MCP servers -- which ones are active, what tools they provide, and their
+    current status.
+  guide_ref: "Section 10.2"
+  tags: ["mcp", "commands"]
+
+- id: "10-007"
+  question: "What is an example of a common MCP server?"
+  options:
+    a: "A music player"
+    b: "A web search server that lets Codex search the internet for current information"
+    c: "A video editor"
+    d: "A screen recorder"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    A web search MCP server is one of the most common examples. It gives
+    Codex the ability to search the internet for up-to-date information.
+    Other common MCP servers include GitHub (for working with repositories),
+    filesystem (for accessing specific folders), and database servers
+    (for querying databases).
+  guide_ref: "Section 10.1"
+  tags: ["mcp", "examples"]
+
+- id: "10-008"
+  question: "Can MCP servers access your files?"
+  options:
+    a: "No, they are completely isolated"
+    b: "Yes, depending on how they are configured, they may have access to files and data"
+    c: "Only with a paid license"
+    d: "Only text files, not binary files"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    MCP servers can access your files if they are configured to do so.
+    For example, a filesystem MCP server might be given access to specific
+    directories. This is why vetting MCP servers is important -- you should
+    understand what access each server has and whether you trust it with
+    that access.
+  guide_ref: "Section 10.3"
+  tags: ["mcp", "security"]
+
+- id: "10-009"
+  question: "What happens if an MCP server has a bug or vulnerability?"
+  options:
+    a: "Nothing, Codex protects you automatically"
+    b: "It could potentially compromise your system, files, or data"
+    c: "Only the MCP server is affected"
+    d: "OpenAI fixes it instantly"
+  answer: "b"
+  difficulty: "advanced"
+  explanation: >
+    An MCP server with a bug or vulnerability could potentially be exploited
+    to access your files, data, or system in ways you did not intend. This
+    is why you should only install MCP servers from trusted sources, keep
+    them updated, and review their code if possible. Treat them like any
+    other software you install on your computer.
+  guide_ref: "Section 10.3"
+  tags: ["mcp", "security"]
+
+- id: "10-010"
+  question: "Can you create your own MCP server?"
+  options:
+    a: "No, only OpenAI can create them"
+    b: "Yes, MCP is an open protocol and anyone can build servers for it"
+    c: "Only with enterprise access"
+    d: "Only in Python"
+  answer: "b"
+  difficulty: "advanced"
+  explanation: >
+    MCP is an open protocol, which means anyone can create MCP servers.
+    If you have a specific tool or service you want Codex to connect to,
+    you can build your own MCP server. This is more of an advanced topic,
+    but it shows the flexibility of the MCP system.
+  guide_ref: "Section 10.4"
+  tags: ["mcp", "advanced"]

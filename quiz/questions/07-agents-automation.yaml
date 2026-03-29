@@ -1,0 +1,177 @@
+# Section 7: Agents and Automation
+# These questions cover creating custom agents, using AGENTS.md effectively,
+# and automating tasks.
+
+- id: "07-001"
+  question: "What makes a good AGENTS.md file?"
+  options:
+    a: "It should be as long as possible to cover every scenario"
+    b: "Clear project description, specific rules, important file locations, and how to test"
+    c: "Just the project name and nothing else"
+    d: "A copy of the project's source code"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    A good AGENTS.md is clear, specific, and concise. It includes: a brief
+    project description, where important files are, rules for what to always
+    and never do, and how to run tests. It does not need to cover every
+    scenario -- just the essentials the agent needs to work effectively.
+  guide_ref: "Section 7.1"
+  tags: ["agents-md", "agents"]
+
+- id: "07-002"
+  question: "Can you create a Codex agent for tasks that are not about writing code?"
+  options:
+    a: "No, Codex is only for code"
+    b: "Yes, you can create agents for writing, data analysis, file organization, and more"
+    c: "Only with special plugins"
+    d: "Only in the enterprise version"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    Codex agents can do much more than code. You can create agents for
+    writing and editing documents, analyzing spreadsheet data, organizing
+    files, doing research, and many other tasks. The AGENTS.md file just
+    tells the agent what its job is -- that job can be anything you want.
+  guide_ref: "Section 7.2"
+  tags: ["agents", "non-code"]
+
+- id: "07-003"
+  question: "What is 'codex exec' useful for in automation?"
+  options:
+    a: "Nothing -- it is the same as regular codex"
+    b: "Running automated tasks in scripts, since it completes and exits without interaction"
+    c: "Executing system updates"
+    d: "Compiling code"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    'codex exec' is perfect for automation because it runs a single task
+    and exits. You can use it in scripts, scheduled jobs, or CI/CD pipelines.
+    For example, a nightly script could run
+    'codex exec "review all changes made today and write a summary"'
+    without any human interaction.
+  guide_ref: "Section 7.3"
+  tags: ["exec", "automation"]
+
+- id: "07-004"
+  question: "What is a 'multi-agent' setup?"
+  options:
+    a: "Using Codex on multiple computers at the same time"
+    b: "Having multiple specialized agents that work on different parts of a task"
+    c: "A team of humans all using Codex"
+    d: "Running multiple copies of the same agent"
+  answer: "b"
+  difficulty: "advanced"
+  explanation: >
+    A multi-agent setup involves creating different specialized agents for
+    different parts of a workflow. For example, one agent writes code, a
+    second agent reviews it, and a third agent writes tests. Each agent
+    has its own AGENTS.md with focused instructions. This is an advanced
+    pattern that works well for complex workflows.
+  guide_ref: "Section 7.4"
+  tags: ["agents", "multi-agent"]
+
+- id: "07-005"
+  question: "What is the 'Things to Never Do' section in AGENTS.md for?"
+  options:
+    a: "Legal requirements"
+    b: "Preventing the agent from making specific costly mistakes"
+    c: "Just decoration"
+    d: "Listing things the agent cannot do anyway"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    The "Never Do" section creates guardrails. Explicit prohibitions like
+    "never delete migration files" or "never modify the production config"
+    prevent specific mistakes that could be costly. Think of it as putting
+    up a fence around a cliff -- it keeps the agent from going somewhere
+    dangerous.
+  guide_ref: "Section 7.1"
+  tags: ["agents-md", "safety"]
+
+- id: "07-006"
+  question: "How can you make Codex run a task automatically at a scheduled time?"
+  options:
+    a: "Codex has a built-in calendar"
+    b: "Use 'codex exec' in a system scheduled task (like cron on Linux or Task Scheduler on Windows)"
+    c: "Set an alarm clock next to your computer"
+    d: "You cannot automate Codex at all"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    You can automate Codex by using 'codex exec' inside scheduled tasks.
+    On Linux/Mac, you use cron jobs. On Windows, you use Task Scheduler.
+    For example, you could schedule a nightly task that runs
+    'codex exec "summarize today's changes and email the team."'
+  guide_ref: "Section 7.3"
+  tags: ["automation", "exec"]
+
+- id: "07-007"
+  question: "What is the purpose of the 'How to Test' section in AGENTS.md?"
+  options:
+    a: "To test the AGENTS.md file itself"
+    b: "To tell the agent how to verify that its changes work correctly"
+    c: "To test the user's knowledge"
+    d: "It is optional and never used"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    The "How to Test" section tells the agent exactly how to verify its work.
+    For example: "Run 'npm test' and make sure all tests pass." Without this,
+    the agent might make changes but never check if they work. With it, the
+    agent automatically verifies its work as part of every task.
+  guide_ref: "Section 7.1"
+  tags: ["agents-md", "testing"]
+
+- id: "07-008"
+  question: "Can you give different agents different levels of access?"
+  options:
+    a: "No, all agents have the same permissions"
+    b: "Yes, using different sandbox and approval settings for different agent configurations"
+    c: "Only with enterprise features"
+    d: "Agents do not have access levels"
+  answer: "b"
+  difficulty: "advanced"
+  explanation: >
+    Different agents can have different access levels through configuration.
+    A code review agent might only need read-only access, while a code
+    writing agent needs workspace-write. A research agent might need network
+    access. You set these through the config.toml sandbox and approval settings.
+  guide_ref: "Section 7.4"
+  tags: ["agents", "sandbox", "configuration"]
+
+- id: "07-009"
+  question: "What is a good way to start creating your first custom agent?"
+  options:
+    a: "Write a 500-line AGENTS.md file covering everything"
+    b: "Start with a simple AGENTS.md -- project overview, 3-5 rules, key files -- and refine as you go"
+    c: "Copy someone else's AGENTS.md without changing it"
+    d: "Skip AGENTS.md and just use prompts"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    Start simple and iterate. A basic AGENTS.md with a short project
+    description, a few important rules, and key file locations is enough
+    to get started. As you use Codex and notice what works and what does not,
+    add more specific rules and instructions. You do not need to get it
+    perfect on the first try.
+  guide_ref: "Section 7.1"
+  tags: ["agents-md", "getting-started"]
+
+- id: "07-010"
+  question: "What is Codex Cloud useful for?"
+  options:
+    a: "Storing your files in the cloud"
+    b: "Running long or complex tasks in OpenAI's containers without tying up your local machine"
+    c: "Accessing Codex from your phone"
+    d: "Free unlimited usage"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    Codex Cloud runs your agent in containers hosted by OpenAI. This is
+    useful for long-running tasks (so your computer is free to do other
+    things), for consistent environments (no "it works on my machine"
+    problems), or for running multiple agents at the same time.
+  guide_ref: "Section 7.5"
+  tags: ["cloud", "automation"]

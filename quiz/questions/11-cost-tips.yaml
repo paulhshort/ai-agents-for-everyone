@@ -1,0 +1,139 @@
+# Section 11: Cost and Efficiency Tips
+# These questions cover how to keep your Codex usage affordable and
+# efficient -- getting the most value for your money.
+
+- id: "11-001"
+  question: "What is the main factor that affects how much Codex costs to use?"
+  options:
+    a: "The time of day you use it"
+    b: "The number of tokens (text processed) -- more text = higher cost"
+    c: "The color theme of your terminal"
+    d: "Your internet speed"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    Codex costs are based on tokens -- the units of text processed by the
+    AI model. Every word you type, every file Codex reads, and every response
+    it generates uses tokens. More tokens = higher cost. Being efficient
+    with your prompts and context management helps keep costs down.
+  guide_ref: "Section 11.1"
+  tags: ["costs", "tokens"]
+
+- id: "11-002"
+  question: "Which model is cheaper to use?"
+  options:
+    a: "GPT-5.4 (the full model)"
+    b: "GPT-5.4-mini (the smaller, faster model)"
+    c: "They cost the same"
+    d: "The cost depends on the time of day"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    GPT-5.4-mini is cheaper than GPT-5.4. It is also faster. For simple
+    tasks like explaining code, renaming variables, or organizing files,
+    mini is often good enough and costs less. Save the full GPT-5.4 for
+    complex tasks where quality matters most.
+  guide_ref: "Section 11.2"
+  tags: ["costs", "models"]
+
+- id: "11-003"
+  question: "How does running /compact help with costs?"
+  options:
+    a: "It does not affect costs"
+    b: "It reduces the context size, so less data is processed in future interactions"
+    c: "It gives you a discount code"
+    d: "It switches to a free model"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    When you /compact, the conversation is summarized into a shorter version.
+    This means future interactions process less data (fewer tokens), which
+    costs less. It is a win-win -- better performance AND lower costs.
+    Compacting regularly is one of the simplest cost-saving strategies.
+  guide_ref: "Section 11.2"
+  tags: ["costs", "compact"]
+
+- id: "11-004"
+  question: "What is a cost-effective way to handle simple and complex tasks?"
+  options:
+    a: "Use the same model for everything"
+    b: "Use GPT-5.4-mini for simple tasks and switch to GPT-5.4 for complex ones"
+    c: "Always use the most expensive model"
+    d: "Avoid using Codex for simple tasks"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    Matching the model to the task is a smart cost strategy. Use GPT-5.4-mini
+    for simple tasks (explanations, small edits, formatting) and GPT-5.4 for
+    complex work (architecture decisions, bug diagnosis, large refactoring).
+    You can switch models mid-session with the /model command.
+  guide_ref: "Section 11.2"
+  tags: ["costs", "models"]
+
+- id: "11-005"
+  question: "Why does starting a fresh session for each new task help with costs?"
+  options:
+    a: "It does not help with costs"
+    b: "Because a fresh session has no old context, so less data is processed per interaction"
+    c: "Because fresh sessions are free"
+    d: "Because it resets your billing cycle"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    A fresh session starts with an empty context window. If you continue
+    in an old session, all the previous conversation is still in context
+    and gets processed with every new interaction. Starting fresh means
+    only the relevant information is in context, reducing token usage.
+  guide_ref: "Section 11.2"
+  tags: ["costs", "context", "fresh-context"]
+
+- id: "11-006"
+  question: "How can you be more specific in your prompts to reduce costs?"
+  options:
+    a: "Write longer, more detailed prompts"
+    b: "Point Codex to specific files instead of asking it to search the whole project"
+    c: "Use shorter words"
+    d: "Type faster"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    Being specific saves tokens. "Fix the login bug in src/auth.py, line 42"
+    is more efficient than "Find and fix any bugs related to login somewhere
+    in the project." The specific version tells Codex exactly where to look,
+    so it does not waste tokens reading irrelevant files.
+  guide_ref: "Section 11.2"
+  tags: ["costs", "prompting"]
+
+- id: "11-007"
+  question: "What is ONE simple habit that saves the most on Codex costs?"
+  options:
+    a: "Only using Codex on weekends"
+    b: "Running /compact regularly and starting fresh sessions for new tasks"
+    c: "Never using any features"
+    d: "Keeping your screen brightness low"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    The simplest cost-saving habit is managing your context. Run /compact
+    when usage gets high, and start a new session for each distinct task.
+    This prevents the context from filling up with irrelevant information,
+    which means less data processed and lower costs.
+  guide_ref: "Section 11.2"
+  tags: ["costs", "compact", "context"]
+
+- id: "11-008"
+  question: "Does reading a large file cost more than reading a small file?"
+  options:
+    a: "No, all file reads cost the same"
+    b: "Yes, larger files have more text (tokens) to process"
+    c: "It depends on the file type"
+    d: "Reading files is free"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    Yes, bigger files mean more tokens. A 1,000-line file uses much more
+    context (and costs more) than a 10-line file. This is why you should
+    ask Codex to look at specific parts of large files rather than reading
+    the whole thing, when possible.
+  guide_ref: "Section 11.1"
+  tags: ["costs", "tokens", "context"]

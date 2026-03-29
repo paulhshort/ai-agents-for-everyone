@@ -1,0 +1,71 @@
+import type { Slide } from '@/data/types';
+
+export const day1RecapSlides: Slide[] = [
+  {
+    id: 'recap1-1',
+    type: 'title',
+    title: 'What We Learned Today',
+    subtitle: 'Day 1: What Is AI, Really?',
+    animation: 'zoom-in',
+    notes: 'Energy check! Students have been at this all day. Keep it upbeat and fast-paced.',
+  },
+  {
+    id: 'recap1-2',
+    type: 'content',
+    title: '5 Key Takeaways',
+    bullets: [
+      'AI is pattern matching, not magic — it predicts the next word based on probabilities',
+      'Tokens are the building blocks — AI breaks text into small chunks to process',
+      'The context window is AI\'s whiteboard — it has limited space for memory',
+      'Chatbots answer questions, but AI AGENTS take action and do real work',
+      'The agentic loop: Think → Plan → Act → Observe → Repeat',
+    ],
+    animation: 'reveal-steps',
+    notes: 'Ask students to say each takeaway back to you in their own words.',
+  },
+  {
+    id: 'recap1-3',
+    type: 'content',
+    title: 'The 5 Golden Rules',
+    subtitle: 'Rules that will serve you for your entire AI journey',
+    bullets: [
+      '1. Start in Read-Only mode until you trust the AI with your files',
+      '2. Be specific in your prompts — vague instructions get vague results',
+      '3. ALWAYS review AI\'s work — trust but verify',
+      '4. Never share passwords, API keys, or personal information',
+      '5. Use AI to LEARN, not to skip learning',
+    ],
+    animation: 'reveal-steps',
+    notes: 'Have students write these down or take a photo. These rules are timeless.',
+  },
+  {
+    id: 'recap1-4',
+    type: 'content',
+    title: 'Try Tonight',
+    subtitle: '3 experiments for after class',
+    bullets: [
+      'Ask ChatGPT or Claude to explain something you learned today — then check if it matches what we covered',
+      'Try the "Guess the Tokens" game with your friends — how many tokens is your name?',
+      'Think about what you would want to build on Day 3 — start dreaming big!',
+    ],
+    animation: 'reveal-steps',
+    notes: 'These are optional but high-engagement. Students who try them come back more excited.',
+  },
+  {
+    id: 'recap1-5',
+    type: 'title',
+    title: 'Tomorrow: Becoming a Power User',
+    subtitle: 'Prompt engineering, safety, and your first real build. Get ready!',
+    animation: 'slide-up',
+    notes: 'Build anticipation for Day 2. End on a high note.',
+  },
+  {
+    id: 'recap1-6',
+    type: 'discussion',
+    title: 'One Last Question',
+    subtitle: 'What was your favorite moment today?',
+    content: 'Share one thing that surprised you, excited you, or changed how you think about AI. No wrong answers!',
+    animation: 'fade-in',
+    notes: 'Go around the room if time allows. This feedback is invaluable for tomorrow\'s pacing.',
+  },
+];

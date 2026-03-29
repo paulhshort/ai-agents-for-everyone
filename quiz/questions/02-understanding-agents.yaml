@@ -1,0 +1,292 @@
+# Section 2: Understanding Agents
+# These questions cover the agentic paradigm -- what makes agents different
+# from chatbots, how they work, and why this matters.
+
+- id: "02-001"
+  question: "What is the main difference between a chatbot and an agent?"
+  options:
+    a: "Agents are more expensive"
+    b: "Chatbots can only talk, agents can actually take actions"
+    c: "Chatbots are smarter than agents"
+    d: "There is no real difference"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    The fundamental difference is action. A chatbot can have a conversation --
+    it receives your messages and sends responses. An agent can do that too,
+    but it can also take actions: read files, write code, run commands, search
+    the web, and interact with other tools. An agent DOES things, a chatbot
+    just SAYS things.
+  guide_ref: "Section 2.1"
+  tags: ["agentic", "basics"]
+
+- id: "02-002"
+  question: "What is the 'agentic loop'?"
+  options:
+    a: "A circular cable used for AI hardware"
+    b: "The cycle where an agent thinks, acts, observes the result, and then thinks again"
+    c: "A bug that causes Codex to run forever"
+    d: "A subscription payment cycle"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    The agentic loop is the core pattern of how agents work: Think (decide
+    what to do) -> Act (do it) -> Observe (see what happened) -> Think again
+    (decide what to do next). This loop continues until the task is complete.
+    It is what allows agents to handle complex, multi-step tasks.
+  guide_ref: "Section 2.2"
+  tags: ["agentic", "agentic-loop"]
+
+- id: "02-003"
+  question: "Can an AI agent make mistakes?"
+  options:
+    a: "No, AI agents are always correct"
+    b: "Yes, which is why you should always review their work"
+    c: "Only if the computer has a hardware problem"
+    d: "Only with simple tasks"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    Yes, AI agents can and do make mistakes. They might misunderstand your
+    request, write buggy code, or take an approach that is not what you wanted.
+    This is exactly why the Golden Rule is to always review what the agent did
+    before accepting it. Think of the agent as a very fast but sometimes
+    careless assistant -- you always want to check their work.
+  guide_ref: "Section 2.3"
+  tags: ["agentic", "safety", "golden-rules"]
+
+- id: "02-004"
+  question: "What happens when Codex runs into a problem during a task?"
+  options:
+    a: "It immediately crashes"
+    b: "It tries a different approach on its own (the agentic loop)"
+    c: "It deletes everything and starts over"
+    d: "It sends an email to OpenAI support"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    When Codex hits a problem (like an error from a command it ran), it uses
+    the agentic loop: it observes what went wrong, thinks about what to try
+    next, and takes a different action. This ability to recover from errors
+    and try alternative approaches is one of the most powerful features of
+    agents compared to simple chatbots.
+  guide_ref: "Section 2.2"
+  tags: ["agentic", "agentic-loop", "error-handling"]
+
+- id: "02-005"
+  question: "What are 'tools' in the context of an AI agent?"
+  options:
+    a: "Physical tools like hammers and screwdrivers"
+    b: "Capabilities the agent can use, like reading files, running commands, or searching"
+    c: "Plugins you buy from an app store"
+    d: "Other AI models"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    Tools are the specific capabilities an agent has access to. For Codex,
+    tools include things like reading files, writing files, running terminal
+    commands, and searching through code. The agent decides which tools to
+    use based on the task you give it. Adding MCP servers gives Codex
+    access to even more tools.
+  guide_ref: "Section 2.2"
+  tags: ["agentic", "tools"]
+
+- id: "02-006"
+  question: "Why is the agentic paradigm considered a big shift in how we use AI?"
+  options:
+    a: "Because the AI is faster"
+    b: "Because the AI can now take action in the real world, not just answer questions"
+    c: "Because it is cheaper"
+    d: "Because it works without the internet"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    The shift from chatbots to agents is significant because it changes
+    AI from a question-answering tool into an action-taking assistant.
+    Instead of asking "How do I organize these files?" and getting
+    instructions, you can say "Organize these files" and the agent
+    actually does it. This is the difference between getting a recipe
+    and having someone cook for you.
+  guide_ref: "Section 2.1"
+  tags: ["agentic", "paradigm-shift"]
+
+- id: "02-007"
+  question: "What is a 'multi-step task' for an agent?"
+  options:
+    a: "A task that requires walking"
+    b: "A task that requires multiple actions in sequence, like read-then-fix-then-test"
+    c: "Running the same command multiple times"
+    d: "A task shared between multiple users"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    A multi-step task requires the agent to perform several actions in
+    order. For example, fixing a bug might require: (1) read the error
+    log, (2) find the problematic code, (3) understand what is wrong,
+    (4) write the fix, (5) run tests to verify. Agents excel at these
+    because the agentic loop lets them chain actions together.
+  guide_ref: "Section 2.2"
+  tags: ["agentic", "multi-step"]
+
+- id: "02-008"
+  question: "What does 'context' mean when talking about AI agents?"
+  options:
+    a: "The physical location of your computer"
+    b: "All the information the agent has to work with during your session"
+    c: "The brand of your keyboard"
+    d: "The programming language you use"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    Context is everything the agent knows and remembers during your session:
+    your conversation, the files it has read, the results of commands it has
+    run, and the instructions from AGENTS.md. Context is limited (there is
+    a maximum amount), so managing it well is important for getting good
+    results.
+  guide_ref: "Section 2.3"
+  tags: ["context", "basics"]
+
+- id: "02-009"
+  question: "Can Codex remember things from a previous session?"
+  options:
+    a: "Yes, it remembers everything forever"
+    b: "No, each session starts fresh, but AGENTS.md provides persistent instructions"
+    c: "Only if you pay for premium memory"
+    d: "Yes, but only for 24 hours"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    Each Codex session starts with a clean slate -- it does not remember
+    previous conversations. However, the AGENTS.md file is read at the
+    start of every session, so anything you put there persists between
+    sessions. This is why AGENTS.md is so important -- it is your way
+    of giving the agent permanent instructions and context about your project.
+  guide_ref: "Section 2.3"
+  tags: ["context", "agents-md", "memory"]
+
+- id: "02-010"
+  question: "What is the human's most important role when working with an AI agent?"
+  options:
+    a: "Doing nothing and letting the AI handle everything"
+    b: "Providing clear instructions and reviewing the agent's work"
+    c: "Writing all the code yourself"
+    d: "Monitoring the agent's internet usage"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    Your most important roles are (1) giving clear, specific instructions
+    so the agent knows what you want, and (2) reviewing the results to
+    make sure they are correct. Think of yourself as a manager who delegates
+    tasks but always checks the work. The agent is the worker, you are
+    the decision-maker.
+  guide_ref: "Section 2.3"
+  tags: ["agentic", "golden-rules"]
+
+- id: "02-011"
+  question: "What does 'sandbox' mean in the context of Codex?"
+  options:
+    a: "A fun game mode"
+    b: "A restricted environment that limits what Codex can access on your computer"
+    c: "A special type of file"
+    d: "A testing website"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    A sandbox is a safety boundary around Codex. It controls what the agent
+    can and cannot do on your computer. For example, the "read-only" sandbox
+    means Codex can look at your files but cannot change anything. The
+    "workspace-write" sandbox lets it make changes but only inside your
+    project folder. It is like putting bumpers on a bowling lane.
+  guide_ref: "Section 2.4"
+  tags: ["sandbox", "security"]
+
+- id: "02-012"
+  question: "If you asked a chatbot 'organize my files,' what would it do?"
+  options:
+    a: "Actually organize your files"
+    b: "Give you instructions on how to organize your files yourself"
+    c: "Nothing -- chatbots cannot interact with files"
+    d: "Ask you to install an app"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    A chatbot would give you instructions -- it would explain how to
+    organize files, maybe suggest folder structures, and tell you what
+    commands to run. But you would have to do all the actual work yourself.
+    An agent like Codex, on the other hand, would actually organize the
+    files for you (with your approval). That is the key difference.
+  guide_ref: "Section 2.1"
+  tags: ["agentic", "chatbot-vs-agent"]
+
+- id: "02-013"
+  question: "What is 'approval' in Codex?"
+  options:
+    a: "Getting your manager's permission to use Codex"
+    b: "The process where Codex asks you to confirm before it takes an action"
+    c: "A rating system for Codex's performance"
+    d: "A feature that is no longer available"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    Approval is Codex asking "Can I do this?" before it takes an action like
+    writing a file or running a command. You can configure how often it asks:
+    "untrusted" means it asks for everything, "on-request" means it asks for
+    significant actions, and "never" means it acts without asking. More
+    approval = more safety but slower work.
+  guide_ref: "Section 2.4"
+  tags: ["approval", "safety"]
+
+- id: "02-014"
+  question: "Why do agents need access to tools (like file reading and command running)?"
+  options:
+    a: "To look impressive"
+    b: "Because without tools, they can only talk -- tools let them take real actions"
+    c: "Tools are optional and never needed"
+    d: "To increase the subscription price"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    Tools are what turn a chatbot into an agent. Without tools, an AI can
+    only process text in conversation. With tools like file reading, file
+    writing, and command execution, the AI can interact with your actual
+    project. Each tool gives the agent a new capability -- more tools
+    means more things the agent can do for you.
+  guide_ref: "Section 2.2"
+  tags: ["tools", "agentic"]
+
+- id: "02-015"
+  question: "What analogy best describes the relationship between you and a Codex agent?"
+  options:
+    a: "You are the student, Codex is the teacher"
+    b: "You are the manager giving direction, Codex is the skilled worker doing the task"
+    c: "You are the customer, Codex is the salesperson"
+    d: "There is no relationship -- Codex works independently"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    The best analogy is manager and worker. You set the direction (what needs
+    to be done and any important constraints), and Codex does the work (figuring
+    out the details and executing). Like any good manager, you review the work
+    before it goes live. You do not need to know how to do the work yourself --
+    you just need to know what you want and whether the result is good.
+  guide_ref: "Section 2.1"
+  tags: ["agentic", "basics"]
+
+- id: "02-016"
+  question: "What is the 'context window' of an AI agent?"
+  options:
+    a: "A physical window on your screen"
+    b: "The maximum amount of information the agent can hold in memory at once"
+    c: "The time limit for each session"
+    d: "The number of projects you can work on"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    The context window is like the agent's short-term memory -- there is a
+    maximum amount of information it can hold at once. This includes your
+    conversation, any files it has read, command outputs, and instructions.
+    When the context window gets full, the agent starts to lose track of
+    older information. That is why commands like /compact exist -- to free
+    up space.
+  guide_ref: "Section 2.3"
+  tags: ["context", "context-window"]

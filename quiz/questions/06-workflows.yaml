@@ -1,0 +1,179 @@
+# Section 6: Workflows
+# These questions cover practical workflows -- how to use Codex effectively
+# for real-world tasks and common scenarios.
+
+- id: "06-001"
+  question: "What is the recommended workflow for fixing a bug with Codex?"
+  options:
+    a: "Just say 'fix all bugs' and hope for the best"
+    b: "Describe the bug, let Codex investigate, review the proposed fix, test it"
+    c: "Delete the file with the bug and rewrite it"
+    d: "Ignore the bug"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    The best bug-fixing workflow is: (1) Describe the bug clearly, including
+    any error messages. (2) Let Codex investigate by reading relevant files.
+    (3) Review the proposed fix using /diff. (4) Test the fix to make sure
+    it actually works and does not break anything else. Always test!
+  guide_ref: "Section 6.1"
+  tags: ["workflows", "bug-fixing"]
+
+- id: "06-002"
+  question: "When should you use 'plan mode' before letting Codex work?"
+  options:
+    a: "Never -- planning wastes time"
+    b: "For complex tasks where you want to review the approach before Codex starts"
+    c: "Only for tasks that cost money"
+    d: "Every single time, no exceptions"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    Plan mode (/plan) is most valuable for complex tasks with multiple steps.
+    Before Codex starts changing files and running commands, you can see its
+    plan and adjust it. For simple tasks like "explain this file," planning
+    is unnecessary. Use your judgment -- if the task feels significant, plan first.
+  guide_ref: "Section 6.2"
+  tags: ["workflows", "plan"]
+
+- id: "06-003"
+  question: "What is the best approach for a large task that might use a lot of context?"
+  options:
+    a: "Do everything in one long session"
+    b: "Break it into smaller tasks, doing each in a fresh session"
+    c: "Use the --unlimited-context flag"
+    d: "Switch to a cheaper model"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    Breaking large tasks into smaller pieces is a core strategy. Each piece
+    gets a fresh session with full context available. For example, instead
+    of "refactor the entire application," break it into "refactor the
+    authentication module" then "refactor the database module" in separate
+    sessions. This gives better results and uses context efficiently.
+  guide_ref: "Section 6.3"
+  tags: ["workflows", "context", "efficiency"]
+
+- id: "06-004"
+  question: "Before asking Codex to make big changes, what should you do?"
+  options:
+    a: "Nothing special -- just go for it"
+    b: "Make sure your work is saved in version control (git) so you can undo changes"
+    c: "Print all your files on paper"
+    d: "Email your code to yourself"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    Always commit your current work to version control (git) before asking
+    Codex to make significant changes. This gives you a safety net -- if
+    anything goes wrong, you can easily undo the changes and go back to
+    how things were. Think of it as saving your game before a boss fight.
+  guide_ref: "Section 6.1"
+  tags: ["workflows", "safety", "git"]
+
+- id: "06-005"
+  question: "What is the 'exploration workflow'?"
+  options:
+    a: "Using Codex to explore a new city"
+    b: "Using Codex to understand an unfamiliar codebase by asking it to explain parts"
+    c: "Exploring the Codex settings menu"
+    d: "Testing every model to find the best one"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    The exploration workflow is when you use Codex to understand code you
+    did not write. You ask it to explain files, trace how features work,
+    identify patterns, and summarize the project structure. It is like
+    having a tour guide for an unfamiliar codebase. Great when you join
+    a new project or inherit someone else's code.
+  guide_ref: "Section 6.4"
+  tags: ["workflows", "exploration"]
+
+- id: "06-006"
+  question: "When using Codex to write a new feature, what is the recommended order?"
+  options:
+    a: "Write all the code first, then think about what you want"
+    b: "Plan the feature, implement step by step, test after each step, review at the end"
+    c: "Let Codex decide the order randomly"
+    d: "Start with the documentation, skip the code"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    The recommended workflow for new features is: (1) Plan -- describe what
+    the feature should do. (2) Implement step by step -- do not try to build
+    everything at once. (3) Test after each step to catch problems early.
+    (4) Review all changes at the end using /diff. This methodical approach
+    gives much better results than trying to do everything in one shot.
+  guide_ref: "Section 6.2"
+  tags: ["workflows", "features"]
+
+- id: "06-007"
+  question: "How should you tell Codex about a bug you want fixed?"
+  options:
+    a: "Just say 'there is a bug'"
+    b: "Describe what happens, what should happen, and include any error messages"
+    c: "Write the fix yourself and ask Codex to confirm"
+    d: "Send a screenshot (even though Codex is text-based)"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    A good bug report for Codex includes: what actually happens (the wrong
+    behavior), what should happen (the expected behavior), and any error
+    messages you see. The more specific you are, the faster Codex can find
+    and fix the problem. Vague descriptions like "it is broken" make the
+    agent's job much harder.
+  guide_ref: "Section 6.1"
+  tags: ["workflows", "bug-fixing", "prompting"]
+
+- id: "06-008"
+  question: "What should you do after Codex finishes a task?"
+  options:
+    a: "Immediately close the terminal"
+    b: "Review the changes (/diff), test if applicable, then accept or reject"
+    c: "Always accept without reviewing"
+    d: "Delete the session and redo it"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    After Codex finishes: (1) Review what changed using /diff. (2) If there
+    are tests, run them. (3) If everything looks good, accept the changes.
+    (4) If something is off, tell Codex what to adjust. This review step
+    is the most important part of working with an AI agent.
+  guide_ref: "Section 6.1"
+  tags: ["workflows", "review", "golden-rules"]
+
+- id: "06-009"
+  question: "Is it okay to give Codex feedback and ask it to try again?"
+  options:
+    a: "No, you can only give it one chance"
+    b: "Yes, iterating with feedback is the normal workflow"
+    c: "Only if you pay for premium iterations"
+    d: "No, it is rude to the AI"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    Absolutely! Iteration is a natural part of working with an AI agent.
+    If the first result is not quite right, tell Codex what to change.
+    "This looks good, but make the error messages more user-friendly" or
+    "Try a different approach -- instead of X, try Y." The agent learns
+    from your feedback within the session and adjusts.
+  guide_ref: "Section 6.1"
+  tags: ["workflows", "iteration"]
+
+- id: "06-010"
+  question: "What is the benefit of using /plan before complex changes?"
+  options:
+    a: "It makes Codex work faster"
+    b: "You can review and adjust the approach before any changes are made"
+    c: "It is required -- Codex will not work without it"
+    d: "It reduces costs by half"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    /plan lets you see what Codex intends to do before it does anything.
+    You can catch misunderstandings early ("No, I meant the OTHER database
+    table"), suggest a different approach, or break the task into smaller
+    steps. It is like reviewing blueprints before construction starts --
+    much cheaper to fix mistakes at the planning stage.
+  guide_ref: "Section 6.2"
+  tags: ["workflows", "plan"]

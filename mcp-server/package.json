@@ -1,0 +1,43 @@
+{
+  "name": "codex-ultimate-guide-mcp",
+  "version": "0.2.0",
+  "description": "MCP server for querying The Ultimate OpenAI Codex Guide — learn the agentic paradigm",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "codex-ultimate-guide-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "mcp",
+    "openai",
+    "codex",
+    "gpt-5.4",
+    "guide",
+    "ai-agent",
+    "agentic",
+    "model-context-protocol"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "dist",
+    "content"
+  ],
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "yaml": "^2.6.0",
+    "zod": "^3.23.0"
+  }
+}

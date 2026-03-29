@@ -1,0 +1,175 @@
+# Section 13: Advanced Features
+# These questions cover advanced Codex capabilities for users who have
+# mastered the basics and want to go deeper.
+
+- id: "13-001"
+  question: "What is 'Codex Cloud'?"
+  options:
+    a: "A cloud storage service"
+    b: "Running Codex agents in OpenAI's hosted containers instead of on your local machine"
+    c: "A weather-themed Codex skin"
+    d: "A backup service for your code"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    Codex Cloud lets you run your agent in containers hosted by OpenAI
+    rather than on your local computer. This is useful for long-running
+    tasks, CI/CD integration, and ensuring a consistent environment.
+    You start it with 'codex cloud'.
+  guide_ref: "Section 13.1"
+  tags: ["cloud", "advanced"]
+
+- id: "13-002"
+  question: "What is a multi-agent workflow?"
+  options:
+    a: "Multiple people using Codex"
+    b: "Chaining multiple specialized agents where one agent's output feeds into another"
+    c: "Running Codex on multiple monitors"
+    d: "Using multiple keyboards"
+  answer: "b"
+  difficulty: "advanced"
+  explanation: >
+    A multi-agent workflow uses several specialized agents in sequence or
+    in parallel. For example: Agent 1 writes code, Agent 2 reviews it,
+    Agent 3 writes tests. Each agent is optimized for its specific task
+    with its own AGENTS.md. This produces better results than a single
+    agent trying to do everything.
+  guide_ref: "Section 13.2"
+  tags: ["multi-agent", "advanced"]
+
+- id: "13-003"
+  question: "What is the benefit of creating custom commands (like /explain or /commit)?"
+  options:
+    a: "They make Codex look cooler"
+    b: "They standardize repeated tasks so you get consistent results every time"
+    c: "They are required for Codex to work"
+    d: "They increase processing speed"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    Custom commands let you save prompts for tasks you do repeatedly.
+    Instead of typing a detailed instruction every time, you type a short
+    command. This saves time, ensures consistency, and lets you share
+    useful workflows with your team.
+  guide_ref: "Section 13.3"
+  tags: ["commands", "custom-commands"]
+
+- id: "13-004"
+  question: "What is the difference between project-level and global AGENTS.md?"
+  options:
+    a: "There is no difference"
+    b: "Global provides instructions for all projects; project-level has instructions specific to one project"
+    c: "Global is for teams, project-level is for individuals"
+    d: "Project-level is the old format, global is the new format"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    Global AGENTS.md (in ~/.codex/) gives instructions that apply to every
+    Codex session. Project-level AGENTS.md (in the project root) gives
+    instructions for that specific project. Project-level overrides global
+    when they conflict. Use global for your general preferences and
+    project-level for project-specific rules.
+  guide_ref: "Section 13.4"
+  tags: ["agents-md", "configuration"]
+
+- id: "13-005"
+  question: "Can Codex work with continuous integration (CI/CD) pipelines?"
+  options:
+    a: "No, Codex is only for local use"
+    b: "Yes, using 'codex exec' or Codex Cloud in automated workflows"
+    c: "Only with a special enterprise license"
+    d: "Only with GitHub"
+  answer: "b"
+  difficulty: "advanced"
+  explanation: >
+    Codex can be integrated into CI/CD pipelines using 'codex exec' for
+    automated tasks or Codex Cloud for containerized execution. For example,
+    you could have a CI pipeline that automatically runs code review on
+    every pull request using Codex.
+  guide_ref: "Section 13.5"
+  tags: ["ci-cd", "automation", "advanced"]
+
+- id: "13-006"
+  question: "What is the purpose of Skills (in .agents/skills/)?"
+  options:
+    a: "To track your learning progress"
+    b: "To create reusable, shareable capability definitions that standardize how Codex performs specific tasks"
+    c: "To display your certifications"
+    d: "To unlock hidden features"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    Skills are reusable definitions for specific tasks. A code review skill,
+    for example, defines exactly what to check, how to categorize findings,
+    and how to format the output. Once created, the skill ensures consistent
+    results every time, and can be shared across projects or with teammates.
+  guide_ref: "Section 13.3"
+  tags: ["skills", "advanced"]
+
+- id: "13-007"
+  question: "What is an advantage of using 'codex exec' over interactive mode for automation?"
+  options:
+    a: "exec mode is free"
+    b: "exec mode runs the task and exits, making it suitable for scripts and automated pipelines"
+    c: "exec mode uses a better model"
+    d: "exec mode never makes mistakes"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    'codex exec' is designed for automation. It takes a prompt, completes
+    the task, and exits. No human interaction needed. This makes it perfect
+    for scripts, cron jobs, and CI/CD pipelines where you need Codex to
+    do something automatically without someone sitting at the keyboard.
+  guide_ref: "Section 13.5"
+  tags: ["exec", "automation"]
+
+- id: "13-008"
+  question: "What is prompt engineering?"
+  options:
+    a: "Building AI hardware"
+    b: "The skill of writing clear, effective prompts that get the best results from AI"
+    c: "A degree program at university"
+    d: "Programming in a specific language"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    Prompt engineering is the practice of crafting your instructions to get
+    the best possible results from AI. It includes being specific, providing
+    context, using the WHAT+WHERE+HOW+VERIFY formula, and learning what
+    works through experience. Better prompts = better results.
+  guide_ref: "Section 13.6"
+  tags: ["prompting", "advanced"]
+
+- id: "13-009"
+  question: "Can you chain multiple Codex commands together in a workflow?"
+  options:
+    a: "No, each command is independent"
+    b: "Yes, you can create workflows where one task feeds into the next"
+    c: "Only with premium features"
+    d: "Only using MCP servers"
+  answer: "b"
+  difficulty: "advanced"
+  explanation: >
+    You can chain tasks together using scripts. For example: run codex exec
+    to analyze code, then pass the results to another codex exec to write
+    tests based on the analysis. Or use a multi-agent setup where agents
+    pass their output to the next agent in the chain.
+  guide_ref: "Section 13.2"
+  tags: ["automation", "workflows", "advanced"]
+
+- id: "13-010"
+  question: "What is the benefit of keeping AGENTS.md in version control (git)?"
+  options:
+    a: "There is no benefit"
+    b: "Your team shares the same agent instructions, and you can track how they evolve over time"
+    c: "It makes git faster"
+    d: "It is required by OpenAI"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    Keeping AGENTS.md in git means every team member gets the same agent
+    instructions (consistency), you can see how instructions have changed
+    over time (history), and you can revert to previous versions if a
+    change causes problems (safety). It is a best practice for team projects.
+  guide_ref: "Section 13.4"
+  tags: ["agents-md", "git", "teams"]

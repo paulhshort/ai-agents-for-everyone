@@ -1,0 +1,279 @@
+# Section 4: Context Management
+# These questions cover how context works, why it matters, and how to
+# manage it effectively for better results.
+
+- id: "04-001"
+  question: "What is the 'context window' in simple terms?"
+  options:
+    a: "A window that shows your code"
+    b: "The amount of information the AI can hold in its working memory at one time"
+    c: "A software update window"
+    d: "The time limit for a session"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    The context window is like the AI's notepad -- everything it is thinking
+    about has to fit on this notepad. Your conversation, any files it reads,
+    command results, and instructions all take up space. When the notepad is
+    full, it cannot take in new information without losing old information.
+  guide_ref: "Section 4.1"
+  tags: ["context", "context-window"]
+
+- id: "04-002"
+  question: "At what context usage level should you run /compact?"
+  options:
+    a: "At 30% (green zone) -- just to be safe"
+    b: "At 50% (yellow zone)"
+    c: "Before reaching 70% (orange zone)"
+    d: "Only at 100% (when it stops working)"
+  answer: "c"
+  difficulty: "beginner"
+  explanation: >
+    The recommendation is to /compact before reaching 70% context usage.
+    At 70-85% (the orange zone), Codex starts having trouble keeping track
+    of things. If you wait until 100%, it simply cannot process any more
+    information. Compacting early keeps you in the safe zone.
+  guide_ref: "Section 4.2"
+  tags: ["context", "compact", "commands"]
+
+- id: "04-003"
+  question: "What is the 'Fresh Context Pattern'?"
+  options:
+    a: "Drinking fresh coffee while coding"
+    b: "Starting a new Codex session for each distinct task"
+    c: "Refreshing your browser every 5 minutes"
+    d: "Deleting all your files and starting over"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    The Fresh Context Pattern means starting a brand new Codex session for
+    each separate task. This gives you the maximum context window to work
+    with and avoids confusion from leftover information from previous tasks.
+    It is like using a fresh sheet of paper for each new assignment.
+  guide_ref: "Section 4.3"
+  tags: ["context", "patterns"]
+
+- id: "04-004"
+  question: "What takes up space in the context window?"
+  options:
+    a: "Only your typed messages"
+    b: "Everything: your messages, Codex responses, file contents it reads, command outputs"
+    c: "Only the files in your project"
+    d: "Only the code Codex writes"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    Everything in the conversation takes up context space: your messages,
+    Codex's responses, the contents of any files it reads, the output of
+    any commands it runs, and the AGENTS.md instructions. This is why being
+    mindful of context usage matters -- it fills up faster than you might
+    think.
+  guide_ref: "Section 4.1"
+  tags: ["context", "tokens"]
+
+- id: "04-005"
+  question: "What are 'tokens' in the context of AI?"
+  options:
+    a: "Digital coins for buying AI credits"
+    b: "Small chunks of text (roughly words or parts of words) that the AI processes"
+    c: "Permission badges"
+    d: "Error codes"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    Tokens are the basic units the AI works with. Roughly speaking, one
+    token is about three-quarters of a word. The sentence "The cat sat on
+    the mat" is about 7 tokens. Context windows are measured in tokens, and
+    you are also billed based on how many tokens you use.
+  guide_ref: "Section 4.1"
+  tags: ["tokens", "context", "costs"]
+
+- id: "04-006"
+  question: "What happens if you never run /compact and keep working?"
+  options:
+    a: "Nothing bad -- Codex handles it automatically"
+    b: "Codex gradually loses track of earlier parts of the conversation and may give worse results"
+    c: "Your computer runs out of memory"
+    d: "Codex charges you double"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    As the context fills up, Codex has to work with less and less room for
+    new information. It may forget instructions you gave earlier, lose track
+    of what files it already looked at, or give inconsistent answers. Running
+    /compact regularly keeps things organized and prevents this degradation.
+  guide_ref: "Section 4.2"
+  tags: ["context", "compact"]
+
+- id: "04-007"
+  question: "What does /compact actually do to your conversation?"
+  options:
+    a: "Deletes everything and starts over"
+    b: "Summarizes the key points and removes the detailed back-and-forth"
+    c: "Translates everything into a shorter language"
+    d: "Moves old messages to a file"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    /compact creates a summary of the important information from your
+    conversation -- what you are working on, what has been done, what
+    decisions were made -- and replaces the detailed back-and-forth with
+    this summary. You lose the word-for-word history but keep the essential
+    information.
+  guide_ref: "Section 4.2"
+  tags: ["compact", "context"]
+
+- id: "04-008"
+  question: "Why should you start a new session for a different task instead of continuing?"
+  options:
+    a: "It is not necessary -- just keep going"
+    b: "Because leftover context from the old task can confuse the agent and waste context space"
+    c: "Because each session costs the same regardless of length"
+    d: "Because Codex refuses to change topics"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    Starting a new session gives you a clean context. If you were working on
+    a bug fix and then switch to a new feature in the same session, all the
+    bug fix discussion is still in context, taking up space and potentially
+    confusing the agent. A fresh session means maximum available context
+    and no leftover confusion.
+  guide_ref: "Section 4.3"
+  tags: ["context", "patterns", "fresh-context"]
+
+- id: "04-009"
+  question: "Which uses more context: asking Codex to read a small config file or a large log file?"
+  options:
+    a: "They use the same amount"
+    b: "The large log file uses much more context"
+    c: "The config file uses more because configs are complex"
+    d: "Neither uses any context"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    The more text a file contains, the more context it uses when Codex reads
+    it. A 10-line config file might use 50 tokens, while a 10,000-line log
+    file could use thousands of tokens. This is why it is important to be
+    specific about what you need -- instead of saying "read the whole log,"
+    say "look at the last 50 lines of the log."
+  guide_ref: "Section 4.1"
+  tags: ["context", "tokens", "efficiency"]
+
+- id: "04-010"
+  question: "What is a good strategy for working on a large project with many files?"
+  options:
+    a: "Ask Codex to read every file at the start"
+    b: "Focus on one area at a time and only load relevant files"
+    c: "Use the largest possible model so context does not matter"
+    d: "Copy all files into one file and read that"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    Focus on one area at a time. Instead of loading every file in the project
+    (which would quickly fill the context), point Codex to the specific files
+    relevant to your current task. You can always point it to additional files
+    later. This keeps the context lean and focused.
+  guide_ref: "Section 4.3"
+  tags: ["context", "strategies", "efficiency"]
+
+- id: "04-011"
+  question: "Does the AGENTS.md file take up context space?"
+  options:
+    a: "No, it is free"
+    b: "Yes, it is loaded into context at the start of every session"
+    c: "Only if it is longer than 100 lines"
+    d: "Only in paid plans"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    Yes, AGENTS.md is loaded into the context at the start of every session,
+    so it does take up space. This is why you should keep it concise and
+    relevant. A 5-page AGENTS.md uses up context before you even ask your
+    first question. Include what the agent needs to know, but do not pad
+    it with unnecessary detail.
+  guide_ref: "Section 4.3"
+  tags: ["agents-md", "context"]
+
+- id: "04-012"
+  question: "What does the color coding on context usage typically mean?"
+  options:
+    a: "Green = expensive, Red = cheap"
+    b: "Green = safe (plenty of room), Yellow = getting full, Orange/Red = almost full"
+    c: "Colors are just decorative"
+    d: "Green = beginner, Red = expert"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    Context usage is often shown as a color spectrum: Green (0-50%) means
+    you have plenty of room. Yellow (50-70%) means it is getting used up.
+    Orange (70-85%) means you should compact soon. Red (85%+) means you
+    are running low and need to compact or start a new session.
+  guide_ref: "Section 4.2"
+  tags: ["context", "usage"]
+
+- id: "04-013"
+  question: "If Codex starts giving inconsistent or forgetful answers, what should you try first?"
+  options:
+    a: "Restart your computer"
+    b: "Run /compact or start a fresh session"
+    c: "Switch to a different model"
+    d: "Type your questions in all caps"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    Inconsistent or forgetful answers often mean the context is getting full.
+    The agent is losing track of earlier information. Running /compact to
+    free up space, or starting a new session with a clear prompt, usually
+    fixes this. It is the most common solution for "Codex is acting weird."
+  guide_ref: "Section 4.2"
+  tags: ["context", "troubleshooting"]
+
+- id: "04-014"
+  question: "How can you check how much context you have used?"
+  options:
+    a: "There is no way to check"
+    b: "Use the /status command to see context usage"
+    c: "Count the words in your conversation manually"
+    d: "Check your email for a usage report"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    The /status command shows you how much of your context window is in use.
+    Check it periodically, especially during long sessions, so you know when
+    it is time to /compact or start fresh.
+  guide_ref: "Section 4.2"
+  tags: ["status", "context", "commands"]
+
+- id: "04-015"
+  question: "What is the relationship between context usage and cost?"
+  options:
+    a: "There is no relationship"
+    b: "More context used generally means higher cost, since you pay per token"
+    c: "Less context always costs more"
+    d: "Cost is fixed regardless of usage"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    You pay for AI usage based on tokens (the units of text processed).
+    More context means more tokens being processed, which costs more.
+    Being efficient with context -- not loading unnecessary files, using
+    /compact regularly, starting fresh sessions -- helps keep costs down.
+  guide_ref: "Section 4.4"
+  tags: ["context", "costs", "tokens"]
+
+- id: "04-016"
+  question: "When working on a task, Codex reads a large file. Should you ask it to read the same file again later?"
+  options:
+    a: "Yes, always re-read files to be safe"
+    b: "Only if the file has changed, since it is already in context"
+    c: "Never -- once read, it remembers forever"
+    d: "Yes, but only on Tuesdays"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    If Codex already read a file and it has not changed, the content is
+    already in context. Re-reading it would waste context space by adding
+    a duplicate. However, if the file has been modified (perhaps by Codex
+    itself), re-reading it makes sense to get the updated version.
+  guide_ref: "Section 4.3"
+  tags: ["context", "efficiency"]

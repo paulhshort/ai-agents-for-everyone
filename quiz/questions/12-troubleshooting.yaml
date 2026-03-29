@@ -1,0 +1,177 @@
+# Section 12: Troubleshooting
+# These questions cover common problems and how to fix them.
+
+- id: "12-001"
+  question: "Codex seems to have 'forgotten' what you told it earlier. What is likely wrong?"
+  options:
+    a: "Codex has a bad memory chip"
+    b: "The context window is getting full, causing it to lose track of older information"
+    c: "Your internet connection is unstable"
+    d: "You need to reinstall Codex"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    When Codex seems forgetful, the most likely cause is a full context
+    window. As context fills up, the AI has less room to keep track of
+    everything. Run /compact to free up space, or start a fresh session
+    if the current one is very long.
+  guide_ref: "Section 12.1"
+  tags: ["troubleshooting", "context"]
+
+- id: "12-002"
+  question: "Codex gives you an answer that is clearly wrong. What should you do?"
+  options:
+    a: "Accept it anyway -- the AI knows best"
+    b: "Point out what is wrong, provide the correct information, and ask it to try again"
+    c: "Give up and do it yourself"
+    d: "Restart your computer"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    When Codex gets something wrong, correct it. Say something like
+    "That is not right. The function actually does X, not Y. Please try
+    again with that in mind." Codex learns from corrections within the
+    session and will adjust its approach. This is normal and expected.
+  guide_ref: "Section 12.2"
+  tags: ["troubleshooting", "iteration"]
+
+- id: "12-003"
+  question: "Codex keeps going in circles, doing the same thing over and over. What should you try?"
+  options:
+    a: "Wait longer -- it will eventually figure it out"
+    b: "Stop it, rephrase your request more clearly, or break the task into smaller steps"
+    c: "Let it run overnight"
+    d: "Install more MCP servers"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    If Codex is stuck in a loop, it usually means the task is unclear or
+    too complex. Stop it and try: (1) rephrasing your request more
+    specifically, (2) breaking the task into smaller steps, or (3) starting
+    a fresh session with a clearer prompt. The agentic loop can sometimes
+    get stuck -- human intervention is the fix.
+  guide_ref: "Section 12.3"
+  tags: ["troubleshooting", "agentic-loop"]
+
+- id: "12-004"
+  question: "Codex says it cannot find a file you know exists. What might be wrong?"
+  options:
+    a: "The file has been deleted"
+    b: "Codex might be looking in the wrong directory, or the sandbox is restricting access"
+    c: "Files cannot be read by AI"
+    d: "The file is too old"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    Common causes: (1) Codex is looking in the wrong folder -- give it the
+    full file path. (2) The sandbox mode is restricting access to that
+    location. If the file is outside the project folder and you are using
+    workspace-write or read-only mode, Codex cannot see it. Check your
+    sandbox settings and provide the correct path.
+  guide_ref: "Section 12.4"
+  tags: ["troubleshooting", "sandbox"]
+
+- id: "12-005"
+  question: "Codex is running very slowly. What is the first thing to check?"
+  options:
+    a: "Your computer's fan speed"
+    b: "Context usage -- a nearly full context window slows processing"
+    c: "The weather"
+    d: "Your keyboard type"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    High context usage is the most common cause of slow Codex performance.
+    When the context window is nearly full, every interaction requires
+    processing more data. Run /compact to free up space. Also check your
+    internet connection, as Codex communicates with OpenAI's servers.
+  guide_ref: "Section 12.1"
+  tags: ["troubleshooting", "performance", "context"]
+
+- id: "12-006"
+  question: "You installed an MCP server but Codex does not seem to use it. What should you check?"
+  options:
+    a: "Your screen resolution"
+    b: "Whether the server is properly configured in config.toml and running correctly"
+    c: "The MCP server's color scheme"
+    d: "Nothing -- it is probably working fine"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    If an MCP server is not working: (1) Check config.toml for typos in
+    the server configuration. (2) Make sure the command and arguments are
+    correct. (3) Try running the MCP server command manually to see if it
+    starts. (4) Use /mcp inside Codex to check the server's status.
+  guide_ref: "Section 12.5"
+  tags: ["troubleshooting", "mcp"]
+
+- id: "12-007"
+  question: "Codex made changes to your files that you do not want. How do you undo them?"
+  options:
+    a: "You cannot undo changes"
+    b: "Use git to undo the changes: 'git checkout -- filename' or 'git reset'"
+    c: "Close and reopen the file"
+    d: "Press Ctrl+Z many times"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    If your work was committed to git before Codex made changes (which it
+    should be!), you can undo changes with git commands. 'git checkout --
+    filename' reverts a specific file, and 'git reset --hard' reverts
+    everything. This is why committing before major Codex work is so
+    important -- it gives you an undo button.
+  guide_ref: "Section 12.6"
+  tags: ["troubleshooting", "git", "undo"]
+
+- id: "12-008"
+  question: "Codex is producing lower quality results than usual. What might help?"
+  options:
+    a: "Use more exclamation marks in your prompts"
+    b: "Try /compact, start a fresh session, or be more specific in your prompt"
+    c: "Switch to a more expensive internet plan"
+    d: "Wait for OpenAI to fix it"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    Lower quality results usually come from: (1) context overload --
+    /compact or start fresh. (2) Vague prompts -- be more specific about
+    what you want. (3) Wrong model -- make sure you are using GPT-5.4
+    for complex tasks. (4) Lack of context -- make sure Codex has read
+    the relevant files and understands the project.
+  guide_ref: "Section 12.2"
+  tags: ["troubleshooting", "quality"]
+
+- id: "12-009"
+  question: "What error usually means your API key is not set up correctly?"
+  options:
+    a: "File not found"
+    b: "Authentication error or unauthorized"
+    c: "Syntax error"
+    d: "Disk full"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    An "authentication error" or "unauthorized" error usually means your
+    OpenAI API key is missing, expired, or incorrect. Check that your
+    OPENAI_API_KEY environment variable is set correctly. You can get a
+    new key from platform.openai.com.
+  guide_ref: "Section 12.7"
+  tags: ["troubleshooting", "api-key"]
+
+- id: "12-010"
+  question: "Codex wrote tests but they are failing. What is the best next step?"
+  options:
+    a: "Delete the tests"
+    b: "Ask Codex to look at the failing tests, understand why they fail, and fix them"
+    c: "Ignore the failures"
+    d: "Write the tests yourself from scratch"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    Tell Codex about the test failures -- share the error messages. Ask
+    it to investigate why the tests fail. Sometimes the tests have bugs,
+    and sometimes the tests revealed actual bugs in the code. Either way,
+    Codex can usually figure out the problem and fix it. Do not just
+    delete failing tests!
+  guide_ref: "Section 12.2"
+  tags: ["troubleshooting", "testing"]

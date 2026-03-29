@@ -1,0 +1,38 @@
+# Question Template for the Codex Ultimate Guide Quiz
+#
+# HOW TO USE THIS TEMPLATE:
+# Copy one of the question blocks below into a quiz file in quiz/questions/.
+# Fill in your question, options, answer, and explanation.
+#
+# RULES:
+# - Every question needs a unique id (section number + question number)
+# - The answer must be one of the option letters (a, b, c, or d)
+# - Difficulty must be one of: beginner, intermediate, advanced
+# - The explanation should teach, not just confirm the answer
+# - guide_ref points to the relevant section of the guide
+# - Tags help filter questions by topic
+
+# EXAMPLE QUESTION:
+
+- id: "XX-001"                        # Unique ID: section number + question number
+  question: "Your question goes here?" # The question to ask the user
+  options:                             # Four possible answers (always a, b, c, d)
+    a: "First option"
+    b: "Second option"
+    c: "Third option"
+    d: "Fourth option"
+  answer: "b"                          # Which option is correct (a, b, c, or d)
+  difficulty: "beginner"               # beginner, intermediate, or advanced
+  explanation: >                       # Why the answer is correct (this teaches!)
+    Explain why this answer is correct. Include helpful context so the user
+    learns something even if they got it right. Keep it conversational and
+    jargon-free.
+  guide_ref: "Section X.Y"            # Where to learn more in the guide
+  tags: ["topic1", "topic2"]          # Topics this question covers
+
+# TIPS FOR WRITING GOOD QUESTIONS:
+# - Write the question as if talking to a friend who is new to AI
+# - Make wrong answers plausible but clearly wrong if you know the material
+# - Avoid trick questions -- test understanding, not careful reading
+# - The explanation is the most important part -- it is where learning happens
+# - Keep questions focused on one concept at a time

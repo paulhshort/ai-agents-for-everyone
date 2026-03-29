@@ -1,0 +1,271 @@
+# Section 3: Commands and Controls
+# These questions cover the commands you can use inside Codex, CLI basics,
+# and how to control what Codex does.
+
+- id: "03-001"
+  question: "What does the /compact command do?"
+  options:
+    a: "Makes the text smaller on screen"
+    b: "Summarizes the conversation to free up context space"
+    c: "Compresses your project files"
+    d: "Closes the Codex session"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    /compact tells Codex to summarize the conversation so far into a shorter
+    version. This frees up space in the context window so you can keep working
+    without losing important information. Think of it like writing a summary
+    of meeting notes instead of keeping every word -- you save space while
+    keeping the key points.
+  guide_ref: "Section 3.2"
+  tags: ["commands", "compact", "context"]
+
+- id: "03-002"
+  question: "What does the /diff command show you?"
+  options:
+    a: "The difference in price between models"
+    b: "The changes Codex has made to your files"
+    c: "The difficulty level of your task"
+    d: "The difference between Codex versions"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    /diff shows you exactly what Codex has changed in your files. It
+    highlights what was added (usually in green) and what was removed
+    (usually in red). This is one of the most important commands because
+    it lets you review changes before accepting them.
+  guide_ref: "Section 3.2"
+  tags: ["commands", "diff", "review"]
+
+- id: "03-003"
+  question: "What does the /clear command do?"
+  options:
+    a: "Deletes all your project files"
+    b: "Clears the conversation history and starts fresh"
+    c: "Clears your screen but keeps the conversation"
+    d: "Uninstalls Codex"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    /clear wipes the conversation history and gives you a fresh start. It
+    is useful when you are switching to a completely different task and do
+    not want the old conversation cluttering up your context. Your files
+    are not affected -- only the conversation is cleared.
+  guide_ref: "Section 3.2"
+  tags: ["commands", "clear"]
+
+- id: "03-004"
+  question: "What does the /model command do?"
+  options:
+    a: "Creates a 3D model of your project"
+    b: "Lets you switch to a different AI model during your session"
+    c: "Shows model information about your computer"
+    d: "Downloads a new model"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    /model lets you switch between AI models without ending your session.
+    For example, you might start with GPT-5.4 for a complex task, then
+    switch to GPT-5.4-mini for simpler follow-up work to save on costs.
+  guide_ref: "Section 3.2"
+  tags: ["commands", "model"]
+
+- id: "03-005"
+  question: "What does the /plan command do?"
+  options:
+    a: "Buys a subscription plan"
+    b: "Asks Codex to make a plan before taking action"
+    c: "Shows your payment plan"
+    d: "Plans your schedule for the day"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    /plan puts Codex into planning mode, where it thinks through a task and
+    describes what it would do BEFORE actually doing anything. This is great
+    for complex tasks where you want to review the approach first. Think of
+    it like asking a contractor for a quote before they start building.
+  guide_ref: "Section 3.2"
+  tags: ["commands", "plan"]
+
+- id: "03-006"
+  question: "How do you run a quick, one-time task with Codex without starting a full session?"
+  options:
+    a: "codex exec 'your task here'"
+    b: "codex --quick 'your task'"
+    c: "codex fast 'your task'"
+    d: "You cannot -- you must always start a full session"
+  answer: "a"
+  difficulty: "intermediate"
+  explanation: >
+    'codex exec' runs a single task and exits. It is perfect for quick,
+    automated tasks like "codex exec 'add comments to all functions in
+    app.py'" -- it does the job and finishes without opening an interactive
+    session.
+  guide_ref: "Section 3.1"
+  tags: ["cli", "exec"]
+
+- id: "03-007"
+  question: "What does the /status command show you?"
+  options:
+    a: "Your social media status"
+    b: "Information about your current session -- model, context usage, and settings"
+    c: "Whether your computer is online"
+    d: "How many tokens you have left in your account"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    /status gives you a snapshot of your current Codex session. It shows
+    which model you are using, how much of your context window is used,
+    what permissions are active, and other useful session information.
+  guide_ref: "Section 3.2"
+  tags: ["commands", "status"]
+
+- id: "03-008"
+  question: "What does the /init command do?"
+  options:
+    a: "Initializes a new programming project"
+    b: "Creates initial Codex configuration files for your project"
+    c: "Restarts your computer"
+    d: "Initializes the internet connection"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    /init helps you set up Codex configuration for your project. It can
+    create an AGENTS.md file and other configuration files with sensible
+    defaults, giving you a starting point that you can customize.
+  guide_ref: "Section 3.2"
+  tags: ["commands", "init", "setup"]
+
+- id: "03-009"
+  question: "What does the /permissions command do?"
+  options:
+    a: "Shows and manages what Codex is allowed to do"
+    b: "Grants admin access to your computer"
+    c: "Changes your user account permissions"
+    d: "Shares permissions with other users"
+  answer: "a"
+  difficulty: "intermediate"
+  explanation: >
+    /permissions shows you the current permission settings and lets you
+    adjust them. You can see what sandbox mode is active, what approval
+    level is set, and make changes during your session.
+  guide_ref: "Section 3.2"
+  tags: ["commands", "permissions", "safety"]
+
+- id: "03-010"
+  question: "What does the /mcp command do?"
+  options:
+    a: "Manages Minecraft plugins"
+    b: "Shows information about installed MCP servers and their tools"
+    c: "Sends emails"
+    d: "Manages cloud payments"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    /mcp shows you which MCP (Model Context Protocol) servers are
+    installed, what tools they provide, and lets you manage them.
+    MCP servers extend Codex's capabilities by giving it access to
+    additional tools like web search, database access, or GitHub.
+  guide_ref: "Section 3.2"
+  tags: ["commands", "mcp"]
+
+- id: "03-011"
+  question: "What does the /review command do?"
+  options:
+    a: "Writes a review of your project on a website"
+    b: "Asks Codex to review code changes, similar to a code review"
+    c: "Reviews your Codex subscription"
+    d: "Reviews your billing history"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    /review tells Codex to look at your recent code changes and provide
+    feedback, just like a human code reviewer would. It checks for bugs,
+    security issues, and areas for improvement.
+  guide_ref: "Section 3.2"
+  tags: ["commands", "review"]
+
+- id: "03-012"
+  question: "What does the /mention command do?"
+  options:
+    a: "Tags someone on social media"
+    b: "Brings a specific file or piece of context to Codex's attention"
+    c: "Mentions your project in a blog post"
+    d: "Sends a notification to a team member"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    /mention lets you bring a specific file or piece of context to Codex's
+    attention. This is useful when you want to make sure Codex considers a
+    particular file while working on a task.
+  guide_ref: "Section 3.2"
+  tags: ["commands", "mention", "context"]
+
+- id: "03-013"
+  question: "What is the '--full-auto' flag used for?"
+  options:
+    a: "Automatically updating Codex"
+    b: "Running Codex without needing to approve any actions"
+    c: "Automatically fixing all bugs"
+    d: "Setting up automatic backups"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    The --full-auto flag starts Codex in a mode where it does not ask for
+    your approval before taking actions. This speeds up work but means you
+    need to review changes afterward. Use it when you trust Codex with the
+    task and have your work backed up in version control.
+  guide_ref: "Section 3.1"
+  tags: ["cli", "approval", "full-auto"]
+
+- id: "03-014"
+  question: "How do you add an MCP server from the command line?"
+  options:
+    a: "codex install-mcp server-name"
+    b: "codex mcp add --name 'server-name' -- command args"
+    c: "npm install mcp-server"
+    d: "codex plugin install server-name"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    The command is 'codex mcp add --name "server-name" -- command arg1 arg2'.
+    This registers the MCP server in your configuration. You can also add
+    MCP servers manually by editing the [mcp_servers] section in your
+    config.toml file.
+  guide_ref: "Section 3.3"
+  tags: ["mcp", "cli"]
+
+- id: "03-015"
+  question: "What is 'Codex Cloud'?"
+  options:
+    a: "A weather service"
+    b: "Running Codex in OpenAI's containers instead of on your local computer"
+    c: "Cloud storage for your files"
+    d: "A different product entirely"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    Codex Cloud runs your Codex agent in containers hosted by OpenAI, rather
+    than on your local machine. This is useful for long-running tasks,
+    consistent environments, or when you do not want to tie up your local
+    computer. You start it with 'codex cloud'.
+  guide_ref: "Section 3.4"
+  tags: ["cloud", "cli"]
+
+- id: "03-016"
+  question: "What does the '--yolo' flag do?"
+  options:
+    a: "Makes Codex faster"
+    b: "Runs Codex with no approval needed and allows network access"
+    c: "Enables debug mode"
+    d: "Activates a fun mode with jokes"
+  answer: "b"
+  difficulty: "advanced"
+  explanation: >
+    The --yolo flag is like --full-auto but even more permissive -- it also
+    allows network access without approval. The name is tongue-in-cheek
+    (You Only Live Once). Use it only when you fully trust the task and
+    have backups. It is not recommended for production work or sensitive
+    projects.
+  guide_ref: "Section 3.1"
+  tags: ["cli", "approval", "yolo"]

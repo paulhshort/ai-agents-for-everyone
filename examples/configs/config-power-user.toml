@@ -1,0 +1,91 @@
+# Codex Configuration -- Power User Mode
+#
+# WHAT IS THIS FILE?
+# Configuration file for OpenAI Codex, optimized for experienced users
+# who want maximum productivity with minimal interruptions.
+#
+# WHERE DOES IT GO?
+# - For ALL your projects: ~/.codex/config.toml
+# - For ONE specific project: .codex/config.toml
+#
+# WHAT IS THIS CONFIGURATION FOR?
+# This is the POWER USER configuration. It gives Codex a lot of freedom
+# to work quickly. It asks fewer questions and can do more on its own.
+#
+# WHO SHOULD USE THIS?
+# - Users who are very comfortable with Codex
+# - Users who trust Codex and review results afterward (via git diff)
+# - Users working on projects with good version control (git)
+#
+# WARNING: This configuration gives Codex more freedom. Make sure you:
+#   1. Have your work committed in git before starting
+#   2. Review changes with /diff or git diff after Codex finishes
+#   3. Know how to undo changes (git checkout, git reset)
+#   If you are new to Codex, start with config-safe.toml instead.
+
+# ============================================================
+# MODEL SETTINGS
+# ============================================================
+
+# GPT-5.4 for the best results. Switch to gpt-5.4-mini for faster,
+# cheaper results on simple tasks. You can also switch models
+# mid-session using the /model command.
+model = "gpt-5.4"
+
+# ============================================================
+# APPROVAL SETTINGS
+# ============================================================
+
+# "never" means Codex will not ask for permission before taking actions.
+# It will read files, write files, and run commands on its own.
+#
+# This is great for productivity but means you should ALWAYS review
+# changes afterward. Use /diff to see what Codex changed.
+#
+# To get this same behavior temporarily without changing your config,
+# you can run:  codex --full-auto
+approval = "never"
+
+# ============================================================
+# SANDBOX SETTINGS
+# ============================================================
+
+# "workspace-write" keeps things contained to your project folder.
+# Even in power user mode, it is wise to keep the sandbox in place.
+# Only use "danger-full-access" if you specifically need Codex to
+# work outside your project folder (like installing system packages).
+sandbox = "workspace-write"
+
+# ============================================================
+# MCP SERVERS
+# ============================================================
+
+# Power users often add MCP servers for extra capabilities.
+# Here are some popular ones:
+
+# Web search -- lets Codex look things up online
+# [mcp_servers.web-search]
+# command = "npx"
+# args = ["-y", "@anthropic/web-search-mcp"]
+
+# GitHub -- lets Codex work with GitHub issues, PRs, and repos
+# [mcp_servers.github]
+# command = "npx"
+# args = ["-y", "@anthropic/github-mcp"]
+# env = { GITHUB_TOKEN = "your-github-token-here" }
+
+# Database -- lets Codex query your database directly
+# [mcp_servers.postgres]
+# command = "npx"
+# args = ["-y", "@anthropic/postgres-mcp", "postgresql://localhost/mydb"]
+
+# Filesystem -- gives Codex access to specific folders outside your project
+# [mcp_servers.filesystem]
+# command = "npx"
+# args = ["-y", "@anthropic/filesystem-mcp", "/path/to/folder"]
+
+# To add an MCP server from the command line:
+#   codex mcp add --name "server-name" -- command arg1 arg2
+#
+# To see what MCP servers are installed:
+#   Use the /mcp command inside Codex

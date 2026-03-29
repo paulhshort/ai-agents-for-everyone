@@ -1,0 +1,62 @@
+import type { Slide } from '@/data/types';
+
+export const day2RecapSlides: Slide[] = [
+  {
+    id: 'recap2-1',
+    type: 'title',
+    title: 'What We Learned Today',
+    subtitle: 'Day 2: Becoming a Power User',
+    animation: 'zoom-in',
+    notes: 'Students should feel significantly more confident than yesterday. Celebrate that growth.',
+  },
+  {
+    id: 'recap2-2',
+    type: 'content',
+    title: 'Skills Unlocked',
+    subtitle: 'Look how far you have come!',
+    content: 'In just two days, you have gone from "what is AI?" to writing power-user prompts and building real projects. Here is what you can now do:',
+    bullets: [
+      'Write prompts using the WHAT-WHERE-HOW-VERIFY formula — prompt engineering: mastered',
+      'Choose the right sandbox mode for any situation — safety: mastered',
+      'Manage AI context with @, /compact, and AGENTS.md — context: mastered',
+      'Build small projects from scratch using Codex — building: in progress',
+      'Review AI\'s work critically — the Review Rule: always active',
+    ],
+    animation: 'reveal-steps',
+    notes: 'Read each "mastered" with enthusiasm. Students should feel proud of their progress.',
+  },
+  {
+    id: 'recap2-3',
+    type: 'content',
+    title: 'Final Project Ideas',
+    subtitle: 'What will you build tomorrow?',
+    content: 'Tomorrow you will have almost 2 hours to build something real with Codex. Here are some ideas to get you started:',
+    bullets: [
+      'A personal quiz app — test your friends on any topic',
+      'A mini-game — text adventure, number guessing, trivia',
+      'A portfolio website — showcase your work and interests',
+      'A productivity tool — to-do list, timer, note organizer',
+      'A data dashboard — visualize interesting data (sports, weather, music)',
+      'Something totally original — surprise us!',
+    ],
+    animation: 'reveal-steps',
+    notes: 'Encourage students to discuss ideas with each other. Partnerships are allowed!',
+  },
+  {
+    id: 'recap2-4',
+    type: 'title',
+    title: 'Tomorrow: Build Something Amazing',
+    subtitle: 'Your final project, your presentation, and your certificate await.',
+    animation: 'slide-up',
+    notes: 'End with energy. Tomorrow is the payoff for everything they have learned.',
+  },
+  {
+    id: 'recap2-5',
+    type: 'discussion',
+    title: 'Dream Big',
+    subtitle: 'What are you planning to build?',
+    content: 'Share your final project idea with the class. Even if it is just a seed of an idea, say it out loud — that makes it real! What would you want to create if you knew you could not fail?',
+    animation: 'fade-in',
+    notes: 'Every student should share at least a brief idea. This commits them mentally for tomorrow.',
+  },
+];

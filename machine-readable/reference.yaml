@@ -1,0 +1,1055 @@
+# ============================================================
+# The Ultimate OpenAI Codex Guide — Master Reference Index
+# ============================================================
+# This file is the navigation brain for the entire guide.
+# Every topic has a pointer (line number or file path) into the guide content.
+# Used by: onboarding prompt, MCP server, quiz system, audit tools.
+#
+# Audience: Non-technical people learning the agentic paradigm.
+# Codex is an AI agent — it DOES things, not just answers questions.
+# ============================================================
+
+version: "0.2.0"
+updated: "2026-03-28"
+guide_file: "guide/ultimate-guide.md"
+product: "OpenAI Codex"
+model: "GPT-5.4"
+model_variants:
+  default: "GPT-5.4"
+  fast: "GPT-5.4-mini"
+  legacy: "GPT-5.3-codex"
+install_methods:
+  npm: "npm install -g @openai/codex"
+  brew: "brew install --cask codex"
+subscriptions:
+  - "ChatGPT Plus"
+  - "ChatGPT Pro"
+  - "ChatGPT Business"
+  - "ChatGPT Team"
+  - "ChatGPT Edu"
+  - "ChatGPT Enterprise"
+config_format: "TOML"
+config_files:
+  user: "~/.codex/config.toml"
+  project: ".codex/config.toml"
+  system: "/etc/codex/config.toml"
+project_instructions: "AGENTS.md"
+
+# ============================================================
+# DEEP DIVE — Line numbers / file paths for every topic
+# ============================================================
+# The guide has 15 sections across roughly 4000 lines.
+# Each section averages 250+ lines. Line numbers are estimates.
+deep_dive:
+  # Section 1: Quick Start (lines 30-280)
+  quick_start: 30
+  what_is_codex: 35
+  installation: 55
+  npm_install: 60
+  brew_install: 70
+  first_run: 85
+  golden_rules: 100
+  first_workflow: 120
+  hello_world: 140
+  basic_prompting: 160
+  understanding_responses: 180
+  accepting_changes: 200
+  what_is_an_agent: 220
+  agentic_paradigm: 240
+  codex_vs_chatgpt: 260
+
+  # Section 2: Core Concepts (lines 280-530)
+  core_concepts: 280
+  how_codex_works: 290
+  the_agentic_loop: 305
+  context_window: 325
+  models: 345
+  model_selection: 360
+  tool_system: 380
+  file_reading: 395
+  file_writing: 405
+  terminal_commands: 415
+  web_search_tool: 430
+  thinking_process: 445
+  plan_mode: 460
+  token_basics: 480
+  how_ai_reads_code: 500
+  trust_but_verify: 515
+
+  # Section 3: Commands & Shortcuts (lines 530-780)
+  commands: 530
+  slash_commands: 540
+  cmd_clear: 545
+  cmd_compact: 550
+  cmd_diff: 555
+  cmd_model: 560
+  cmd_plan: 565
+  cmd_status: 570
+  cmd_review: 575
+  cmd_init: 580
+  cmd_permissions: 585
+  cmd_mcp: 590
+  cmd_mention: 595
+  cmd_fork: 600
+  cmd_resume: 605
+  cmd_new: 610
+  cmd_personality: 615
+  cmd_theme: 620
+  cmd_ps: 625
+  cmd_agent: 630
+  cmd_apps: 635
+  cmd_fast: 640
+  keyboard_shortcuts: 650
+  ctrl_c: 655
+  ctrl_g: 660
+  esc_esc: 665
+  at_symbol: 670
+  bang_symbol: 675
+  dollar_symbol: 680
+  cli_flags: 690
+  flag_model: 695
+  flag_full_auto: 700
+  flag_sandbox: 705
+  flag_search: 710
+  flag_profile: 715
+  flag_config: 720
+  flag_image: 725
+  flag_cd: 730
+  flag_add_dir: 735
+  flag_oss: 740
+  flag_yolo: 745
+  codex_exec: 755
+  codex_cloud: 765
+  codex_resume: 775
+
+  # Section 4: Context Management (lines 780-1030)
+  context_management: 780
+  what_is_context: 790
+  context_zones: 810
+  context_triage: 840
+  when_to_compact: 860
+  when_to_clear: 875
+  fresh_sessions: 890
+  project_instructions: 910
+  agents_md: 925
+  context_engineering: 945
+  reducing_context: 965
+  adding_context: 980
+  mentioning_files: 995
+  context_symptoms: 1010
+
+  # Section 5: Configuration (lines 1030-1280)
+  configuration: 1030
+  config_hierarchy: 1040
+  user_config: 1055
+  project_config: 1070
+  system_config: 1085
+  settings_reference: 1100
+  toml_format: 1115
+  environment_variables: 1135
+  codex_home: 1145
+  codex_api_key: 1155
+  codex_ca_certificate: 1165
+  codex_sqlite_home: 1175
+  feature_flags: 1190
+  flag_multi_agent: 1200
+  flag_shell_tool: 1210
+  flag_web_search: 1220
+  flag_codex_hooks: 1230
+  flag_js_repl: 1240
+  flag_fast_mode: 1245
+  flag_undo: 1250
+  flag_memories: 1255
+  web_search_config: 1265
+
+  # Section 6: Workflows (lines 1280-1530)
+  workflows: 1280
+  standard_workflow: 1290
+  bug_fixing: "guide/workflows/bug-fixing-workflow.md"
+  feature_development: "guide/workflows/feature-development-workflow.md"
+  code_review: 1350
+  refactoring: 1380
+  exploration: "guide/workflows/exploration-workflow.md"
+  writing_tests: 1420
+  documentation_workflow: 1440
+  learning_codebase: 1460
+  pair_programming: 1480
+  daily_standup_workflow: 1500
+  project_kickoff: 1515
+
+  # Section 7: Agents & Automation (lines 1530-1780)
+  agents: 1530
+  what_are_agents: 1540
+  built_in_agents: 1560
+  custom_agents: 1580
+  agent_template: 1600
+  agents_md_format: 1620
+  multi_agent_patterns: 1640
+  multi_agent_config: 1660
+  max_threads: 1670
+  max_depth: 1680
+  skills: 1700
+  skills_directory: 1710
+  skill_md: 1720
+  session_persistence: 1740
+  resuming_sessions: 1760
+
+  # Section 8: Hooks & Extensions (lines 1780-2030)
+  hooks: 1780
+  what_are_hooks: 1790
+  hooks_json: 1810
+  hook_events: 1830
+  event_session_start: 1840
+  event_pre_tool_use: 1850
+  event_post_tool_use: 1860
+  event_user_prompt_submit: 1870
+  event_stop: 1880
+  writing_hooks: 1900
+  example_hooks: 1930
+  hook_security: 1960
+  hook_best_practices: 1990
+
+  # Section 9: Security (lines 2030-2280)
+  security: 2030
+  sandbox_modes: "guide/security/sandbox-modes.md"
+  sandbox_readonly: 2050
+  sandbox_workspace_write: 2065
+  sandbox_full_access: 2080
+  permission_modes: 2100
+  approval_untrusted: 2115
+  approval_on_request: 2130
+  approval_never: 2145
+  full_auto_mode: 2160
+  yolo_mode: 2175
+  secrets_management: 2195
+  security_hardening: "guide/security/security-hardening.md"
+  data_privacy: "guide/security/data-privacy.md"
+  enterprise_governance: "guide/security/enterprise-governance.md"
+  threat_prevention: 2240
+  safe_defaults: 2260
+
+  # Section 10: MCP Servers (lines 2280-2530)
+  mcp: 2280
+  mcp_overview: 2290
+  what_is_mcp: 2300
+  mcp_installation: 2320
+  mcp_add: 2335
+  mcp_list: 2345
+  mcp_get: 2355
+  mcp_remove: 2365
+  mcp_config_toml: 2380
+  mcp_http_servers: 2400
+  mcp_stdio_servers: 2415
+  popular_mcp_servers: 2430
+  mcp_vetting: 2460
+  custom_mcp_servers: 2490
+  mcp_security: 2510
+
+  # Section 11: Cost Optimization (lines 2530-2780)
+  cost_optimization: 2530
+  understanding_costs: 2540
+  subscription_model: 2555
+  plus_plan: 2565
+  pro_plan: 2575
+  business_plan: 2585
+  team_plan: 2595
+  edu_plan: 2605
+  enterprise_plan: 2615
+  cost_strategies: 2635
+  model_selection_cost: 2655
+  context_cost: 2675
+  mini_for_simple: 2695
+  budgeting: 2715
+  tracking_usage: 2735
+  cost_vs_value: 2755
+
+  # Section 12: Troubleshooting (lines 2780-3030)
+  troubleshooting: 2780
+  common_issues: 2790
+  installation_issues: 2805
+  auth_issues: 2825
+  connection_issues: 2845
+  performance_issues: 2865
+  context_issues: 2885
+  sandbox_issues: 2905
+  mcp_issues: 2925
+  debug_commands: 2945
+  debug_verbose: 2960
+  debug_status: 2975
+  getting_help: 2995
+  community_resources: 3015
+
+  # Section 13: Advanced Patterns (lines 3030-3280)
+  advanced_patterns: 3030
+  plan_validate_execute: 3045
+  dual_instance: 3070
+  context_engineering_advanced: 3100
+  extended_thinking: 3130
+  prompt_chaining: 3160
+  batch_operations: 3190
+  codex_in_ci: 3220
+  codex_cloud_patterns: 3250
+
+  # Section 14: Team & Enterprise (lines 3280-3530)
+  team_enterprise: 3280
+  team_configuration: 3295
+  shared_agents_md: 3315
+  shared_config: 3335
+  team_conventions: 3355
+  enterprise_governance_overview: 3380
+  cicd_integration: 3410
+  onboarding_developers: 3440
+  measuring_impact: 3470
+  scaling_codex: 3500
+
+  # Section 15: Ecosystem (lines 3530-3780)
+  ecosystem: 3530
+  official_tools: 3545
+  community_tools: 3570
+  ide_integrations: 3595
+  complementary_resources: 3620
+  codex_and_chatgpt: 3650
+  codex_and_cursor: 3670
+  codex_and_github_copilot: 3690
+  future_roadmap: 3720
+  contributing_to_codex: 3745
+  learning_resources: 3760
+
+  # Core reference docs (external files)
+  glossary: "guide/core/glossary.md"
+  architecture: "guide/core/architecture.md"
+  settings_ref_doc: "guide/core/settings-reference.md"
+  methodologies: "guide/core/methodologies.md"
+  known_issues: "guide/core/known-issues.md"
+  cheatsheet: "guide/cheatsheet.md"
+
+# ============================================================
+# DECISION TREE — Quick routing for common situations
+# ============================================================
+decide:
+  simple_task: "Just type what you want in plain English — Codex will do it"
+  complex_task: "Use /plan to have Codex think it through before acting"
+  context_high: "/compact to compress your conversation, or /clear for a fresh start"
+  repeating_task: "Create a custom agent or skill so you can reuse it"
+  need_external_data: "Add an MCP server to give Codex access to external tools"
+  deep_debug: "Provide the full error message and let Codex investigate"
+  security_concern: "Check your sandbox mode and review permission settings"
+  new_project: "Run /init to set up AGENTS.md with project instructions"
+  team_setup: "Create a shared .codex/config.toml in the project repo"
+  slow_responses: "Switch to GPT-5.4-mini with /model or --model flag"
+  lost_context: "Start a fresh session — Codex works best with clean context"
+  want_to_learn: "Use the onboarding prompt for a personalized guided tour"
+
+# ============================================================
+# PROMPT FORMULA
+# ============================================================
+prompt_formula:
+  structure: "WHAT + WHERE + HOW + VERIFY"
+  description: "The 4-part formula for getting great results from Codex"
+  parts:
+    what: "What do you want done? Be specific about the outcome."
+    where: "Where in the project? Name the file or folder."
+    how: "Any constraints or preferences for how it should be done."
+    verify: "How should Codex confirm it worked? Tests? Output?"
+  example:
+    what: "Add input validation"
+    where: "in src/api/auth.ts, the login() function"
+    how: "using zod schema, reject empty strings"
+    verify: "existing tests still pass, add test for empty input"
+  simple_example:
+    what: "Fix the broken login button"
+    where: "in the main page"
+    how: "it should redirect to the dashboard after login"
+    verify: "try clicking it and confirm it works"
+
+# ============================================================
+# STANDARD WORKFLOW (9 steps)
+# ============================================================
+workflow:
+  description: "The recommended way to work with Codex on any task"
+  steps:
+    1: "Open your project folder in the terminal"
+    2: "Start a Codex session by typing 'codex'"
+    3: "Describe your task using the WHAT + WHERE + HOW + VERIFY formula"
+    4: "Review the plan Codex proposes"
+    5: "Approve the plan or ask for changes"
+    6: "Review the changes Codex made (the 'diff')"
+    7: "Accept the changes if they look right"
+    8: "Verify the result works as expected"
+    9: "Save your work (commit) if you are satisfied"
+
+# ============================================================
+# COMMANDS — All slash commands
+# ============================================================
+commands:
+  /clear: "Wipe the conversation and start fresh — like opening a new chat"
+  /compact: "Compress the conversation to free up space without losing important context"
+  /diff: "Show what Codex has changed in your files"
+  /model: "Switch to a different AI model mid-conversation"
+  /plan: "Ask Codex to think through a task and show you its plan before acting"
+  /status: "See how much context space is used and current session info"
+  /review: "Have Codex review code changes or a pull request"
+  /init: "Set up a new project with an AGENTS.md file for project instructions"
+  /permissions: "View or change what Codex is allowed to do"
+  /mcp: "Manage MCP server connections"
+  /mention: "Bring a specific file into the conversation"
+  /fork: "Split the current conversation into a new branch"
+  /resume: "Continue a previous session where you left off"
+  /new: "Start a brand new conversation"
+  /personality: "Change how Codex communicates (formal, casual, etc.)"
+  /theme: "Change the visual appearance of the terminal interface"
+  /ps: "Show running background processes"
+  /agent: "Launch or manage sub-agents for parallel work"
+  /apps: "List available applications and integrations"
+  /fast: "Toggle fast mode for quicker responses with less detail"
+
+# ============================================================
+# SHORTCUTS — Keyboard shortcuts
+# ============================================================
+shortcuts:
+  "Ctrl+C": "Stop what Codex is currently doing — like pressing the pause button"
+  "Ctrl+G": "Submit your message (alternative to pressing Enter)"
+  "Esc Esc": "Press Escape twice to cancel the current input"
+  "@": "Mention a file to bring it into the conversation"
+  "!": "Run a shell command directly"
+  "$": "Reference an environment variable"
+
+# ============================================================
+# CLI FLAGS — Command-line options
+# ============================================================
+cli:
+  "--model": "Choose which AI model to use (e.g., --model gpt-5.4-mini)"
+  "--full-auto": "Let Codex work without asking for approval on each step"
+  "--sandbox": "Set the safety level (read-only, workspace-write, danger-full-access)"
+  "--search": "Enable or configure web search (disabled, cached, live)"
+  "--profile": "Load a named configuration profile"
+  "--config": "Point to a specific configuration file"
+  "--image": "Include an image file for Codex to analyze"
+  "--cd": "Change to a specific directory before starting"
+  "--add-dir": "Add extra directories for Codex to access"
+  "--oss": "Run in open-source mode"
+  "--yolo": "Full auto with no safety guardrails — use with extreme caution"
+
+# ============================================================
+# CONTEXT MANAGEMENT
+# ============================================================
+context:
+  description: "Context is the AI's memory during a conversation. Managing it well is key to good results."
+  zones:
+    green: "0-50% used — Plenty of room. Work freely."
+    yellow: "50-70% used — Getting full. Be mindful of pasting large files."
+    orange: "70-85% used — Running low. Use /compact soon."
+    red: "85-100% used — Almost out. Use /compact now or start fresh with /clear."
+  fresh_context: "Start a new session for each distinct task — Codex works best with clean, focused context."
+  symptoms:
+    slow_responses: "Context is too large — use /compact to free up space"
+    hallucinations: "Stale or conflicting context — use /clear for a fresh start"
+    wrong_files: "Context pollution from earlier work — start a fresh session"
+    repetitive_answers: "Codex is going in circles — rephrase your question or /clear"
+    ignoring_instructions: "Too much noise in context — use /compact or simplify your request"
+
+# ============================================================
+# PROJECT INSTRUCTIONS (AGENTS.md)
+# ============================================================
+memory:
+  description: "AGENTS.md is like a briefing document you give Codex before each session. It tells Codex about your project."
+  locations:
+    - path: "AGENTS.md"
+      scope: "Project root — main project instructions"
+      priority: 1
+    - path: ".codex/config.toml"
+      scope: "Project-level configuration"
+      priority: 2
+    - path: "~/.codex/config.toml"
+      scope: "Your personal global settings"
+      priority: 3
+    - path: "/etc/codex/config.toml"
+      scope: "System-wide settings (set by admins)"
+      priority: 4
+  priority_order: "Project instructions override global, which override system"
+  what_to_include:
+    - "What the project does (a brief summary)"
+    - "Which programming language and framework it uses"
+    - "How to build and run the project"
+    - "How to run tests"
+    - "Any coding conventions or style rules"
+    - "Things Codex should never do (restrictions)"
+
+# ============================================================
+# FOLDER STRUCTURE
+# ============================================================
+folder_structure:
+  ".codex/":
+    "config.toml": "Project-level configuration in TOML format"
+    "hooks.json": "Custom hooks that run at specific events"
+  ".agents/":
+    "skills/": "Custom skills with SKILL.md files"
+  "AGENTS.md": "Project instructions for Codex (at project root)"
+
+# ============================================================
+# PERMISSION / APPROVAL MODES
+# ============================================================
+permissions:
+  description: "Approval modes control how much freedom Codex has to act on its own."
+  modes:
+    untrusted:
+      description: "Maximum safety — Codex asks permission for everything"
+      when_to_use: "Working in unfamiliar projects or sensitive codebases"
+      risk: "Lowest"
+    on_request:
+      description: "Balanced — Codex asks before risky actions but handles safe ones automatically"
+      when_to_use: "Everyday work in trusted projects"
+      risk: "Low"
+    never:
+      description: "Codex never asks — it either acts or skips"
+      when_to_use: "Automated pipelines and CI/CD"
+      risk: "Medium"
+  cli_overrides:
+    "--full-auto": "Let Codex work through its plan without stopping to ask"
+    "--yolo": "No guardrails at all — Codex does whatever it decides. Only use if you know what you are doing."
+  sandbox_modes:
+    "read-only": "Codex can look at files but cannot change anything — safest option"
+    "workspace-write": "Codex can modify files in the project folder but nothing outside it"
+    "danger-full-access": "Codex can modify anything on your system — use with extreme caution"
+
+# ============================================================
+# MCP SERVERS
+# ============================================================
+mcp:
+  overview: "MCP (Model Context Protocol) lets you connect Codex to external tools and data sources — like giving it superpowers."
+  description: "Think of MCP servers as plugins. Each one gives Codex a new ability, like searching the web, reading a database, or connecting to your project management tool."
+  management:
+    add: "codex mcp add <name> — Add a new MCP server"
+    list: "codex mcp list — See all connected servers"
+    get: "codex mcp get <name> — View details of a server"
+    remove: "codex mcp remove <name> — Disconnect a server"
+  config_location: "[mcp_servers] section in config.toml"
+  server_types:
+    http: "Connects to a web-based MCP server over HTTP"
+    stdio: "Runs a local program that communicates through standard input/output"
+  popular_servers:
+    - name: "filesystem"
+      purpose: "Enhanced file system access"
+    - name: "github"
+      purpose: "Interact with GitHub repos, issues, PRs"
+    - name: "postgres"
+      purpose: "Query PostgreSQL databases"
+    - name: "brave-search"
+      purpose: "Search the web using Brave"
+  security_checklist:
+    - "Only install MCP servers from trusted sources"
+    - "Review what permissions each server requests"
+    - "Use read-only servers when possible"
+    - "Monitor server activity in logs"
+
+# ============================================================
+# ARCHITECTURE
+# ============================================================
+architecture:
+  summary: "Codex is an AI agent that follows a loop: read the situation, make a plan, take action, check the result."
+  master_loop: "Read -> Plan -> Act -> Verify"
+  loop_explained:
+    read: "Codex reads your files, your instructions, and your request"
+    plan: "It figures out what steps to take"
+    act: "It makes changes — editing files, running commands, searching"
+    verify: "It checks that the changes work correctly"
+  tools:
+    file_read: "Look at file contents"
+    file_write: "Create or replace files"
+    file_edit: "Change specific parts of files"
+    terminal: "Run commands in the terminal"
+    search: "Find files or text in the project"
+    web: "Look up information on the internet"
+  context_budget: "Codex manages its memory automatically, but you can help by using /compact and starting fresh sessions"
+  models:
+    primary: "GPT-5.4 — Best quality, used by default"
+    fast: "GPT-5.4-mini — Faster and lighter for simple tasks"
+    legacy: "GPT-5.3-codex — Previous generation, still available"
+
+# ============================================================
+# COST MODEL
+# ============================================================
+cost:
+  description: "Codex is included with your ChatGPT subscription — no separate API charges."
+  model: "subscription"
+  plans:
+    plus:
+      name: "ChatGPT Plus"
+      includes_codex: true
+    pro:
+      name: "ChatGPT Pro"
+      includes_codex: true
+    business:
+      name: "ChatGPT Business"
+      includes_codex: true
+    team:
+      name: "ChatGPT Team"
+      includes_codex: true
+    edu:
+      name: "ChatGPT Edu"
+      includes_codex: true
+    enterprise:
+      name: "ChatGPT Enterprise"
+      includes_codex: true
+  strategies:
+    - "Use GPT-5.4-mini for simple tasks to save quota"
+    - "Use /compact early to keep conversations efficient"
+    - "Start fresh sessions for each task instead of one long conversation"
+    - "Be specific in your requests to avoid back-and-forth"
+    - "Use AGENTS.md so Codex does not have to re-learn your project each time"
+
+# ============================================================
+# TOOLS — Which tool for which task
+# ============================================================
+tools:
+  description: "Codex has several built-in tools it uses automatically. You do not need to tell it which one to use — it decides based on your request."
+  tool_list:
+    file_read: "When Codex needs to look at a file"
+    file_write: "When Codex creates a new file from scratch"
+    file_edit: "When Codex changes part of an existing file"
+    search: "When Codex needs to find something in the project"
+    terminal: "When Codex needs to run a command (build, test, install)"
+    web_search: "When Codex needs to look something up online"
+    js_repl: "When Codex needs to run JavaScript to test something"
+  guidance:
+    read_before_edit: "Codex always reads a file before changing it"
+    prefer_edit: "Small changes use edit (surgical), big rewrites use write"
+    terminal_for_verification: "Codex runs commands to verify its changes work"
+    search_for_discovery: "Codex searches when it needs to find the right file"
+
+# ============================================================
+# ANTI-PATTERNS — Things to avoid
+# ============================================================
+dont:
+  - "Do not paste passwords, API keys, or secrets into Codex"
+  - "Do not ignore context warnings — if Codex says it is running low, use /compact"
+  - "Do not skip reviewing changes — always look at diffs before accepting"
+  - "Do not write vague prompts like 'fix everything' for complex tasks"
+  - "Do not keep working when context is in the red zone — start fresh"
+  - "Do not use --yolo or danger-full-access in projects you do not fully trust"
+  - "Do not install MCP servers from unknown sources without reviewing them"
+  - "Do not assume Codex remembers previous sessions — it starts fresh each time"
+  - "Do not paste entire large files when Codex can read them with @mention"
+  - "Do not fight the AI — if it keeps misunderstanding, rephrase or start over"
+  - "Do not skip AGENTS.md — it saves you from repeating instructions every session"
+  - "Do not run Codex on production systems without sandbox protection"
+
+# ============================================================
+# TROUBLESHOOTING QUICK FIXES
+# ============================================================
+fix:
+  context_too_long: "Use /compact to compress, or /clear for a fresh start"
+  slow_responses: "Switch to GPT-5.4-mini with /model, or reduce context"
+  wrong_file_edited: "Be specific — use the WHAT+WHERE+HOW+VERIFY formula"
+  api_key_error: "Check that CODEX_API_KEY is set: echo $CODEX_API_KEY"
+  codex_not_found: "Reinstall: npm install -g @openai/codex"
+  permission_denied: "Check sandbox mode — you may need workspace-write or higher"
+  mcp_not_connecting: "Run 'codex mcp list' to check status, try removing and re-adding"
+  hooks_not_firing: "Verify .codex/hooks.json syntax and that codex_hooks feature flag is enabled"
+  agent_not_working: "Check AGENTS.md syntax — it should be plain markdown with clear instructions"
+  session_lost: "Use 'codex resume' to pick up where you left off"
+  wrong_model: "Use /model to switch, or set default in ~/.codex/config.toml"
+  codex_loops: "Codex is stuck in a loop — interrupt with Ctrl+C and rephrase your request"
+  empty_responses: "Context may be corrupted — use /clear and try again"
+  cant_find_files: "Use @mention to point Codex to the right file, or use --add-dir"
+
+# ============================================================
+# DEBUG TECHNIQUES
+# ============================================================
+debug:
+  description: "When something is not working right, these techniques help you figure out what is going on."
+  techniques:
+    check_status: "Run /status to see context usage and session details"
+    check_version: "Run codex --version to make sure you have the latest"
+    verbose_mode: "Start with extra detail to see what Codex is doing internally"
+    review_config: "Check your config files for typos or conflicting settings"
+    test_simple: "Try a simple request first to rule out complex issues"
+    check_network: "Make sure you have internet access — Codex needs to reach OpenAI servers"
+    check_mcp: "Run codex mcp list to verify MCP server connections"
+    read_logs: "Check terminal output for error messages"
+    fresh_session: "Sometimes the fix is simply starting over with /clear"
+    ask_community: "Post in the OpenAI community forum with your error message"
+
+# ============================================================
+# GOLDEN RULES
+# ============================================================
+rules:
+  description: "Five simple rules that will make your Codex experience dramatically better."
+  1:
+    rule: "Always review changes before accepting"
+    why: "Codex is powerful but not perfect — a quick review catches mistakes before they cause problems"
+  2:
+    rule: "Manage your context — use /compact before 70%"
+    why: "A cluttered context makes Codex slower and less accurate, like trying to think in a noisy room"
+  3:
+    rule: "Be specific: use WHAT + WHERE + HOW + VERIFY"
+    why: "Clear instructions get better results — just like giving directions to a person"
+  4:
+    rule: "Plan first for complex or risky tasks"
+    why: "Use /plan to have Codex show you its approach before it starts making changes"
+  5:
+    rule: "Create AGENTS.md for every project"
+    why: "Project instructions help Codex understand your project instantly instead of guessing"
+
+# ============================================================
+# AGENT TEMPLATE — AGENTS.md format
+# ============================================================
+agent_template:
+  description: "AGENTS.md is a markdown file at the root of your project that tells Codex about your project."
+  format: "Plain markdown"
+  recommended_sections:
+    - heading: "Project Overview"
+      content: "A 1-2 sentence description of what the project does"
+    - heading: "Tech Stack"
+      content: "Languages, frameworks, and tools used"
+    - heading: "Getting Started"
+      content: "How to install dependencies and run the project"
+    - heading: "Testing"
+      content: "How to run tests"
+    - heading: "Conventions"
+      content: "Coding style, naming conventions, file organization"
+    - heading: "Restrictions"
+      content: "Things Codex should never do in this project"
+  example: |
+    # AGENTS.md
+
+    ## Project Overview
+    A web app for managing personal recipes, built with React and Node.js.
+
+    ## Tech Stack
+    - Frontend: React 18 with TypeScript
+    - Backend: Node.js with Express
+    - Database: PostgreSQL
+    - Testing: Jest + React Testing Library
+
+    ## Getting Started
+    ```bash
+    npm install
+    npm run dev
+    ```
+
+    ## Testing
+    ```bash
+    npm test
+    ```
+
+    ## Conventions
+    - Use TypeScript strict mode
+    - Components in PascalCase
+    - API routes in kebab-case
+    - All new features need tests
+
+    ## Restrictions
+    - Never modify database migration files directly
+    - Never commit .env files
+    - Always use parameterized queries (no string concatenation for SQL)
+
+# ============================================================
+# HOOK EVENTS
+# ============================================================
+hook_events:
+  description: "Hooks let you run custom code when specific things happen in Codex. They are defined in .codex/hooks.json."
+  config_file: ".codex/hooks.json"
+  events:
+    SessionStart:
+      when: "When a new Codex session begins"
+      use_case: "Set up the environment, load project-specific tools"
+    PreToolUse:
+      when: "Just before Codex uses a tool (like editing a file)"
+      use_case: "Validate or block certain actions, add logging"
+    PostToolUse:
+      when: "Right after Codex finishes using a tool"
+      use_case: "Run linters, format code, send notifications"
+    UserPromptSubmit:
+      when: "When you submit a message to Codex"
+      use_case: "Add standard context, validate inputs"
+    Stop:
+      when: "When a Codex session ends"
+      use_case: "Clean up, generate reports, send summaries"
+
+# ============================================================
+# ECOSYSTEM — Guide positioning and resources
+# ============================================================
+ecosystem:
+  guide:
+    name: "The Ultimate OpenAI Codex Guide"
+    url: "https://github.com/paulhdev/codex-ultimate-guide"
+    audience: "Everyone — especially people new to AI and the agentic paradigm"
+    mission: "Teach people that AI can DO things, not just answer questions"
+  mcp_server:
+    name: "codex-ultimate-guide-mcp"
+    install: "npx -y codex-ultimate-guide-mcp"
+    purpose: "Query the guide from any AI assistant without cloning the repo"
+  complementary:
+    - name: "OpenAI Codex Documentation"
+      url: "https://openai.com/codex"
+      what: "Official docs from OpenAI"
+    - name: "OpenAI Cookbook"
+      url: "https://cookbook.openai.com"
+      what: "Code examples and tutorials"
+    - name: "OpenAI Community Forum"
+      url: "https://community.openai.com"
+      what: "Ask questions, share tips, get help"
+    - name: "MCP Specification"
+      url: "https://modelcontextprotocol.io"
+      what: "Technical details of the Model Context Protocol"
+
+# ============================================================
+# ONBOARDING MATRIX — Maps user profile to content roadmap
+# ============================================================
+onboarding_matrix_meta:
+  version: "2.0.0"
+  architecture: "adaptive"
+  timing: "6-8 min per topic on average"
+  audience: "Non-technical users learning the agentic paradigm"
+
+onboarding_matrix:
+  # GET STARTED profiles — for people who are brand new
+  get_started:
+    beginner_5min:
+      core: [what_is_an_agent, golden_rules, installation, first_run]
+      topics_max: 4
+    beginner_15min:
+      core: [what_is_an_agent, golden_rules, installation, first_run, basic_prompting]
+      adaptive:
+        triggers:
+          security: [sandbox_modes]
+          team: [config_hierarchy]
+        default: [context_zones, commands]
+      topics_max: 6
+    beginner_30min:
+      core: [what_is_an_agent, agentic_paradigm, golden_rules, installation, first_run, basic_prompting, commands]
+      adaptive:
+        triggers:
+          security: [sandbox_modes, permission_modes]
+          team: [config_hierarchy, shared_config]
+        default: [workflows, context_zones, understanding_responses]
+      topics_max: 8
+    intermediate_5min:
+      core: [golden_rules, commands, context_zones]
+      topics_max: 3
+    intermediate_15min:
+      core: [golden_rules, commands, context_management, standard_workflow]
+      adaptive:
+        triggers:
+          security: [permission_modes]
+          mcp: [mcp_overview]
+        default: [agents_md, configuration]
+      topics_max: 6
+    intermediate_30min:
+      core: [golden_rules, commands, context_management, standard_workflow, configuration, agents_md]
+      adaptive:
+        triggers:
+          security: [permission_modes, sandbox_modes]
+          mcp: [mcp_overview, mcp_installation]
+          team: [shared_config]
+        default: [agents, hooks, feature_flags]
+      topics_max: 8
+
+  # OPTIMIZE profiles — for people who want to get more out of Codex
+  optimize:
+    intermediate_5min:
+      core: [context_triage, cost_strategies]
+      topics_max: 2
+    intermediate_15min:
+      core: [context_triage, cost_optimization, prompt_chaining]
+      adaptive:
+        triggers:
+          team: [config_hierarchy, shared_config]
+          plan: [plan_validate_execute]
+        default: [context_engineering]
+      topics_max: 5
+    intermediate_30min:
+      core: [context_triage, cost_optimization, plan_validate_execute, context_engineering]
+      adaptive:
+        triggers:
+          team: [config_hierarchy, shared_config]
+          quality: [dual_instance]
+          security: [permission_modes]
+        default: [extended_thinking, batch_operations]
+      topics_max: 6
+    power_15min:
+      core: [context_engineering, cost_strategies, prompt_chaining]
+      adaptive:
+        triggers:
+          team: [shared_config]
+          quality: [dual_instance]
+        default: [extended_thinking]
+      topics_max: 4
+    power_30min:
+      core: [context_engineering, cost_optimization, plan_validate_execute]
+      adaptive:
+        triggers:
+          team: [config_hierarchy, shared_config]
+          quality: [dual_instance]
+        default: [batch_operations, codex_cloud_patterns]
+      topics_max: 5
+
+  # BUILD AGENTS profiles — for people who want to automate things
+  build_agents:
+    beginner_15min:
+      core: [what_are_agents, agents_md, agent_template]
+      adaptive:
+        triggers:
+          hook: [what_are_hooks]
+        default: [built_in_agents]
+      topics_max: 4
+    beginner_30min:
+      core: [what_are_agents, agents_md, agent_template, built_in_agents, custom_agents]
+      adaptive:
+        triggers:
+          hook: [what_are_hooks, hooks_json]
+          team: [shared_agents_md]
+        default: [skills, session_persistence]
+      topics_max: 7
+    intermediate_15min:
+      core: [agent_template, custom_agents, skills]
+      adaptive:
+        triggers:
+          hook: [hooks, hook_events]
+          team: [config_hierarchy]
+        default: [multi_agent_patterns]
+      topics_max: 4
+    intermediate_30min:
+      core: [agent_template, custom_agents, hooks, skills]
+      adaptive:
+        triggers:
+          team: [config_hierarchy, shared_agents_md]
+          mcp: [mcp_overview]
+          quality: [dual_instance]
+        default: [multi_agent_patterns, hook_events]
+      topics_max: 6
+    power_15min:
+      core: [agent_template, multi_agent_patterns, skills]
+      adaptive:
+        triggers:
+          hook: [hook_events, writing_hooks]
+          mcp: [custom_mcp_servers]
+        default: [hooks]
+      topics_max: 4
+    power_30min:
+      core: [agent_template, multi_agent_patterns, hooks, skills]
+      adaptive:
+        triggers:
+          mcp: [custom_mcp_servers]
+          quality: [dual_instance]
+          security: [mcp_vetting]
+        default: [hook_events, writing_hooks, session_persistence]
+      topics_max: 6
+
+  # LEARN SECURITY profiles — for people who want to stay safe
+  learn_security:
+    beginner_15min:
+      core: [sandbox_modes, permission_modes, safe_defaults]
+      topics_max: 3
+    beginner_30min:
+      core: [sandbox_modes, permission_modes, safe_defaults, secrets_management, data_privacy]
+      adaptive:
+        triggers:
+          mcp: [mcp_vetting, mcp_security]
+          enterprise: [enterprise_governance]
+        default: [security_hardening, threat_prevention]
+      topics_max: 6
+    intermediate_15min:
+      core: [security_hardening, permission_modes, mcp_vetting]
+      topics_max: 3
+    intermediate_30min:
+      core: [security_hardening, mcp_vetting, secrets_management, threat_prevention]
+      adaptive:
+        triggers:
+          enterprise: [enterprise_governance]
+          team: [config_hierarchy, shared_config]
+        default: [data_privacy, hook_security]
+      topics_max: 6
+    power_15min:
+      core: [security_hardening, mcp_vetting, hook_security]
+      topics_max: 3
+    power_30min:
+      core: [security_hardening, mcp_vetting, hook_security, threat_prevention]
+      adaptive:
+        triggers:
+          enterprise: [enterprise_governance]
+          team: [config_hierarchy]
+        default: [secrets_management, data_privacy]
+      topics_max: 5
+
+  # FIX A PROBLEM — for people who need help now
+  fix_problem:
+    any_any:
+      core: [troubleshooting, common_issues, debug_commands]
+      topics_max: 3
+
+  # LEARN EVERYTHING profiles — for the truly curious
+  learn_everything:
+    beginner_30min:
+      core: [what_is_an_agent, agentic_paradigm, golden_rules, installation, commands, context_management, workflows]
+      topics_max: 7
+    beginner_60min:
+      core: [what_is_an_agent, agentic_paradigm, golden_rules, installation, commands, context_management, workflows, agents, security, configuration]
+      topics_max: 10
+    intermediate_30min:
+      core: [context_triage, cost_optimization, agents, hooks, security_hardening, mcp, commands]
+      topics_max: 7
+    intermediate_60min:
+      core: [context_triage, cost_optimization, agents, hooks, security_hardening, mcp, advanced_patterns, team_enterprise]
+      topics_max: 8
+    intermediate_120min:
+      core: [context_triage, cost_optimization, agents, hooks, security_hardening, mcp, advanced_patterns, team_enterprise, ecosystem, skills, feature_flags]
+      topics_max: 11
+    power_60min:
+      core: [context_engineering, multi_agent_patterns, hooks, security_hardening, custom_mcp_servers, plan_validate_execute, dual_instance]
+      topics_max: 7
+    power_120min:
+      core: [context_engineering, multi_agent_patterns, hooks, security_hardening, custom_mcp_servers, plan_validate_execute, dual_instance, enterprise_governance, ecosystem, codex_cloud_patterns]
+      topics_max: 10
+
+# ============================================================
+# ONBOARDING QUESTIONS — Flow structure
+# ============================================================
+onboarding_questions:
+  mandatory:
+    - question: language
+      prompt: "What language would you like me to speak?"
+      options: [English, "Fran\xE7ais", "Espa\xF1ol", Deutsch, "Portugu\xEAs", Other]
+    - question: goal
+      prompt: "What brings you here today?"
+      options:
+        get_started: "I am new to Codex and want to learn the basics"
+        optimize: "I already use Codex and want to get better at it"
+        build_agents: "I want to build custom agents and automate things"
+        learn_security: "I want to make sure my setup is safe and secure"
+        fix_problem: "Something is not working and I need help"
+        learn_everything: "I want a complete guided tour of everything"
+    - question: tone
+      prompt: "How would you like me to teach you?"
+      options:
+        pedagogical: "Explain things in detail so I understand the why"
+        direct: "Give me the essentials, skip the background"
+        coaching: "Guide me with questions so I discover things myself"
+        adaptive: "Mix it up based on the topic"
+  conditional:
+    - question: level
+      prompt: "How familiar are you with AI coding tools?"
+      options:
+        beginner: "I am completely new to this"
+        intermediate: "I have used Codex or similar tools before"
+        power: "I am very experienced and want advanced techniques"
+      skip_for: [fix_problem]
+    - question: time
+      prompt: "How much time do you have right now?"
+      options:
+        5min: "Just 5 minutes — give me the highlights"
+        15min: "About 15 minutes — a solid introduction"
+        30min: "Half an hour — I want to learn properly"
+        60min: "An hour — let us go deep"
+        120min: "As long as it takes — I want everything"
+      skip_for: [fix_problem]
+    - question: style
+      prompt: "How do you learn best?"
+      options:
+        explain: "Show me concepts and explain them"
+        examples: "Show me examples I can try"
+        reference: "Give me a reference I can look things up in"
+        handson: "Walk me through it step by step"
+      condition: "time >= 15min"
+      skip_for: [fix_problem]

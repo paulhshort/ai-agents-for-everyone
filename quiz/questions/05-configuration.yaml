@@ -1,0 +1,195 @@
+# Section 5: Configuration
+# These questions cover how to configure Codex -- AGENTS.md, config.toml,
+# hooks, and settings.
+
+- id: "05-001"
+  question: "What is AGENTS.md?"
+  options:
+    a: "A social media profile for your AI"
+    b: "A file that gives Codex instructions about your project and how to behave"
+    c: "A log file that records what Codex does"
+    d: "A mandatory legal document"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    AGENTS.md is like a briefing document for your AI agent. You put it in
+    your project folder, and Codex reads it at the start of every session.
+    It tells Codex about your project, what rules to follow, what files are
+    important, and what to always or never do.
+  guide_ref: "Section 5.1"
+  tags: ["agents-md", "configuration"]
+
+- id: "05-002"
+  question: "What format is the Codex configuration file written in?"
+  options:
+    a: "JSON"
+    b: "XML"
+    c: "TOML"
+    d: "YAML"
+  answer: "c"
+  difficulty: "beginner"
+  explanation: >
+    Codex uses TOML format for its configuration file (config.toml). TOML
+    is designed to be easy to read and write. It uses simple key = value
+    pairs and sections marked with [brackets]. The file goes in
+    ~/.codex/config.toml for global settings or .codex/config.toml for
+    project-specific settings.
+  guide_ref: "Section 5.2"
+  tags: ["configuration", "toml"]
+
+- id: "05-003"
+  question: "Where can you put a config.toml file?"
+  options:
+    a: "Only in your home folder"
+    b: "Either ~/.codex/config.toml (global) or .codex/config.toml (per project)"
+    c: "Only in the project folder"
+    d: "Anywhere on your computer"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    There are two places for config.toml: the global location
+    (~/.codex/config.toml) which applies to all projects, and the
+    project-specific location (.codex/config.toml) which applies only to
+    that project. Project-specific settings override global settings, so
+    you can have safe defaults globally and customize per project.
+  guide_ref: "Section 5.2"
+  tags: ["configuration", "config-toml"]
+
+- id: "05-004"
+  question: "What should you include in your AGENTS.md file?"
+  options:
+    a: "Your social security number and bank details"
+    b: "Project overview, important files, rules (always do / never do), and how to test"
+    c: "Your entire project's source code"
+    d: "Nothing -- leave it empty"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    A good AGENTS.md includes: what the project is, what technology it uses,
+    where important files are, rules for the agent (things to always do and
+    never do), and how to run tests. Think of it as a new employee orientation
+    document. Keep it concise -- it takes up context space every session.
+  guide_ref: "Section 5.1"
+  tags: ["agents-md", "configuration"]
+
+- id: "05-005"
+  question: "If you have a global config with model = 'gpt-5.4-mini' and a project config with model = 'gpt-5.4', which one wins?"
+  options:
+    a: "The global config always wins"
+    b: "The project config overrides the global config"
+    c: "They cancel each other out"
+    d: "Codex asks you which one to use"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    Project-specific settings override global settings. This makes sense
+    because you might want different settings for different projects. For
+    example, a personal project might use the cheaper mini model globally,
+    but a critical work project might override that to use the full GPT-5.4.
+  guide_ref: "Section 5.2"
+  tags: ["configuration", "config-toml"]
+
+- id: "05-006"
+  question: "What is hooks.json used for?"
+  options:
+    a: "Hanging pictures on a wall"
+    b: "Configuring scripts that run automatically at specific moments during Codex's work"
+    c: "Connecting to fishing databases"
+    d: "Linking your social media accounts"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    hooks.json (.codex/hooks.json) lets you set up scripts that run
+    automatically at specific moments. For example, you could have a
+    script that runs a linter before every commit, or one that sends
+    you a notification when a task finishes. Hooks automate repetitive
+    checks and actions.
+  guide_ref: "Section 5.3"
+  tags: ["hooks", "configuration"]
+
+- id: "05-007"
+  question: "Which section of AGENTS.md is most important for preventing mistakes?"
+  options:
+    a: "The project overview section"
+    b: "The 'Things to Never Do' section"
+    c: "The technology stack section"
+    d: "The file listing section"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    The "Things to Never Do" section is critical for preventing mistakes.
+    By explicitly listing what the agent should avoid (like "never delete
+    database migration files" or "never modify the .env file"), you create
+    guardrails that prevent costly errors.
+  guide_ref: "Section 5.1"
+  tags: ["agents-md", "safety"]
+
+- id: "05-008"
+  question: "Should your AGENTS.md be as long and detailed as possible?"
+  options:
+    a: "Yes, more detail is always better"
+    b: "No, it should be concise because it takes up context space every session"
+    c: "Length does not matter at all"
+    d: "It should be exactly 100 lines"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    AGENTS.md is loaded into context at the start of every session, so
+    every word in it uses up some of your context budget. Keep it concise
+    and relevant -- include what the agent needs to know, but do not pad
+    it with unnecessary detail. You can always add more later if you find
+    the agent needs additional guidance.
+  guide_ref: "Section 5.1"
+  tags: ["agents-md", "context"]
+
+- id: "05-009"
+  question: "What are Skills in Codex?"
+  options:
+    a: "Certifications you earn by completing courses"
+    b: "Reusable capability definitions stored in .agents/skills/ with SKILL.md files"
+    c: "The programming languages Codex knows"
+    d: "Special keyboard shortcuts"
+  answer: "b"
+  difficulty: "intermediate"
+  explanation: >
+    Skills are reusable capabilities you define for Codex. Each skill lives
+    in its own folder under .agents/skills/ and has a SKILL.md file that
+    explains what the skill does and how to use it. Think of them as
+    recipes -- you write them once and can use them over and over.
+  guide_ref: "Section 5.4"
+  tags: ["skills", "configuration"]
+
+- id: "05-010"
+  question: "Can you have different configurations for different projects?"
+  options:
+    a: "No, settings are system-wide only"
+    b: "Yes, put a .codex/config.toml file in each project folder with project-specific settings"
+    c: "Only with an enterprise license"
+    d: "Yes, but only by renaming the global config each time"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    Yes! Each project can have its own .codex/config.toml with settings
+    specific to that project. These override the global settings. So a
+    personal project might use relaxed settings, while a work project uses
+    strict security settings -- without changing anything globally.
+  guide_ref: "Section 5.2"
+  tags: ["configuration", "config-toml"]
+
+- id: "05-011"
+  question: "What happens if you do not create an AGENTS.md file?"
+  options:
+    a: "Codex refuses to work"
+    b: "Codex works fine but without any project-specific context or rules"
+    c: "Your computer crashes"
+    d: "Codex creates one automatically with perfect settings"
+  answer: "b"
+  difficulty: "beginner"
+  explanation: >
+    AGENTS.md is optional. Without it, Codex still works perfectly well --
+    it just will not have any special knowledge about your project or rules
+    to follow. It is like having a new assistant start without an orientation
+    document. They can still work, but they will not know the specifics of
+    how you like things done.
+  guide_ref: "Section 5.1"
+  tags: ["agents-md", "basics"]
