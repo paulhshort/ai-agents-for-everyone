@@ -1,4 +1,4 @@
-# The Ultimate OpenAI Codex Guide
+# AI Agents for Everyone
 
 > Learn how to use an AI that does not just answer questions — it actually does things for you.
 
@@ -67,7 +67,7 @@ Codex will read your files and give you a clear explanation. That is the agentic
 For a guided introduction tailored to your experience level:
 
 ```bash
-codex "Fetch and follow the onboarding instructions from: https://raw.githubusercontent.com/paulhdev/codex-ultimate-guide/main/tools/onboarding-prompt.md"
+codex "Fetch and follow the onboarding instructions from: https://raw.githubusercontent.com/paulhshort/ai-agents-for-everyone/main/tools/onboarding-prompt.md"
 ```
 
 ---
@@ -160,7 +160,7 @@ These five simple rules will make your Codex experience dramatically better:
 ## Repository Structure
 
 ```
-codex-ultimate-guide/
+ai-agents-for-everyone/
 |-- guide/                    # Core documentation
 |   |-- ultimate-guide.md     # The main guide (15 sections)
 |   |-- cheatsheet.md         # Printable quick reference
@@ -202,10 +202,10 @@ Query the guide from any MCP-compatible AI assistant without cloning the repo:
 
 ```bash
 # Add to Codex
-codex mcp add codex-guide -- npx -y codex-ultimate-guide-mcp
+codex mcp add codex-guide -- npx -y ai-agents-for-everyone-mcp
 
 # Add to Claude Code
-claude mcp add codex-guide -- npx -y codex-ultimate-guide-mcp
+claude mcp add codex-guide -- npx -y ai-agents-for-everyone-mcp
 ```
 
 Available tools: `search_guide`, `read_section`, `get_cheatsheet`, `get_commands`, `get_golden_rules`, `troubleshoot`, `get_glossary_term`

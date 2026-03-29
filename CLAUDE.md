@@ -1,4 +1,4 @@
-# CLAUDE.md — Project Memory for Codex Ultimate Guide
+# CLAUDE.md — Project Memory for AI Agents for Everyone
 
 ## Project Overview
 This is the most comprehensive community guide for OpenAI Codex (CLI + App + Web) and GPT-5.4. It teaches the agentic paradigm — that AI can DO things, not just answer questions — to a non-technical audience.

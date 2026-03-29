@@ -64,7 +64,7 @@ export const closingSlides: Slide[] = [
     subtitle: 'Resources to continue your AI journey',
     bullets: [
       'OpenAI Codex docs — codex.openai.com — the official reference',
-      'The Codex Ultimate Guide — the companion guide to this course',
+      'AI Agents for Everyone — the companion guide to this course',
       'ChatGPT — chat.openai.com — practice your prompts for free',
       'Claude by Anthropic — claude.ai — another powerful AI to explore',
       'r/ChatGPT and r/OpenAI — community discussions and discoveries',

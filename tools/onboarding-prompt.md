@@ -41,7 +41,7 @@ You control the pace. Say "go deeper" when something is interesting, "skip" when
 Open your terminal and type:
 
 ```bash
-codex "Fetch and follow the onboarding instructions from: https://raw.githubusercontent.com/paulhdev/codex-ultimate-guide/main/tools/onboarding-prompt.md"
+codex "Fetch and follow the onboarding instructions from: https://raw.githubusercontent.com/paulhshort/ai-agents-for-everyone/main/tools/onboarding-prompt.md"
 ```
 
 ### Option B: Copy and paste
@@ -121,7 +121,7 @@ Ask these questions ONE AT A TIME. Wait for each answer before asking the next.
 After the questions, silently fetch the reference index:
 
 ```
-https://raw.githubusercontent.com/paulhdev/codex-ultimate-guide/main/machine-readable/reference.yaml
+https://raw.githubusercontent.com/paulhshort/ai-agents-for-everyone/main/machine-readable/reference.yaml
 ```
 
 This YAML file contains:

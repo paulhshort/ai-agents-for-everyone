@@ -17,7 +17,7 @@ The AI assistant does all the work. You just answer a couple of questions and re
 ### Option A: One command
 
 ```bash
-codex "Fetch and follow the audit instructions from: https://raw.githubusercontent.com/paulhdev/codex-ultimate-guide/main/tools/audit-prompt.md"
+codex "Fetch and follow the audit instructions from: https://raw.githubusercontent.com/paulhshort/ai-agents-for-everyone/main/tools/audit-prompt.md"
 ```
 
 ### Option B: Copy and paste

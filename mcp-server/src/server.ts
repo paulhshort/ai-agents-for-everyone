@@ -77,7 +77,7 @@ function loadReference(): ReferenceData {
 // ---------- Content Fetching ----------
 
 const GITHUB_RAW_BASE =
-  "https://raw.githubusercontent.com/paulhdev/codex-ultimate-guide/main";
+  "https://raw.githubusercontent.com/paulhshort/ai-agents-for-everyone/main";
 
 const contentCache = new Map<string, string>();
 
@@ -248,7 +248,7 @@ export function createServer(): McpServer {
   const ref = loadReference();
 
   const server = new McpServer({
-    name: "codex-ultimate-guide",
+    name: "ai-agents-for-everyone",
     version: ref.version,
   });
 

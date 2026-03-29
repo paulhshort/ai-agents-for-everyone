@@ -1,11 +1,11 @@
 {
-  "name": "codex-ultimate-guide-mcp",
+  "name": "ai-agents-for-everyone-mcp",
   "version": "0.2.0",
-  "description": "MCP server for querying The Ultimate OpenAI Codex Guide — learn the agentic paradigm",
+  "description": "MCP server for querying AI Agents for Everyone — learn the agentic paradigm",
   "type": "module",
   "main": "dist/index.js",
   "bin": {
-    "codex-ultimate-guide-mcp": "dist/index.js"
+    "ai-agents-for-everyone-mcp": "dist/index.js"
   },
   "scripts": {
     "build": "tsup",

@@ -1,50 +1,50 @@
-# The Ultimate OpenAI Codex Guide
+# AI Agents for Everyone
 > The most comprehensive guide for OpenAI Codex — teaching the agentic paradigm to everyone, including people who are new to AI.
 
 Codex is an AI agent that can DO things — edit files, write code, run commands, fix bugs — not just answer questions. This guide helps anyone learn to use it effectively and safely.
 
 ## Core Resources
-- [Main Guide](https://github.com/paulhdev/codex-ultimate-guide/blob/main/guide/ultimate-guide.md): Complete documentation covering 15 sections from installation to advanced patterns
-- [Cheat Sheet](https://github.com/paulhdev/codex-ultimate-guide/blob/main/guide/cheatsheet.md): Printable one-page quick reference
-- [Reference Index](https://github.com/paulhdev/codex-ultimate-guide/blob/main/machine-readable/reference.yaml): Machine-readable YAML navigation index for all topics
+- [Main Guide](https://github.com/paulhshort/ai-agents-for-everyone/blob/main/guide/ultimate-guide.md): Complete documentation covering 15 sections from installation to advanced patterns
+- [Cheat Sheet](https://github.com/paulhshort/ai-agents-for-everyone/blob/main/guide/cheatsheet.md): Printable one-page quick reference
+- [Reference Index](https://github.com/paulhshort/ai-agents-for-everyone/blob/main/machine-readable/reference.yaml): Machine-readable YAML navigation index for all topics
 
 ## Architecture & Concepts
-- [Architecture](https://github.com/paulhdev/codex-ultimate-guide/blob/main/guide/core/architecture.md): How the agentic loop works (read, plan, act, verify)
-- [Glossary](https://github.com/paulhdev/codex-ultimate-guide/blob/main/guide/core/glossary.md): Plain-language definitions of all terms
-- [Settings Reference](https://github.com/paulhdev/codex-ultimate-guide/blob/main/guide/core/settings-reference.md): Complete settings documentation
-- [Methodologies](https://github.com/paulhdev/codex-ultimate-guide/blob/main/guide/core/methodologies.md): Proven approaches for working with Codex
+- [Architecture](https://github.com/paulhshort/ai-agents-for-everyone/blob/main/guide/core/architecture.md): How the agentic loop works (read, plan, act, verify)
+- [Glossary](https://github.com/paulhshort/ai-agents-for-everyone/blob/main/guide/core/glossary.md): Plain-language definitions of all terms
+- [Settings Reference](https://github.com/paulhshort/ai-agents-for-everyone/blob/main/guide/core/settings-reference.md): Complete settings documentation
+- [Methodologies](https://github.com/paulhshort/ai-agents-for-everyone/blob/main/guide/core/methodologies.md): Proven approaches for working with Codex
 
 ## Security
-- [Security Hardening](https://github.com/paulhdev/codex-ultimate-guide/blob/main/guide/security/security-hardening.md): How to keep your setup safe
-- [Sandbox Modes](https://github.com/paulhdev/codex-ultimate-guide/blob/main/guide/security/sandbox-modes.md): Read-only, workspace-write, and full-access explained
-- [Data Privacy](https://github.com/paulhdev/codex-ultimate-guide/blob/main/guide/security/data-privacy.md): How your data is handled
-- [Enterprise Governance](https://github.com/paulhdev/codex-ultimate-guide/blob/main/guide/security/enterprise-governance.md): Organization-wide policies and controls
+- [Security Hardening](https://github.com/paulhshort/ai-agents-for-everyone/blob/main/guide/security/security-hardening.md): How to keep your setup safe
+- [Sandbox Modes](https://github.com/paulhshort/ai-agents-for-everyone/blob/main/guide/security/sandbox-modes.md): Read-only, workspace-write, and full-access explained
+- [Data Privacy](https://github.com/paulhshort/ai-agents-for-everyone/blob/main/guide/security/data-privacy.md): How your data is handled
+- [Enterprise Governance](https://github.com/paulhshort/ai-agents-for-everyone/blob/main/guide/security/enterprise-governance.md): Organization-wide policies and controls
 
 ## Workflows
-- [Bug Fixing](https://github.com/paulhdev/codex-ultimate-guide/blob/main/guide/workflows/bug-fixing-workflow.md): Step-by-step bug fix workflow
-- [Feature Development](https://github.com/paulhdev/codex-ultimate-guide/blob/main/guide/workflows/feature-development-workflow.md): Building new features with Codex
-- [Exploration](https://github.com/paulhdev/codex-ultimate-guide/blob/main/guide/workflows/exploration-workflow.md): Learning and exploring a codebase
+- [Bug Fixing](https://github.com/paulhshort/ai-agents-for-everyone/blob/main/guide/workflows/bug-fixing-workflow.md): Step-by-step bug fix workflow
+- [Feature Development](https://github.com/paulhshort/ai-agents-for-everyone/blob/main/guide/workflows/feature-development-workflow.md): Building new features with Codex
+- [Exploration](https://github.com/paulhshort/ai-agents-for-everyone/blob/main/guide/workflows/exploration-workflow.md): Learning and exploring a codebase
 
 ## Interactive Tools
-- [Onboarding Prompt](https://github.com/paulhdev/codex-ultimate-guide/blob/main/tools/onboarding-prompt.md): Personalized guided tour (adaptive, 5-120 min)
-- [Setup Audit](https://github.com/paulhdev/codex-ultimate-guide/blob/main/tools/audit-prompt.md): Check your Codex configuration
-- [Context Audit](https://github.com/paulhdev/codex-ultimate-guide/blob/main/tools/context-audit-prompt.md): Optimize how you use context
+- [Onboarding Prompt](https://github.com/paulhshort/ai-agents-for-everyone/blob/main/tools/onboarding-prompt.md): Personalized guided tour (adaptive, 5-120 min)
+- [Setup Audit](https://github.com/paulhshort/ai-agents-for-everyone/blob/main/tools/audit-prompt.md): Check your Codex configuration
+- [Context Audit](https://github.com/paulhshort/ai-agents-for-everyone/blob/main/tools/context-audit-prompt.md): Optimize how you use context
 
 ## Audience-Specific Guides
-- [For CTOs](https://github.com/paulhdev/codex-ultimate-guide/blob/main/docs/for-cto.md): Adoption strategy, risks, security, cost
-- [For Tech Leads](https://github.com/paulhdev/codex-ultimate-guide/blob/main/docs/for-tech-leads.md): Team setup, review process, training
-- [For Product Managers](https://github.com/paulhdev/codex-ultimate-guide/blob/main/docs/for-product-managers.md): Velocity impact, planning, stakeholder communication
-- [For Beginners](https://github.com/paulhdev/codex-ultimate-guide/blob/main/docs/for-beginners.md): Complete beginner FAQ — what is AI, what is an agent, is it safe
+- [For CTOs](https://github.com/paulhshort/ai-agents-for-everyone/blob/main/docs/for-cto.md): Adoption strategy, risks, security, cost
+- [For Tech Leads](https://github.com/paulhshort/ai-agents-for-everyone/blob/main/docs/for-tech-leads.md): Team setup, review process, training
+- [For Product Managers](https://github.com/paulhshort/ai-agents-for-everyone/blob/main/docs/for-product-managers.md): Velocity impact, planning, stakeholder communication
+- [For Beginners](https://github.com/paulhshort/ai-agents-for-everyone/blob/main/docs/for-beginners.md): Complete beginner FAQ — what is AI, what is an agent, is it safe
 
 ## Examples
-- [Agent Templates](https://github.com/paulhdev/codex-ultimate-guide/blob/main/examples/agents/): Ready-to-use agent definitions
-- [Custom Commands](https://github.com/paulhdev/codex-ultimate-guide/blob/main/examples/commands/): Custom slash command examples
-- [Hook Scripts](https://github.com/paulhdev/codex-ultimate-guide/blob/main/examples/hooks/): Automation hook examples
-- [Config Files](https://github.com/paulhdev/codex-ultimate-guide/blob/main/examples/configs/): Configuration templates
-- [Skills](https://github.com/paulhdev/codex-ultimate-guide/blob/main/examples/skills/): Custom skill examples
+- [Agent Templates](https://github.com/paulhshort/ai-agents-for-everyone/blob/main/examples/agents/): Ready-to-use agent definitions
+- [Custom Commands](https://github.com/paulhshort/ai-agents-for-everyone/blob/main/examples/commands/): Custom slash command examples
+- [Hook Scripts](https://github.com/paulhshort/ai-agents-for-everyone/blob/main/examples/hooks/): Automation hook examples
+- [Config Files](https://github.com/paulhshort/ai-agents-for-everyone/blob/main/examples/configs/): Configuration templates
+- [Skills](https://github.com/paulhshort/ai-agents-for-everyone/blob/main/examples/skills/): Custom skill examples
 
 ## MCP Server
-- Install: `npx -y codex-ultimate-guide-mcp`
+- Install: `npx -y ai-agents-for-everyone-mcp`
 - Tools: search_guide, read_section, get_cheatsheet, get_commands, get_golden_rules, troubleshoot, get_glossary_term
 - Query the guide from any MCP-compatible AI assistant without cloning the repo
 

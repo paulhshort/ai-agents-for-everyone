@@ -16,10 +16,10 @@
  * - get_glossary_term: Look up a term definition
  *
  * Install in Codex:
- *   codex mcp add codex-guide -- npx -y codex-ultimate-guide-mcp
+ *   codex mcp add codex-guide -- npx -y ai-agents-for-everyone-mcp
  *
  * Install in Claude Code:
- *   claude mcp add codex-guide -- npx -y codex-ultimate-guide-mcp
+ *   claude mcp add codex-guide -- npx -y ai-agents-for-everyone-mcp
  */
 
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";

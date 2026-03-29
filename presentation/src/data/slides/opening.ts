@@ -29,7 +29,7 @@ export const openingSlides: Slide[] = [
       'Understand how AI actually works — tokens, context windows, and why it sometimes makes things up',
       'Know the difference between a chatbot and an AI agent (and why it matters)',
       'Write effective prompts using the WHAT-WHERE-HOW-VERIFY formula',
-      'Use Codex to build real projects from scratch — safely and responsibly',
+      'Use Codex to organize files, review writing, research topics, and automate tasks — safely and responsibly',
       'Be in the top 1% of people who truly understand AI agents',
     ],
     animation: 'reveal-steps',

@@ -56,7 +56,7 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 - Initial project scaffold
-- Directory structure mirroring the Ultimate Claude Code Guide
+- Directory structure mirroring the Ultimate Claude Code Guide (original template)
 - Guide outline with 15 sections adapted for OpenAI Codex
 - Machine-readable reference.yaml index (with TODOs)
 - Example templates structure

@@ -1,5 +1,5 @@
 {
-  "name": "codex-course-presentation",
+  "name": "ai-agents-course-presentation",
   "version": "1.0.0",
   "private": true,
   "description": "Interactive AI course presentation platform with Three.js visualizations and live workbench",

@@ -773,12 +773,12 @@ hook_events:
 ecosystem:
   guide:
     name: "The Ultimate OpenAI Codex Guide"
-    url: "https://github.com/paulhdev/codex-ultimate-guide"
+    url: "https://github.com/paulhshort/ai-agents-for-everyone"
     audience: "Everyone — especially people new to AI and the agentic paradigm"
     mission: "Teach people that AI can DO things, not just answer questions"
   mcp_server:
-    name: "codex-ultimate-guide-mcp"
-    install: "npx -y codex-ultimate-guide-mcp"
+    name: "ai-agents-for-everyone-mcp"
+    install: "npx -y ai-agents-for-everyone-mcp"
     purpose: "Query the guide from any AI assistant without cloning the repo"
   complementary:
     - name: "OpenAI Codex Documentation"

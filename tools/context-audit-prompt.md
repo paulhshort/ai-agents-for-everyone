@@ -17,7 +17,7 @@ This tool checks how you are using context and gives you personalized tips to us
 ### Option A: One command
 
 ```bash
-codex "Fetch and follow the context audit from: https://raw.githubusercontent.com/paulhdev/codex-ultimate-guide/main/tools/context-audit-prompt.md"
+codex "Fetch and follow the context audit from: https://raw.githubusercontent.com/paulhshort/ai-agents-for-everyone/main/tools/context-audit-prompt.md"
 ```
 
 ### Option B: Copy and paste
