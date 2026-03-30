@@ -250,7 +250,7 @@ The agent CANNOT:
 **This is the balanced mode.** The agent can do useful work, but
 it asks for permission before doing anything risky.
 
-### Level 3: Full Access ("Here's my unlock code, handle it")
+### Level 3: Danger-Full-Access ("Here's my unlock code, handle it")
 
 ```
   "I trust you. Here's my phone, do what you
@@ -564,7 +564,7 @@ tool becomes easy to pick up.**
 3. **Tools** (file access, terminal, web search, MCP) give agents the ability
    to interact with the real world.
 
-4. **Autonomy levels** (read-only, limited write, full access) let you control
+4. **Autonomy levels** (read-only, workspace-write, danger-full-access) let you control
    how much freedom the agent has.
 
 5. **MCP** is the standard that lets agents connect to external apps and

@@ -48,7 +48,7 @@ model = "gpt-5.4"
 #                   (Not recommended for this safe configuration!)
 #
 # You can also use these when launching Codex:
-#   codex --full-auto    (same as "never" -- no approval needed)
+#   codex --full-auto    (auto-approves non-network ops in workspace-write)
 #   codex --yolo         (same as "never" but even for network access)
 approval = "untrusted"
 

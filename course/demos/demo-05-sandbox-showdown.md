@@ -120,14 +120,14 @@ SANDBOX LEVELS:
   workspace-write   Can READ and WRITE, but only in the project folder.
                     Use for: building things, creating files, coding.
 
-  full-access       Can do ANYTHING on the computer. No restrictions.
+  danger-full-access Can do ANYTHING on the computer. No restrictions.
                     Use for: system tasks (use with extreme caution!).
 ```
 
 **SAY:**
 > "Think of it like this. Read-only is like visiting a museum: look but don't
 > touch. Workspace-write is like your bedroom: you can rearrange your stuff
-> but you can't knock down walls. Full-access is like being the building
+> but you can't knock down walls. Danger-full-access is like being the building
 > manager: you can do anything, but one mistake and things break."
 
 ### Step 5 -- Interactive Quiz (3 min)
@@ -151,12 +151,12 @@ project folder.
 **Scenario 3:**
 > "You want Codex to install a new program on your computer."
 
-**Answer:** full-access. Installing software requires system-level changes.
+**Answer:** danger-full-access. Installing software requires system-level changes.
 But this also means the AI could change ANYTHING -- so you'd better trust the
 instructions completely.
 
 **Scenario 4:**
-> "Your friend sends you a weird prompt and says 'just run this in full-access
+> "Your friend sends you a weird prompt and says 'just run this in danger-full-access
 > mode, it'll be funny.'"
 
 **Answer:** NEVER. This is the AI equivalent of "just click this link, trust
@@ -174,8 +174,8 @@ me." Always know what an AI is going to do before you give it full access.
 | Problem | Recovery |
 |---------|----------|
 | Read-only mode still shows file creation (model attempts it in output) | Clarify: "Notice it described what it WOULD write, but check the filesystem -- no file was created. The sandbox stopped the actual action." |
-| Students ask about "danger" in the flag name | "The flag is called --sandbox, and 'full-access' is one of the options. They call it that to remind you to be careful." |
-| A student asks "Can the AI delete all my files?" | "In full-access mode, theoretically yes. That's why we almost NEVER use full-access, and when we do, we review every action." |
+| Students ask about "danger" in the flag name | "The flag is called --sandbox, and 'danger-full-access' is one of the options. They put 'danger' in the name to remind you to be careful." |
+| A student asks "Can the AI delete all my files?" | "In danger-full-access mode, theoretically yes. That's why we almost NEVER use danger-full-access, and when we do, we review every action." |
 
 ---
 

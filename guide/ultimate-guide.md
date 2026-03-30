@@ -1133,6 +1133,146 @@ Slash commands are special instructions you type during a Codex session. They st
 
 **Analogy:** Like checking which apps are installed on your phone.
 
+### /fast — Toggle Fast Mode
+
+```
+/fast
+```
+
+**What it does:** Toggles Fast mode on or off for the GPT-5.4 model. When enabled, Codex responds more quickly but with less depth. Useful for rapid iteration on simple tasks.
+
+**When to use it:** When you want faster responses and do not need deep reasoning. When you are doing straightforward tasks where speed matters more than thoroughness.
+
+### /personality — Change Communication Style
+
+```
+/personality
+```
+
+**What it does:** Changes how Codex communicates with you. Options include friendly, pragmatic, or none. This does not affect what Codex does, only how it talks to you.
+
+**When to use it:** When you prefer a different tone. Some people like friendly explanations, others prefer terse, pragmatic answers.
+
+### /new — Start New Conversation
+
+```
+/new
+```
+
+**What it does:** Starts a brand new conversation without leaving your terminal. This is like `/clear` but emphasizes that you are beginning a fresh task.
+
+**When to use it:** When you are done with one task and want to move to something completely different, without closing and reopening Codex.
+
+### /copy — Copy Latest Output
+
+```
+/copy
+```
+
+**What it does:** Copies the most recent Codex output to your clipboard so you can paste it elsewhere.
+
+**When to use it:** When Codex generated something useful (a command, a code snippet, an explanation) and you want to paste it into another app.
+
+### /mention — Attach Files to Conversation
+
+```
+/mention
+```
+
+**What it does:** Attaches specific files or folders to the conversation so Codex can see their contents. Similar to using the `@` shortcut, but as a slash command.
+
+**When to use it:** When you want to bring a specific file into the conversation for Codex to read and work with.
+
+### /apps — Browse Connectors
+
+```
+/apps
+```
+
+**What it does:** Opens a browser of available connectors and integrations you can add to your Codex session.
+
+**When to use it:** When you want to discover and add new capabilities to Codex, like connecting to databases, APIs, or other services.
+
+### /ps — Show Background Terminals
+
+```
+/ps
+```
+
+**What it does:** Shows all background terminal processes that Codex is currently running. This helps you see what is happening behind the scenes.
+
+**When to use it:** When you suspect Codex has background tasks running, or when you want to monitor long-running operations.
+
+### /statusline — Configure Footer
+
+```
+/statusline
+```
+
+**What it does:** Configures the items displayed in the TUI footer bar at the bottom of the terminal. You can customize what information is shown.
+
+**When to use it:** When you want to personalize the information displayed at the bottom of the Codex interface.
+
+### /debug-config — Print Config Precedence
+
+```
+/debug-config
+```
+
+**What it does:** Prints the configuration layer precedence, showing which settings come from which config files and which take priority.
+
+**When to use it:** When you are confused about why a setting has a certain value. This shows you exactly where each setting is coming from.
+
+### /experimental — Toggle Experimental Features
+
+```
+/experimental
+```
+
+**What it does:** Toggles experimental features on or off. Experimental features are new capabilities that are still being tested and may change.
+
+**When to use it:** When you want to try new features before they are fully released.
+
+### /feedback — Submit Diagnostics
+
+```
+/feedback
+```
+
+**What it does:** Submits logs and diagnostic information to the Codex team. This helps them improve the product based on real usage.
+
+**When to use it:** When you encounter a bug or unexpected behavior and want to help the developers fix it.
+
+### /logout — Sign Out
+
+```
+/logout
+```
+
+**What it does:** Signs you out of your current Codex session and clears your authentication credentials.
+
+**When to use it:** When you are done using Codex on a shared computer, or when you need to switch accounts.
+
+### /sandbox-add-read-dir — Grant Read Access (Windows)
+
+```
+/sandbox-add-read-dir
+```
+
+**What it does:** On Windows, grants the sandbox read access to a specific directory. This is useful when the default sandbox restrictions prevent Codex from reading files it needs.
+
+**When to use it:** On Windows, when Codex cannot read files in a directory you need it to access.
+
+### /quit or /exit — Exit CLI
+
+```
+/quit
+```
+
+**What it does:** Exits the Codex CLI and returns you to your normal terminal prompt. Same as closing the application.
+
+**When to use it:** When you are done working with Codex and want to close it cleanly.
+
 ## Keyboard Shortcuts
 
 These keyboard combinations let you quickly control Codex without typing commands:
@@ -1181,6 +1321,30 @@ Type `!` at the start of your input to run a command directly in your terminal, 
 ```
 This runs the `pwd` command (print working directory) and shows your current folder location.
 
+### Ctrl+L — Clear Screen
+
+Press Ctrl and L at the same time to clear the terminal screen. This does not erase your conversation history, it just cleans up the visual display.
+
+**When to use it:** When your screen is cluttered with old output and you want a clean view.
+
+### Tab — Queue Follow-Up Prompt
+
+Press Tab to queue up a follow-up prompt while Codex is still working. Your prompt will be sent as soon as the current task finishes.
+
+**When to use it:** When you already know what you want Codex to do next and do not want to wait for it to finish before typing.
+
+### Enter (While Running) — Inject Instruction
+
+Press Enter while Codex is running to inject a new instruction into the running task. This lets you steer Codex mid-task without canceling it.
+
+**When to use it:** When you realize Codex is heading in the wrong direction and you want to guide it without starting over.
+
+### Up/Down Arrows — Navigate Draft History
+
+Use the Up and Down arrow keys to scroll through your previous prompts. This lets you recall and reuse earlier requests.
+
+**When to use it:** When you want to repeat or modify a previous prompt without retyping it.
+
 ## CLI Startup Flags
 
 When you launch Codex from the terminal, you can add special options (called flags) that change how it behaves for that session. These go after the `codex` command:
@@ -1199,9 +1363,9 @@ Starts Codex with a specific model. Same as using `/model` during a session, but
 codex --full-auto
 ```
 
-Starts Codex in "full auto" mode. In this mode, Codex can read and write files in your project folder without asking for permission. It still can't access the network or run unrestricted commands. This is a good balance between convenience and safety.
+Starts Codex in "full auto" mode. In this mode, file reading, file editing, and working-directory commands are auto-approved without prompting you. Network access still requires your approval. It is equivalent to `approval_policy = "never"` for non-network operations with `sandbox = "workspace-write"`.
 
-**Think of it like:** Telling your assistant, "Go ahead and work in my office. You can use anything on my desk, but don't go into other rooms or use the phone."
+**Think of it like:** Telling your assistant, "Go ahead and work in my office. You can use anything on my desk and rearrange furniture without asking, but if you need to make a phone call, check with me first."
 
 ### --sandbox — Set Safety Level
 
@@ -1729,7 +1893,7 @@ Codex CANNOT:
 
 **Analogy:** Like giving a contractor access to the room being renovated, but not the rest of the house. They can bring in materials, move things around, and do their work in that room, but they stay in their designated area.
 
-### Full Access Mode — "No Restrictions"
+### Danger-Full-Access Mode — "No Restrictions"
 
 ```toml
 sandbox = "danger-full-access"
@@ -1805,9 +1969,10 @@ codex --full-auto
 
 This is equivalent to:
 - Sandbox: `workspace-write`
-- Approval: `on-request`
+- Approval: `never` for non-network operations (file reads, edits, and working-directory commands are auto-approved)
+- Network access still requires your approval
 
-It's a good balanced setting. Codex can work freely within your project folder, asks about anything unusual, but doesn't bother you for routine operations. Think of it as the "cruise control" of Codex, comfortable, efficient, and still safe.
+Codex can read, edit, and run commands within your project folder without asking. It only stops to ask if it needs to access the network. Think of it as the "cruise control" of Codex -- comfortable and efficient, with a safety check only for network operations.
 
 ### --yolo
 
@@ -2806,7 +2971,7 @@ Especially when starting out, establish a practice of reviewing Codex's changes 
 ### 5. Start Conservative
 
 Begin with stricter safety settings for team projects:
-- `sandbox = "workspace-write"` (not full access)
+- `sandbox = "workspace-write"` (not danger-full-access)
 - `approval_policy = "on-request"` (not never)
 
 Loosen settings only after the team is comfortable and has good review practices in place.
@@ -3252,7 +3417,7 @@ codex login --with-api-key           # Sign in with API key
 ### Starting Codex
 ```bash
 codex                                # Interactive session
-codex --full-auto                    # Auto mode (workspace-write + on-request)
+codex --full-auto                    # Auto mode (workspace-write, auto-approve non-network ops)
 codex --model gpt-5.4-mini           # Use a specific model
 codex -p profilename                 # Use a configuration profile
 codex exec "your task here"          # One-shot, non-interactive
@@ -3264,21 +3429,39 @@ codex cloud "your task here"         # Run in the cloud
 |---|---|
 | `/clear` | Fresh start, erase conversation |
 | `/compact` | Summarize conversation to save space |
+| `/copy` | Copy latest output to clipboard |
 | `/diff` | Show all file changes |
 | `/model` | Switch AI model |
+| `/fast` | Toggle Fast mode for GPT-5.4 |
 | `/plan` | Preview mode (plan without executing) |
 | `/status` | Session info and token usage |
 | `/review` | Have Codex review its changes |
 | `/init` | Generate AGENTS.md |
 | `/permissions` | Manage safety settings |
 | `/mcp` | List connected tools |
+| `/mention` | Attach files or folders to conversation |
+| `/new` | Start new conversation without leaving terminal |
+| `/personality` | Change communication style (friendly, pragmatic, none) |
+| `/apps` | Browse and insert connectors |
+| `/ps` | Show background terminals |
+| `/statusline` | Configure TUI footer items |
+| `/debug-config` | Print config layer precedence |
+| `/experimental` | Toggle experimental features |
+| `/feedback` | Submit logs and diagnostics |
+| `/logout` | Sign out |
+| `/sandbox-add-read-dir` | Grant sandbox read access on Windows |
+| `/quit` or `/exit` | Exit CLI |
 
 ### Keyboard Shortcuts
 | Keys | Action |
 |---|---|
 | `Ctrl+C` | Cancel current action |
 | `Ctrl+G` | Open full text editor for prompt |
+| `Ctrl+L` | Clear screen |
 | `Esc Esc` | Edit previous prompt |
+| `Tab` | Queue follow-up prompt |
+| `Enter` (while running) | Inject instruction into running task |
+| `Up/Down` arrows | Navigate draft history |
 | `@` | Fuzzy file search |
 | `!` | Run shell command directly |
 

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ChevronLeft,
@@ -48,7 +49,9 @@ export function SlideControls({
   showNotes,
   showControls,
 }: SlideControlsProps) {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   return (
     <AnimatePresence>
@@ -119,10 +122,12 @@ export function SlideControls({
 
               {/* Theme toggle */}
               <ControlButton
-                tooltip={theme === "dark" ? "Light Mode" : "Dark Mode"}
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                tooltip={resolvedTheme === "dark" ? "Light Mode" : "Dark Mode"}
+                onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
               >
-                {theme === "dark" ? (
+                {!mounted ? (
+                  <Sun className="h-4 w-4" />
+                ) : resolvedTheme === "dark" ? (
                   <Sun className="h-4 w-4" />
                 ) : (
                   <Moon className="h-4 w-4" />

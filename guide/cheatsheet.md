@@ -99,7 +99,7 @@ These control what Codex is allowed to do on your computer:
 |---|---|---|
 | Read-only (safest) | Look at files, but not change anything | Exploring, learning, reviewing |
 | Workspace-write | Read and change files in your project folder only | Most everyday tasks |
-| Full access (most powerful) | Read, write, install software, access the internet | Advanced tasks that need full control |
+| Danger-full-access (most powerful) | Read, write, install software, access the internet | Advanced tasks that need full control |
 
 ---
 
@@ -110,6 +110,7 @@ These control what Codex is allowed to do on your computer:
 | GPT-5.4 (default) | General-purpose work, best overall quality |
 | GPT-5.4-mini | Quick tasks where speed matters more than depth |
 | GPT-5.3-codex | Specialized for code-related work |
+| GPT-5.3-codex-spark | Near-instant coding, ChatGPT Pro only |
 
 ---
 

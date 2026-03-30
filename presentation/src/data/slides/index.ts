@@ -9,6 +9,7 @@ import { safetyMattersSlides } from './safety-matters';
 import { day1RecapSlides } from './day-1-recap';
 import { day2RecapSlides } from './day-2-recap';
 import { closingSlides } from './closing';
+import { pluginsAutomationsSlides } from './plugins-automations';
 
 /**
  * Maps slideFile keys (from course-structure.ts) to their slide arrays.
@@ -22,6 +23,7 @@ export const slideDecks: Record<string, Slide[]> = {
   'context-engineering': contextEngineeringSlides,
   'agent-patterns': agentPatternsSlides,
   'safety-matters': safetyMattersSlides,
+  'plugins-automations': pluginsAutomationsSlides,
   'day-1-recap': day1RecapSlides,
   'day-2-recap': day2RecapSlides,
   'closing': closingSlides,
@@ -41,6 +43,7 @@ export {
   contextEngineeringSlides,
   agentPatternsSlides,
   safetyMattersSlides,
+  pluginsAutomationsSlides,
   day1RecapSlides,
   day2RecapSlides,
   closingSlides,

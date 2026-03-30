@@ -43,15 +43,15 @@ This is ideal for:
 - Getting explanations about existing files
 - Reviewing code or documents without risk
 
-### When Full Access Is Needed
+### When Danger-Full-Access Is Needed
 
-Some tasks genuinely require full access (installing software, downloading files, running tests that need network access). Use it sparingly:
+Some tasks genuinely require danger-full-access (installing software, downloading files, running tests that need network access). Use it sparingly:
 
 ```toml
-sandbox = "full-access"
+sandbox = "danger-full-access"
 ```
 
-When using full access, pair it with a strict approval policy (see below).
+When using danger-full-access, pair it with a strict approval policy (see below).
 
 ---
 
@@ -95,7 +95,7 @@ By default, Codex in `workspace-write` mode has no internet access. This is an i
 - Data being sent to unknown servers
 - Codex making changes based on potentially compromised web content
 
-If you need internet access for a specific task, switch to `full-access` mode temporarily, complete the task, then switch back.
+If you need internet access for a specific task, switch to `danger-full-access` mode temporarily, complete the task, then switch back.
 
 **Best practice:** Keep network disabled for most work. Enable it only when the task specifically requires it.
 

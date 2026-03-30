@@ -104,8 +104,8 @@ If you prefer to run Codex natively on Windows without WSL2, it will still work 
 - Web-related MCP servers do not work
 
 **The workaround:**
-- If your task requires internet access, switch to `full-access` sandbox mode: `codex --sandbox full-access`
-- Be aware that full-access mode removes many safety restrictions, so only use it when you trust the task
+- If your task requires internet access, switch to `danger-full-access` sandbox mode: `codex --sandbox danger-full-access`
+- Be aware that danger-full-access mode removes many safety restrictions, so only use it when you trust the task
 - For tasks that only occasionally need the internet, you can do the internet-dependent steps manually and let Codex handle the rest in workspace-write mode
 
 ---

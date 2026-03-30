@@ -69,10 +69,10 @@ sandbox = "workspace-write"
 
 ---
 
-### 3. Full-Access Mode (Most Powerful, Least Protected)
+### 3. Danger-Full-Access Mode (Most Powerful, Least Protected)
 
 ```toml
-sandbox = "full-access"
+sandbox = "danger-full-access"
 ```
 
 **What Codex can do:**
@@ -93,13 +93,13 @@ sandbox = "full-access"
 
 **Analogy:** Like giving your contractor the master key to the entire building plus a company credit card. Powerful, but you need to trust them.
 
-**Warning:** Only use full-access mode when the task genuinely requires it, and consider pairing it with a strict approval policy (`approval_policy = "untrusted"`) so Codex asks before every action.
+**Warning:** Only use danger-full-access mode when the task genuinely requires it, and consider pairing it with a strict approval policy (`approval_policy = "untrusted"`) so Codex asks before every action.
 
 ---
 
 ## Side-by-Side Comparison
 
-| Capability | Read-Only | Workspace-Write | Full Access |
+| Capability | Read-Only | Workspace-Write | Danger-Full-Access |
 |---|---|---|---|
 | Read files in your project | Yes | Yes | Yes |
 | Read files outside your project | Limited | Limited | Yes |
@@ -177,7 +177,7 @@ Network access (the ability to connect to the internet) deserves special attenti
 - Running tests that call web services
 
 **How to enable it:**
-Switch to `full-access` sandbox mode. There is no way to enable network access in workspace-write mode; this is intentional.
+Switch to `danger-full-access` sandbox mode. There is no way to enable network access in workspace-write mode; this is intentional.
 
 ---
 
@@ -192,11 +192,11 @@ Are you just looking at files or asking questions?
 Are you making changes to files in your project?
   Does the task need internet access?
     No  --> Use workspace-write (the default)
-    Yes --> Use full-access (with approval_policy = "untrusted")
+    Yes --> Use danger-full-access (with approval_policy = "untrusted")
 
 Are you doing something that affects your whole system?
   (installing software, changing system settings)
-  --> Use full-access (with approval_policy = "untrusted")
+  --> Use danger-full-access (with approval_policy = "untrusted")
 ```
 
 **General rule:** Start with the most restrictive mode that lets you accomplish your task. You can always switch to a less restrictive mode if needed. Going the other direction (starting wide open and trying to lock down later) is much harder.
@@ -212,7 +212,7 @@ Add the flag when starting Codex:
 ```
 codex --sandbox read-only
 codex --sandbox workspace-write
-codex --sandbox full-access
+codex --sandbox danger-full-access
 ```
 
 ### As a Default (Personal Setting)

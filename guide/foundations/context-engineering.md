@@ -249,6 +249,91 @@ the oldest parts of the conversation.
 
 ---
 
+## The Official Codex Prompt Framework
+
+Codex has an official framework for writing great prompts. It
+breaks every request into four parts. Here it is:
+
+| Part | What It Means | Example |
+|------|--------------|---------|
+| **Goal** | What you are building or changing | "Create a summary of this week's meeting notes" |
+| **Context** | Relevant files, folders, and docs | "The notes are in `/meetings/march/`. Use `@meetings/march` to point Codex at them." |
+| **Constraints** | Standards, rules, safety requirements | "Use bullet points, keep it under 300 words, follow our team template" |
+| **Done-when criteria** | How you will know it is complete | "The summary covers all 4 meetings, includes action items, and is saved as `weekly-summary.md`" |
+
+### Using @mention to Point at Specific Files
+
+One powerful Codex feature is the `@mention` syntax. Instead
+of describing where files are, you point directly at them:
+
+```
+"Summarize the notes in @meetings/march/monday.md and
+ @meetings/march/wednesday.md. Follow the format in
+ @templates/summary-template.md."
+```
+
+The `@` symbol tells Codex exactly which files to read. No
+ambiguity, no guessing.
+
+### How This Maps to Our WHAT-WHERE-HOW-VERIFY Formula
+
+If you have been following this guide, you already know the
+**WHAT-WHERE-HOW-VERIFY** formula for writing clear prompts.
+The official Codex framework maps directly to it:
+
+```
+Our Formula          Codex Framework       What It Covers
+-----------          ---------------       ---------------
+WHAT            ≈    Goal                  What are you trying to accomplish?
+WHERE           ≈    Context               Which files, folders, and docs matter?
+HOW             ≈    Constraints           What rules and standards apply?
+VERIFY          ≈    Done-when criteria    How do you know it worked?
+```
+
+They are the same idea with different labels. The Codex
+framework uses slightly different words, but the structure is
+identical:
+
+- **WHAT = Goal** -- Both answer: "What should the AI do?"
+- **WHERE = Context** -- Both answer: "What information does
+  the AI need?" (Codex adds the `@mention` shortcut for
+  pointing at specific files.)
+- **HOW = Constraints** -- Both answer: "What rules should
+  the AI follow?"
+- **VERIFY = Done-when** -- Both answer: "How will I know
+  the result is correct?"
+
+### Putting It All Together
+
+Here is a complete prompt using the Codex framework:
+
+```
+Goal: Compile a weekly progress report for my research project.
+
+Context: The relevant notes are in @research/week-12/. My
+previous report is at @reports/week-11-summary.md. Use the
+same format.
+
+Constraints: Keep it under 500 words. Use the three-section
+structure (Completed, In Progress, Next Steps). Do not include
+any raw data -- only summaries and takeaways.
+
+Done-when: The report covers all notes from week 12, follows
+the same format as week 11, is saved as
+@reports/week-12-summary.md, and includes at least one
+action item in the Next Steps section.
+```
+
+Notice how each part eliminates a different type of confusion:
+- Goal eliminates "what should I do?"
+- Context eliminates "where should I look?"
+- Constraints eliminates "how should I do it?"
+- Done-when eliminates "how do I know I am finished?"
+
+When all four are clear, the AI rarely goes off track.
+
+---
+
 ## Prompt Engineering vs. Context Engineering
 
 These terms get mixed up a lot. Here's the difference:

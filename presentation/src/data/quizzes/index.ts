@@ -321,7 +321,7 @@ export const quizCategories: QuizCategory[] = [
         id: 'sec-1',
         question: 'Which sandbox mode should you start with for an unfamiliar project?',
         options: [
-          { key: 'A', text: 'Full Access — to explore everything' },
+          { key: 'A', text: 'Danger-Full-Access — to explore everything' },
           { key: 'B', text: 'Workspace-Write — balanced approach' },
           { key: 'C', text: 'Read-Only — safest for exploration' },
           { key: 'D', text: 'No sandbox — for maximum speed' },

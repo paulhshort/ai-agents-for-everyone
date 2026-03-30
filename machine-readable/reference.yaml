@@ -18,6 +18,7 @@ model_variants:
   default: "GPT-5.4"
   fast: "GPT-5.4-mini"
   legacy: "GPT-5.3-codex"
+  spark: "GPT-5.3-codex-spark"
 install_methods:
   npm: "npm install -g @openai/codex"
   brew: "brew install --cask codex"
@@ -102,9 +103,13 @@ deep_dive:
   keyboard_shortcuts: 650
   ctrl_c: 655
   ctrl_g: 660
+  ctrl_l: 663
   esc_esc: 665
-  at_symbol: 670
-  bang_symbol: 675
+  tab_queue: 668
+  enter_inject: 670
+  up_down_arrows: 672
+  at_symbol: 674
+  bang_symbol: 678
   dollar_symbol: 680
   cli_flags: 690
   flag_model: 695
@@ -392,16 +397,25 @@ commands:
   /init: "Set up a new project with an AGENTS.md file for project instructions"
   /permissions: "View or change what Codex is allowed to do"
   /mcp: "Manage MCP server connections"
-  /mention: "Bring a specific file into the conversation"
+  /mention: "Attach files or folders to conversation"
   /fork: "Split the current conversation into a new branch"
   /resume: "Continue a previous session where you left off"
   /new: "Start a brand new conversation"
-  /personality: "Change how Codex communicates (formal, casual, etc.)"
+  /personality: "Change communication style (friendly, pragmatic, none)"
   /theme: "Change the visual appearance of the terminal interface"
   /ps: "Show running background processes"
   /agent: "Launch or manage sub-agents for parallel work"
   /apps: "List available applications and integrations"
-  /fast: "Toggle fast mode for quicker responses with less detail"
+  /fast: "Toggle Fast mode for GPT-5.4"
+  /copy: "Copy latest output to clipboard"
+  /statusline: "Configure TUI footer items"
+  /debug-config: "Print config layer precedence"
+  /experimental: "Toggle experimental features"
+  /feedback: "Submit logs and diagnostics"
+  /logout: "Sign out"
+  /sandbox-add-read-dir: "Grant sandbox read access on Windows"
+  /quit: "Exit CLI"
+  /exit: "Exit CLI (alias for /quit)"
 
 # ============================================================
 # SHORTCUTS — Keyboard shortcuts
@@ -409,7 +423,11 @@ commands:
 shortcuts:
   "Ctrl+C": "Stop what Codex is currently doing — like pressing the pause button"
   "Ctrl+G": "Submit your message (alternative to pressing Enter)"
+  "Ctrl+L": "Clear the terminal screen"
   "Esc Esc": "Press Escape twice to cancel the current input"
+  "Tab": "Queue a follow-up prompt while Codex is still working"
+  "Enter (while running)": "Inject an instruction into the running task"
+  "Up/Down arrows": "Navigate draft history"
   "@": "Mention a file to bring it into the conversation"
   "!": "Run a shell command directly"
   "$": "Reference an environment variable"
@@ -419,7 +437,7 @@ shortcuts:
 # ============================================================
 cli:
   "--model": "Choose which AI model to use (e.g., --model gpt-5.4-mini)"
-  "--full-auto": "Let Codex work without asking for approval on each step"
+  "--full-auto": "Auto-approve file reads, edits, and working-directory commands; network access still requires approval (workspace-write sandbox)"
   "--sandbox": "Set the safety level (read-only, workspace-write, danger-full-access)"
   "--search": "Enable or configure web search (disabled, cached, live)"
   "--profile": "Load a named configuration profile"
@@ -505,7 +523,7 @@ permissions:
       when_to_use: "Automated pipelines and CI/CD"
       risk: "Medium"
   cli_overrides:
-    "--full-auto": "Let Codex work through its plan without stopping to ask"
+    "--full-auto": "Auto-approve file reads, edits, and working-directory commands; network access still requires approval"
     "--yolo": "No guardrails at all — Codex does whatever it decides. Only use if you know what you are doing."
   sandbox_modes:
     "read-only": "Codex can look at files but cannot change anything — safest option"
@@ -565,6 +583,7 @@ architecture:
     primary: "GPT-5.4 — Best quality, used by default"
     fast: "GPT-5.4-mini — Faster and lighter for simple tasks"
     legacy: "GPT-5.3-codex — Previous generation, still available"
+    spark: "GPT-5.3-codex-spark — Near-instant coding, ChatGPT Pro only"
 
 # ============================================================
 # COST MODEL

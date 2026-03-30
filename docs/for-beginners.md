@@ -58,7 +58,7 @@ Yes, with the right settings. Codex has safety features built in:
 - **Sandbox modes** — You can limit what Codex is allowed to do:
   - *Read-only*: It can look at your files but cannot change anything (safest)
   - *Workspace-write*: It can change files in your project folder but nothing outside it (recommended for everyday use)
-  - *Full access*: It can change anything on your computer (only for experts who know what they are doing)
+  - *Danger-full-access*: It can change anything on your computer (only for experts who know what they are doing)
 
 - **Approval modes** — You can make Codex ask permission before doing anything risky
 

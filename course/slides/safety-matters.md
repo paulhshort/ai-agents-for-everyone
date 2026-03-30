@@ -33,8 +33,8 @@
 ```
   ┌─────────────────────────────────────────────────────────────────┐
   │                                                                 │
-  │  LOCKED ROOM              ONE-ROOM ACCESS       MASTER KEY     │
-  │  (Sandbox)                (Network Only)        (Full Access)  │
+  │  LOCKED ROOM              ONE-ROOM ACCESS       MASTER KEY          │
+  │  (Sandbox)                (Network Only)        (Danger-Full-Access)│
   │                                                                 │
   │  ┌──────────────┐        ┌──────────────┐     ┌──────────────┐ │
   │  │ ┌──────────┐ │        │ ┌──────────┐ │     │              │ │
@@ -43,7 +43,7 @@
   │  │ │  HERE    │ │        │ │  here    │====►  │   ANYWHERE   │ │
   │  │ │  only    │ │        │ │  + web   │ │     │              │ │
   │  │ └──────────┘ │        │ └──────────┘ │     │              │ │
-  │  │  NO exit     │        │  Limited exit│     │  Full access │ │
+  │  │  NO exit     │        │  Limited exit│     │  Danger mode │ │
   │  │  NO internet │        │  CAN browse  │     │  CAN modify  │ │
   │  │  NO files    │        │  NO files    │     │  CAN install │ │
   │  └──────────────┘        └──────────────┘     └──────────────┘ │

@@ -14,7 +14,7 @@ In addition to personal and project settings, administrators can create a **syst
 | Personal | `~/.codex/config.toml` | Individual user | Personal preferences (cannot override system rules) |
 | Project | `.codex/config.toml` | Project team | Project-specific settings |
 
-**How it works:** System-level settings act as a floor (and sometimes a ceiling). For example, if the system config says `sandbox = "workspace-write"`, no individual user can downgrade to a less secure mode. They could use a more restrictive mode (like `read-only`) but not a less restrictive one (like `full-access`).
+**How it works:** System-level settings act as a floor (and sometimes a ceiling). For example, if the system config says `sandbox = "workspace-write"`, no individual user can downgrade to a less secure mode. They could use a more restrictive mode (like `read-only`) but not a less restrictive one (like `danger-full-access`).
 
 **Analogy:** Think of it like a building's fire code. Individual tenants can add extra safety features to their apartments, but they cannot remove the building-wide fire alarms.
 

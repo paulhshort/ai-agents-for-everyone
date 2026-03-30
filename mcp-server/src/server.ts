@@ -663,7 +663,7 @@ export function createServer(): McpServer {
             "The amount of information (text, code, conversation) the AI can hold in its working memory at once. When it fills up, you need to use /compact or start fresh.",
           mcp: "Model Context Protocol — a standard way to connect AI tools to external data sources and services, like plugins for your AI.",
           sandbox:
-            "A safety boundary that limits what Codex can do. Read-only means it can only look. Workspace-write means it can change project files. Full-access means no limits.",
+            "A safety boundary that limits what Codex can do. Read-only means it can only look. Workspace-write means it can change project files. Danger-full-access means no limits.",
           token:
             "The basic unit of text that AI models process. Roughly, 1 token is about 3/4 of a word. Managing tokens efficiently helps Codex work better.",
           hook: "Custom code that runs automatically when specific events happen in Codex — like a trigger that fires when Codex edits a file.",

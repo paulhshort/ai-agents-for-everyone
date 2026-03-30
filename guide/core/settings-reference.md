@@ -40,12 +40,13 @@ These control which AI brain Codex uses and how it behaves.
 | Setting | What It Does | Default Value | Example |
 |---|---|---|---|
 | `model` | Which AI model Codex uses for thinking | `"gpt-5.4"` | `model = "gpt-5.4-mini"` |
-| `model_reasoning_effort` | How hard the model thinks before answering (low, medium, high) | `"high"` | `model_reasoning_effort = "medium"` |
+| `model_reasoning_effort` | How hard the model thinks before answering (minimal, low, medium, high, xhigh) | `"high"` | `model_reasoning_effort = "medium"` |
 
 **Available models:**
 - `"gpt-5.4"` -- Best all-around quality (default)
 - `"gpt-5.4-mini"` -- Faster and lighter, good for simple tasks
 - `"gpt-5.3-codex"` -- Specialized for code-related work
+- `"gpt-5.3-codex-spark"` -- Near-instant coding responses (ChatGPT Pro only)
 
 ---
 
@@ -60,7 +61,7 @@ These control what Codex is allowed to do on your computer.
 **Available sandbox modes:**
 - `"read-only"` -- Codex can look at files but not change anything
 - `"workspace-write"` -- Codex can change files only in your project folder (network disabled)
-- `"full-access"` -- Codex can do anything, including accessing the internet (use with caution)
+- `"danger-full-access"` -- Codex can do anything, including accessing the internet (use with caution)
 
 ---
 
@@ -188,10 +189,10 @@ args = ["-y", "web-search-mcp"]
 Place this in `.codex/config.toml` inside a specific project folder:
 
 ```toml
-# This project needs full access to run its test suite
-sandbox = "full-access"
+# This project needs danger-full-access to run its test suite
+sandbox = "danger-full-access"
 approval_policy = "untrusted"
 model = "gpt-5.3-codex"
 ```
 
-This tells Codex: "When working in this project, use full access (but ask me before doing anything) and use the code-specialized model."
+This tells Codex: "When working in this project, use danger-full-access (but ask me before doing anything) and use the code-specialized model."

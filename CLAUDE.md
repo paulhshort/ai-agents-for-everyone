@@ -21,19 +21,19 @@ This is the most comprehensive community guide for OpenAI Codex (CLI + App + Web
 
 ## Codex Facts (Always Accurate)
 - Open source Rust project, npm package @openai/codex, also brew install --cask codex
-- Models: GPT-5.4 (default), GPT-5.4-mini, GPT-5.3-codex
+- Models: GPT-5.4 (default), GPT-5.4-mini, GPT-5.3-codex, GPT-5.3-codex-spark (ChatGPT Pro only)
 - Included with ChatGPT Plus/Pro/Business/Team/Edu/Enterprise
 - Config: TOML format, ~/.codex/config.toml (user), .codex/config.toml (project), /etc/codex/config.toml (system)
 - Project instructions: AGENTS.md
 - Sandbox: read-only, workspace-write, danger-full-access
-- Approval: untrusted, on-request, never, --full-auto, --yolo
+- Approval: untrusted, on-request, never, --full-auto (auto-approves non-network ops in workspace-write), --yolo
 - MCP support: codex mcp add/list/get/remove, config.toml [mcp_servers], HTTP and stdio servers
 - Hooks: .codex/hooks.json, events: SessionStart, PreToolUse, PostToolUse, UserPromptSubmit, Stop
 - Skills: .agents/skills/ with SKILL.md
-- Commands: /clear, /compact, /diff, /model, /plan, /status, /review, /init, /permissions, /mcp, /mention, /fork, /resume, /new, /personality, /theme, /ps, /agent, /apps, /fast
+- Commands: /clear, /compact, /copy, /diff, /model, /plan, /status, /review, /init, /permissions, /mcp, /mention, /fork, /resume, /new, /personality, /theme, /ps, /agent, /apps, /fast, /statusline, /debug-config, /experimental, /feedback, /logout, /sandbox-add-read-dir, /quit, /exit
 - CLI flags: --model, --full-auto, --sandbox, --search, --profile, --config, --image, --cd, --add-dir, --oss, --yolo
 - codex exec for non-interactive, codex cloud for cloud tasks, codex resume for sessions
-- Keyboard: Ctrl+C, Ctrl+G, Esc Esc, @, !, $
+- Keyboard: Ctrl+C, Ctrl+G, Ctrl+L, Esc Esc, Tab (queue follow-up), Enter (inject), Up/Down (history), @, !, $
 - Env vars: CODEX_HOME, CODEX_API_KEY, CODEX_CA_CERTIFICATE, CODEX_SQLITE_HOME
 - Multi-agent: features.multi_agent, agents.max_threads, agents.max_depth
 - Web search: disabled/cached/live

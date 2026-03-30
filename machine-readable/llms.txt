@@ -16,7 +16,7 @@ Codex is an AI agent that can DO things — edit files, write code, run commands
 
 ## Security
 - [Security Hardening](https://github.com/paulhshort/ai-agents-for-everyone/blob/main/guide/security/security-hardening.md): How to keep your setup safe
-- [Sandbox Modes](https://github.com/paulhshort/ai-agents-for-everyone/blob/main/guide/security/sandbox-modes.md): Read-only, workspace-write, and full-access explained
+- [Sandbox Modes](https://github.com/paulhshort/ai-agents-for-everyone/blob/main/guide/security/sandbox-modes.md): Read-only, workspace-write, and danger-full-access explained
 - [Data Privacy](https://github.com/paulhshort/ai-agents-for-everyone/blob/main/guide/security/data-privacy.md): How your data is handled
 - [Enterprise Governance](https://github.com/paulhshort/ai-agents-for-everyone/blob/main/guide/security/enterprise-governance.md): Organization-wide policies and controls
 

@@ -109,6 +109,7 @@ The specific AI brain Codex uses to think and respond. Different models have dif
 - *GPT-5.4*: The default, best all-around quality.
 - *GPT-5.4-mini*: Faster and lighter, good for simple tasks.
 - *GPT-5.3-codex*: Specially tuned for working with code.
+- *GPT-5.3-codex-spark*: Near-instant coding responses (ChatGPT Pro only).
 
 ---
 
@@ -138,7 +139,7 @@ What you type to tell Codex what you want. A good prompt is clear and specific. 
 A protective bubble that limits what Codex can do on your computer. Even if something goes wrong, the sandbox prevents damage from spreading. There are three modes:
 - *Read-only*: Codex can look at files but not change anything.
 - *Workspace-write*: Codex can change files only in your project folder.
-- *Full access (danger)*: Codex can do anything, including installing software and accessing the internet.
+- *Danger-full-access*: Codex can do anything, including installing software and accessing the internet.
 
 Different operating systems implement the sandbox differently:
 - macOS uses a technology called Seatbelt.

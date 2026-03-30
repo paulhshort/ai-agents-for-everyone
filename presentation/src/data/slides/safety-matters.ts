@@ -34,7 +34,7 @@ export const safetyMattersSlides: Slide[] = [
     bullets: [
       'Read-Only — AI can look but not touch. Safest mode. Great for exploring.',
       'Workspace-Write — AI can modify files in your project folder only. Balanced mode.',
-      'Full Access (Danger Zone) — AI can do anything on your system. Use with extreme caution.',
+      'Danger-Full-Access — AI can do anything on your system. Use with extreme caution.',
     ],
     animation: 'reveal-steps',
     notes: 'Draw three concentric circles on the whiteboard: read-only (inner), workspace (middle), full (outer).',
@@ -50,7 +50,7 @@ export const safetyMattersSlides: Slide[] = [
         variant: 'positive',
       },
       right: {
-        title: 'Full Access (Dangerous)',
+        title: 'Danger-Full-Access',
         content: '**Can do:**\n• Everything in Read-Only and Workspace\n• Run any system command\n• Access files outside your project\n• Install system packages\n• Modify system settings\n\n**Risk:** Can accidentally damage your system',
         variant: 'negative',
       },
@@ -137,7 +137,7 @@ export const safetyMattersSlides: Slide[] = [
     quizQuestion: {
       question: 'Which sandbox mode is the safest for exploring a project you have never seen before?',
       options: [
-        { key: 'A', text: 'Full Access — so AI can do everything needed' },
+        { key: 'A', text: 'Danger-Full-Access — so AI can do everything needed' },
         { key: 'B', text: 'Workspace-Write — balanced safety and power' },
         { key: 'C', text: 'Read-Only — AI can look but not touch anything' },
         { key: 'D', text: 'No sandbox — sandboxes slow you down' },

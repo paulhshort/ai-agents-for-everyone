@@ -181,7 +181,7 @@ never        -- Never asks (you review after)
 Show scenarios on the projector. Students call out the safety issue.
 
 1. "I gave Codex access to danger-full-access mode and asked it to clean up my desktop."
-   - **Issue:** Full access + broad command = it might delete things you need
+   - **Issue:** danger-full-access + broad command = it might delete things you need
 
 2. "I asked Codex to read my .env file and tell me what API keys I have."
    - **Issue:** API keys are secrets. Now they're in the AI's context and could be logged.
