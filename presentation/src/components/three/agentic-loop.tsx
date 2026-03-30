@@ -1,12 +1,10 @@
 'use client';
 
 import { useRef, useMemo } from 'react';
-import { useFrame, extend } from '@react-three/fiber';
-import { Text, RoundedBox, OrbitControls } from '@react-three/drei';
+import { useFrame } from '@react-three/fiber';
+import { Text, RoundedBox, OrbitControls, Line } from '@react-three/drei';
 import * as THREE from 'three';
 import { FloatingParticles } from './shared/floating-particles';
-
-extend({ Line_: THREE.Line });
 
 /* ---------- Node definitions ---------- */
 interface LoopNode {
@@ -27,38 +25,28 @@ const NODES: LoopNode[] = [
 
 /* ---------- Orbit path ring ---------- */
 function OrbitRing() {
-  const ringRef = useRef<THREE.Line>(null);
-
   const points = useMemo(() => {
-    const pts: THREE.Vector3[] = [];
+    const pts: [number, number, number][] = [];
     const segments = 128;
     for (let i = 0; i <= segments; i++) {
       const angle = (i / segments) * Math.PI * 2;
-      pts.push(
-        new THREE.Vector3(
-          Math.cos(angle) * RADIUS,
-          Math.sin(angle) * RADIUS,
-          0
-        )
-      );
+      pts.push([
+        Math.cos(angle) * RADIUS,
+        Math.sin(angle) * RADIUS,
+        0,
+      ]);
     }
     return pts;
   }, []);
 
-  const geo = useMemo(
-    () => new THREE.BufferGeometry().setFromPoints(points),
-    [points]
-  );
-
   return (
-    <line_ ref={ringRef} geometry={geo}>
-      <lineBasicMaterial
-        color="#4c1d95"
-        transparent
-        opacity={0.3}
-        blending={THREE.AdditiveBlending}
-      />
-    </line_>
+    <Line
+      points={points}
+      color="#4c1d95"
+      transparent
+      opacity={0.3}
+      lineWidth={1}
+    />
   );
 }
 
@@ -158,8 +146,14 @@ function OrbWithTrail({ progressRef }: { progressRef: React.RefObject<number> })
   const trailRef = useRef<THREE.Points>(null);
 
   const TRAIL_COUNT = 60;
-  const trailPositions = useMemo(() => new Float32Array(TRAIL_COUNT * 3), []);
   const trailOpacities = useMemo(() => new Float32Array(TRAIL_COUNT), []);
+
+  const trailGeo = useMemo(() => {
+    const geo = new THREE.BufferGeometry();
+    const positions = new Float32Array(TRAIL_COUNT * 3);
+    geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    return geo;
+  }, []);
 
   useFrame(({ clock }) => {
     const t = clock.getElapsedTime();
@@ -232,13 +226,7 @@ function OrbWithTrail({ progressRef }: { progressRef: React.RefObject<number> })
         decay={2}
       />
       {/* Particle trail */}
-      <points ref={trailRef}>
-        <bufferGeometry>
-          <bufferAttribute
-            attach="attributes-position"
-            args={[trailPositions, 3]}
-          />
-        </bufferGeometry>
+      <points ref={trailRef} geometry={trailGeo}>
         <pointsMaterial
           size={0.06}
           color="#c4b5fd"
@@ -410,35 +398,35 @@ function BackgroundSphere() {
 /* ---------- Connecting arcs between adjacent nodes ---------- */
 function NodeArcs() {
   const arcs = useMemo(() => {
-    const result: THREE.BufferGeometry[] = [];
+    const result: { points: [number, number, number][]; color: string }[] = [];
     for (let i = 0; i < NODES.length; i++) {
       const startAngle = NODES[i].angle;
       const endAngle = NODES[(i + 1) % NODES.length].angle;
       let diff = endAngle - startAngle;
       if (diff < 0) diff += Math.PI * 2;
 
-      const pts: THREE.Vector3[] = [];
+      const pts: [number, number, number][] = [];
       const steps = 30;
       for (let s = 0; s <= steps; s++) {
         const a = startAngle + (diff * s) / steps;
-        pts.push(new THREE.Vector3(Math.cos(a) * RADIUS, Math.sin(a) * RADIUS, 0));
+        pts.push([Math.cos(a) * RADIUS, Math.sin(a) * RADIUS, 0]);
       }
-      result.push(new THREE.BufferGeometry().setFromPoints(pts));
+      result.push({ points: pts, color: NODES[i].color });
     }
     return result;
   }, []);
 
   return (
     <>
-      {arcs.map((geo, i) => (
-        <line_ key={i} geometry={geo}>
-          <lineBasicMaterial
-            color={NODES[i].color}
-            transparent
-            opacity={0.2}
-            blending={THREE.AdditiveBlending}
-          />
-        </line_>
+      {arcs.map((arc, i) => (
+        <Line
+          key={i}
+          points={arc.points}
+          color={arc.color}
+          transparent
+          opacity={0.2}
+          lineWidth={1}
+        />
       ))}
     </>
   );

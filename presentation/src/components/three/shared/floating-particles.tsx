@@ -38,13 +38,18 @@ export function FloatingParticles({
     return { positions: pos, velocities: vel };
   }, [count, spread, speed]);
 
-  const sizes = useMemo(() => {
+  const geometry = useMemo(() => {
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
     const s = new Float32Array(count);
     for (let i = 0; i < count; i++) {
       s[i] = size * (0.5 + Math.random());
     }
-    return s;
-  }, [count, size]);
+    geo.setAttribute('size', new THREE.BufferAttribute(s, 1));
+
+    return geo;
+  }, [count, size, positions]);
 
   useFrame(({ clock }) => {
     if (!pointsRef.current) return;
@@ -89,17 +94,7 @@ export function FloatingParticles({
   }, []);
 
   return (
-    <points ref={pointsRef}>
-      <bufferGeometry>
-        <bufferAttribute
-          attach="attributes-position"
-          args={[positions, 3]}
-        />
-        <bufferAttribute
-          attach="attributes-size"
-          args={[sizes, 1]}
-        />
-      </bufferGeometry>
+    <points ref={pointsRef} geometry={geometry}>
       <pointsMaterial
         size={size}
         color={color}

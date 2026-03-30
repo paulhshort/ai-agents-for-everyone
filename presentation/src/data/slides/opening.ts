@@ -5,9 +5,28 @@ export const openingSlides: Slide[] = [
     id: 'opening-1',
     type: 'title',
     title: 'AI Agents: The Next Level',
-    subtitle: 'What if AI could DO things, not just TALK about things?',
+    subtitle: 'What if your computer could actually DO things for you?',
     animation: 'zoom-in',
     notes: 'Welcome everyone! Build excitement. This subtitle is the core thesis of the entire course.',
+  },
+  {
+    id: 'opening-1b',
+    type: 'comparison',
+    title: 'The AI You Know vs. The AI That Exists',
+    comparison: {
+      left: {
+        title: 'What You Think AI Is',
+        content: '• Answering questions\n• Writing essays for you\n• Chatting back and forth\n• A fancy search engine\n• Something you type AT',
+        variant: 'neutral',
+      },
+      right: {
+        title: 'What AI Can Actually Be',
+        content: '• Organizing your messy files into folders\n• Fixing the formatting in your spreadsheet\n• Researching a topic and writing a summary report\n• Managing your schedule and to-do list\n• Something that WORKS FOR you',
+        variant: 'positive',
+      },
+    },
+    animation: 'fade-in',
+    notes: 'This is the HOOK. Let students absorb both sides. The right column should feel like a surprise. Ask: "How many of you knew AI could do the stuff on the right?"',
   },
   {
     id: 'opening-2',
@@ -40,13 +59,13 @@ export const openingSlides: Slide[] = [
     type: 'activity',
     title: 'Icebreaker',
     activityConfig: {
-      title: 'In One Word...',
-      instructions: 'In ONE word, what do you think AI is? Write it on a sticky note and hold it up. No wrong answers!',
+      title: 'The Coolest Thing',
+      instructions: 'Think about this: What is the COOLEST thing you have ever seen a computer do by itself? Maybe autocomplete guessed your whole sentence. Maybe your phone organized your photos automatically. Maybe a game character surprised you with something smart. Write it on a sticky note and hold it up!',
       duration: 3,
       type: 'class',
     },
     animation: 'fade-in',
-    notes: 'Great for gauging the room. Common answers: robot, smart, scary, cool, future. Use these to start a conversation.',
+    notes: 'Way more engaging than "define AI." Students love sharing cool moments. Use their answers to bridge into the course: "What if I told you AI can do things WAY cooler than that?"',
   },
   {
     id: 'opening-5',
