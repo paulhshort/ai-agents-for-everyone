@@ -175,9 +175,8 @@
     │  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  │
     └────────────────────────────────────────────────────┘
 
-    GPT-5.4:       128,000 tokens  (~100 pages)
-    Claude Opus:   200,000 tokens  (~150 pages)
-    Codex:       1,000,000 tokens  (~750 pages!)
+    GPT-5.4:         200,000 tokens  (~150 pages)
+    Claude Opus 4.6: 1,000,000 tokens  (~750 pages!)
 ```
 
 <br>
@@ -300,7 +299,7 @@
   │                    Build projects                             │
   │                    Works autonomously                         │
   │                                                              │
-  │  Claude Opus       Deep analysis         SLOWER   HIGHER    │
+  │  Claude Opus 4.6   Deep analysis         SLOWER   HIGHER    │
   │  (deep brain)      Complex reasoning                         │
   │                    Careful work                               │
   │                                                              │

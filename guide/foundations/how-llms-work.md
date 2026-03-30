@@ -173,9 +173,8 @@ Different models have different context window sizes:
 MODEL                    CONTEXT WINDOW       REAL-WORLD EQUIVALENT
 ----------------------------------------------------------------------
 Older models (GPT-3)     ~4,000 tokens        ~6 pages of text
-GPT-4 class models       ~128,000 tokens      ~a 250-page novel
-Latest models            ~200,000 tokens      ~a 400-page novel
-Some specialized models  ~1,000,000 tokens    ~5 full novels
+GPT-5.4                  ~200,000 tokens      ~a 400-page novel
+Claude Opus 4.6          ~1,000,000 tokens    ~5 full novels
 ```
 
 A 200,000-token context window means you could paste an entire

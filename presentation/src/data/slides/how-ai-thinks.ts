@@ -81,8 +81,8 @@ export const howAiThinksSlides: Slide[] = [
     title: 'What Is a Context Window?',
     content: 'Think of the context window as AI\'s **whiteboard**. Everything you say, everything it says back, all instructions — they all get written on this whiteboard. Once it fills up, the oldest stuff gets erased.',
     bullets: [
-      'GPT-4: ~128,000 tokens (about 300 pages of text)',
-      'Claude: ~200,000 tokens (about 500 pages)',
+      'GPT-5.4: ~200,000 tokens (about 500 pages of text)',
+      'Claude Opus 4.6: ~1,000,000 tokens (about 2,500 pages)',
       'Everything in the conversation uses up space',
       'When the whiteboard fills up, AI starts "forgetting"',
       'This is why long conversations can go off the rails!',

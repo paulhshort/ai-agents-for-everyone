@@ -4,7 +4,7 @@ import { use } from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { getCourseModule } from '@/data/course-structure';
+import { getModuleByDayAndNumber } from '@/data/course-structure';
 import { slideDecks } from '@/data/slides';
 import { SlideDeck } from '@/components/presentation/slide-deck';
 import { ArrowLeft, FlaskConical, Terminal, Users, Clock, BookOpen } from 'lucide-react';
@@ -25,7 +25,7 @@ export default function ModulePage({
   params: Promise<{ dayId: string; moduleId: string }>;
 }) {
   const { dayId, moduleId } = use(params);
-  const result = getCourseModule(moduleId);
+  const result = getModuleByDayAndNumber(Number(dayId), Number(moduleId));
 
   if (!result) {
     notFound();

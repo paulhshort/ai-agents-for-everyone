@@ -305,6 +305,18 @@ export function getCourseModule(moduleId: string): { day: CourseDay; module: Cou
   return undefined;
 }
 
+/** Helper: get a module by day number and module number */
+export function getModuleByDayAndNumber(
+  dayNumber: number,
+  moduleNumber: number
+): { day: CourseDay; module: CourseModule } | undefined {
+  const day = courseDays.find((d) => d.day === dayNumber);
+  if (!day) return undefined;
+  const mod = day.modules.find((m) => m.moduleNumber === moduleNumber);
+  if (!mod) return undefined;
+  return { day, module: mod };
+}
+
 /** Helper: total module count (excluding breaks) */
 export function getTeachingModuleCount(day: CourseDay): number {
   return day.modules.filter((m) => m.type !== 'break').length;

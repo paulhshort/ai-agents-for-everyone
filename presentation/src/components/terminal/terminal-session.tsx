@@ -36,7 +36,7 @@ const DEMOS: Record<string, DemoData> = {
       },
       {
         type: 'output',
-        text: '  ║   Model: o4-mini    Approval: suggest ║',
+        text: '  ║   Model: GPT-5.4-mini    Approval: suggest ║',
       },
       {
         type: 'output',

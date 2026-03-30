@@ -30,7 +30,7 @@ used Codex, Claude Code will feel immediately familiar.
 | | Codex | Claude Code |
 |---|-------|-------------|
 | **Made by** | OpenAI | Anthropic |
-| **AI models** | GPT-5.4, GPT-5.3-codex | Claude Opus, Claude Sonnet |
+| **AI models** | GPT-5.4, GPT-5.3-codex | Claude Opus 4.6, Claude Sonnet 4.6 |
 | **Where it runs** | Terminal (command line) | Terminal (command line) |
 | **Project memory** | AGENTS.md | CLAUDE.md |
 | **Sandbox** | Yes | Yes |
@@ -85,7 +85,7 @@ writing good AGENTS.md files applies directly to CLAUDE.md.
 ### Different AI Models
 
 Codex uses OpenAI's models (like GPT-5.4). Claude Code uses
-Anthropic's models (like Claude Opus and Claude Sonnet).
+Anthropic's models (like Claude Opus 4.6 and Claude Sonnet 4.6).
 
 These are different AI "brains" with different strengths.
 Some people prefer one over the other for certain tasks.

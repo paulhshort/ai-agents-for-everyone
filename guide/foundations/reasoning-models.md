@@ -16,6 +16,10 @@ GPT-4 (2023)     "Now I can pass the bar exam and write real code."
      v
 GPT-5 (2025)     "I can reason through multi-step problems
                    and think before I answer."
+     |
+     v
+GPT-5.4 (2026)   "I can tackle expert-level tasks with deep
+                   reasoning, planning, and tool use."
 ```
 
 Think of it like smartphones:
@@ -23,6 +27,11 @@ Think of it like smartphones:
 - **GPT-3** was like the first iPhone -- mind-blowing for its time, but limited.
 - **GPT-4** was like a modern smartphone -- genuinely useful for real work.
 - **GPT-5** is like having a phone that actually *pauses to think* before giving you directions, instead of just blurting out the first route it finds.
+- **GPT-5.4** is the latest and most capable -- like a phone with a brilliant assistant that plans ahead, uses tools on its own, and rarely makes mistakes.
+
+The same evolution happened with Anthropic's models. Today's
+**Claude Opus 4.6** and **Claude Sonnet 4.6** are reasoning-capable
+agents, just like GPT-5.4.
 
 The big leap isn't just "better at predicting the next word."
 It's that newer models can **reason** -- break problems into steps

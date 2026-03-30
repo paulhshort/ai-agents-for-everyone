@@ -134,7 +134,7 @@ export const theBigIdeaSlides: Slide[] = [
       { type: 'input', text: 'codex', delay: 600 },
       { type: 'output', text: '' },
       { type: 'output', text: '  Welcome to OpenAI Codex CLI' },
-      { type: 'output', text: '  Model: o4-mini    Sandbox: read-only' },
+      { type: 'output', text: '  Model: GPT-5.4-mini    Sandbox: read-only' },
       { type: 'output', text: '' },
       { type: 'input', text: 'What does this project do? Read the files and explain it to me like I\'m 14.', delay: 1000 },
       { type: 'output', text: '', delay: 300 },

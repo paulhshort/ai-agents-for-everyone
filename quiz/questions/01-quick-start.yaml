@@ -106,7 +106,7 @@
 - id: "01-007"
   question: "What is the default AI model that Codex uses?"
   options:
-    a: "GPT-4"
+    a: "GPT-5.4-mini"
     b: "GPT-5.3-codex"
     c: "GPT-5.4"
     d: "GPT-5.4-mini"
