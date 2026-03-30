@@ -13,11 +13,7 @@ export function SlideProgress({ current, total }: SlideProgressProps) {
   return (
     <div className="fixed top-0 left-0 right-0 z-50 h-1 bg-[oklch(0.2_0.02_280)]">
       <motion.div
-        className="h-full"
-        style={{
-          background:
-            "linear-gradient(90deg, var(--brand-purple), var(--brand-blue), var(--brand-cyan))",
-        }}
+        className="h-full bg-[var(--foreground)]"
         initial={{ width: 0 }}
         animate={{ width: `${percent}%` }}
         transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}

@@ -61,7 +61,7 @@ export function SlideControls({
           className="fixed bottom-6 left-1/2 z-50 -translate-x-1/2"
         >
           <TooltipProvider delayDuration={300}>
-            <div className="glass flex items-center gap-1 rounded-2xl px-3 py-2 shadow-2xl shadow-[oklch(0_0_0/0.3)]">
+            <div className="flex items-center gap-1 rounded-2xl bg-[var(--card)] border border-[var(--border)] px-3 py-2 shadow-2xl shadow-[oklch(0_0_0/0.3)]">
               {/* Prev */}
               <ControlButton
                 tooltip="Previous (Left Arrow)"

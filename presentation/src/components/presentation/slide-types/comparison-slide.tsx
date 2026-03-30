@@ -13,7 +13,7 @@ const variantStyles = {
   negative: {
     border: "border-[oklch(0.577_0.245_27/0.4)]",
     bg: "bg-[oklch(0.577_0.245_27/0.05)]",
-    glow: "hover:shadow-[0_0_30px_oklch(0.577_0.245_27/0.15)]",
+    glow: "",
     icon: <X className="h-5 w-5 text-[oklch(0.65_0.2_25)]" />,
     iconBg: "bg-[oklch(0.577_0.245_27/0.15)]",
     titleColor: "text-[oklch(0.65_0.2_25)]",
@@ -21,7 +21,7 @@ const variantStyles = {
   positive: {
     border: "border-[oklch(0.65_0.2_155/0.4)]",
     bg: "bg-[oklch(0.65_0.2_155/0.05)]",
-    glow: "hover:shadow-[0_0_30px_oklch(0.65_0.2_155/0.15)]",
+    glow: "",
     icon: <Check className="h-5 w-5 text-[oklch(0.7_0.18_155)]" />,
     iconBg: "bg-[oklch(0.65_0.2_155/0.15)]",
     titleColor: "text-[oklch(0.7_0.18_155)]",
@@ -29,7 +29,7 @@ const variantStyles = {
   neutral: {
     border: "border-[var(--border)]",
     bg: "bg-[var(--card)]",
-    glow: "hover:shadow-[0_0_30px_oklch(0.55_0.25_290/0.12)]",
+    glow: "",
     icon: <Minus className="h-5 w-5 text-[var(--muted-foreground)]" />,
     iconBg: "bg-[var(--muted)]",
     titleColor: "text-[var(--foreground)]",
@@ -46,7 +46,7 @@ export function ComparisonSlide({ slide }: ComparisonSlideProps) {
       {/* Title */}
       {slide.title && (
         <motion.h2
-          className="mb-10 gradient-text text-center"
+          className="mb-10 text-[var(--foreground)] text-center"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}

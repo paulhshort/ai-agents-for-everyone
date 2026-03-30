@@ -12,24 +12,6 @@ interface DiscussionSlideProps {
 export function DiscussionSlide({ slide }: DiscussionSlideProps) {
   return (
     <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden px-8 py-12">
-      {/* Animated gradient background */}
-      <div className="pointer-events-none absolute inset-0">
-        <div
-          className="absolute inset-0 animate-gradient opacity-30"
-          style={{
-            background:
-              "linear-gradient(135deg, oklch(0.55 0.25 290 / 0.15), oklch(0.6 0.2 250 / 0.1), oklch(0.7 0.15 200 / 0.15), oklch(0.55 0.25 290 / 0.1))",
-            backgroundSize: "400% 400%",
-          }}
-        />
-        {/* Floating orbs */}
-        <div className="absolute left-1/4 top-1/3 h-[350px] w-[350px] rounded-full bg-[var(--brand-purple)] opacity-[0.06] blur-[100px] animate-float" />
-        <div
-          className="absolute right-1/4 bottom-1/3 h-[280px] w-[280px] rounded-full bg-[var(--brand-cyan)] opacity-[0.06] blur-[80px] animate-float"
-          style={{ animationDelay: "1.5s" }}
-        />
-      </div>
-
       <div className="relative z-10 max-w-4xl text-center">
         {/* Icon */}
         <motion.div
@@ -38,8 +20,8 @@ export function DiscussionSlide({ slide }: DiscussionSlideProps) {
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="mb-6 flex justify-center"
         >
-          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[oklch(0.55_0.25_290/0.15)] shadow-[0_0_30px_oklch(0.55_0.25_290/0.2)]">
-            <MessageCircle className="h-8 w-8 text-[var(--brand-purple)]" />
+          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[var(--muted)]">
+            <MessageCircle className="h-8 w-8 text-[var(--foreground)]" />
           </div>
         </motion.div>
 

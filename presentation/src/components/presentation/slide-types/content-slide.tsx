@@ -35,7 +35,7 @@ export function ContentSlide({ slide }: ContentSlideProps) {
         {/* Title */}
         {slide.title && (
           <motion.h2
-            className="mb-8 gradient-text"
+            className="mb-8 text-[var(--foreground)]"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
@@ -55,7 +55,7 @@ export function ContentSlide({ slide }: ContentSlideProps) {
             <ReactMarkdown
               components={{
                 h1: ({ children }: { children?: React.ReactNode }) => (
-                  <h1 className="gradient-text">{children}</h1>
+                  <h1 className="text-[var(--foreground)]">{children}</h1>
                 ),
                 h2: ({ children }: { children?: React.ReactNode }) => (
                   <h2 className="text-[var(--foreground)]">{children}</h2>
@@ -120,11 +120,7 @@ export function ContentSlide({ slide }: ContentSlideProps) {
                 className="flex items-start gap-4"
               >
                 <span
-                  className="mt-2.5 h-2 w-2 shrink-0 rounded-full"
-                  style={{
-                    background:
-                      "linear-gradient(135deg, var(--brand-purple), var(--brand-cyan))",
-                  }}
+                  className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-[var(--foreground)]"
                 />
                 <span className="text-[var(--foreground)] leading-relaxed">
                   {bullet}

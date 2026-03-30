@@ -61,12 +61,6 @@ export function ActivitySlide({ slide }: ActivitySlideProps) {
 
   return (
     <div className="flex h-full w-full flex-col items-center justify-center px-8 py-12">
-      {/* Background accent */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute right-0 top-0 h-[400px] w-[400px] rounded-full bg-[var(--brand-amber)] opacity-[0.04] blur-[100px]" />
-        <div className="absolute bottom-0 left-0 h-[300px] w-[300px] rounded-full bg-[var(--brand-green)] opacity-[0.04] blur-[80px]" />
-      </div>
-
       <div className="relative z-10 w-full max-w-4xl">
         {/* Header */}
         <motion.div
@@ -80,7 +74,7 @@ export function ActivitySlide({ slide }: ActivitySlideProps) {
             {typeConfig.label} Activity
           </Badge>
 
-          <h2 className="text-center text-[calc(2.5rem*var(--font-scale))] font-bold leading-tight gradient-text-warm">
+          <h2 className="text-center text-[calc(2.5rem*var(--font-scale))] font-bold leading-tight text-[var(--foreground)]">
             {config.title}
           </h2>
         </motion.div>

@@ -169,7 +169,7 @@ export function SlideDeck({ slides, moduleTitle }: SlideDeckProps) {
             transition={{ duration: 0.3, ease: "easeOut" }}
             className="fixed bottom-20 left-4 right-4 z-40 mx-auto max-w-2xl"
           >
-            <div className="glass rounded-xl p-4">
+            <div className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
               <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-[var(--muted-foreground)]">
                 Presenter Notes
               </p>

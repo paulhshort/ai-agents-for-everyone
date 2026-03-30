@@ -17,7 +17,7 @@ export function DiagramSlide({ slide }: DiagramSlideProps) {
         {/* Title */}
         {slide.title && (
           <motion.h2
-            className="mb-8 text-center gradient-text"
+            className="mb-8 text-center text-[var(--foreground)]"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -139,13 +139,12 @@ function ThreeJsCanvas({
   return (
     <div className="flex h-full w-full items-center justify-center bg-[oklch(0.06_0.01_280)]">
       <div className="flex flex-col items-center gap-4">
-        {/* Animated rings placeholder */}
+        {/* Loading spinner placeholder */}
         <div className="relative h-32 w-32">
-          <div className="absolute inset-0 animate-spin rounded-full border-2 border-[var(--brand-purple)] border-t-transparent opacity-60" style={{ animationDuration: "3s" }} />
-          <div className="absolute inset-3 animate-spin rounded-full border-2 border-[var(--brand-blue)] border-b-transparent opacity-50" style={{ animationDuration: "4s", animationDirection: "reverse" }} />
-          <div className="absolute inset-6 animate-spin rounded-full border-2 border-[var(--brand-cyan)] border-t-transparent opacity-40" style={{ animationDuration: "5s" }} />
+          <div className="absolute inset-0 animate-spin rounded-full border-2 border-[var(--muted-foreground)] border-t-transparent opacity-60" style={{ animationDuration: "3s" }} />
+          <div className="absolute inset-3 animate-spin rounded-full border-2 border-[var(--muted-foreground)] border-b-transparent opacity-40" style={{ animationDuration: "4s", animationDirection: "reverse" }} />
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="h-4 w-4 rounded-full bg-[var(--brand-purple)] animate-glow" />
+            <div className="h-4 w-4 rounded-full bg-[var(--foreground)]" />
           </div>
         </div>
         <span className="text-sm font-medium text-[var(--muted-foreground)]">

@@ -153,7 +153,7 @@ export function QuizSlide({ slide, slideIndex }: QuizSlideProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-[var(--brand-purple)]">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">
             Knowledge Check
           </p>
           <h2 className="text-[calc(2rem*var(--font-scale))] font-bold leading-tight text-[var(--foreground)]">
@@ -168,10 +168,10 @@ export function QuizSlide({ slide, slideIndex }: QuizSlideProps) {
             if (revealed) {
               if (option.key === quiz.answer) {
                 optionStyle =
-                  "border-[oklch(0.65_0.2_155)] bg-[oklch(0.65_0.2_155/0.1)] shadow-[0_0_20px_oklch(0.65_0.2_155/0.15)]";
+                  "border-[oklch(0.65_0.2_155)] bg-[oklch(0.65_0.2_155/0.1)]";
               } else if (option.key === selected) {
                 optionStyle =
-                  "border-[oklch(0.577_0.245_27)] bg-[oklch(0.577_0.245_27/0.1)] shadow-[0_0_20px_oklch(0.577_0.245_27/0.15)]";
+                  "border-[oklch(0.577_0.245_27)] bg-[oklch(0.577_0.245_27/0.1)]";
               } else {
                 optionStyle = "opacity-50";
               }
